@@ -1,5 +1,5 @@
 import {customElement, property} from "./node_modules/lit/decorators.js";
-import { html, css, LitElement } from "./node_modules/lit";
+import { html, css, LitElement } from "./node_modules/lit/index.d.ts";
 
 export class SimpleGreeting extends LitElement {
   static get styles() {
