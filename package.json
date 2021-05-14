@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "babel-plugin-wildcard": "^7.0.0",
     "lit": "^2.0.0-rc.2"
   }
 }
