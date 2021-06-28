@@ -9,11 +9,15 @@ function initMap() {
 }
 
 onload = function() {
-  fetch('./test.html').then(function (response) {
+
+  let bottomDrawer = document.querySelector("#bottom-drawer");
+
+  // 바텀 드로워
+  fetch('./bottom-drawer.html').then(function (response) {
     return response.text();
   }).then(function (html) {
-    console.log(html);
+    bottomDrawer.innerHTML = html
   }).catch(function (err) {
-    console.warn('Something went wrong.', err);
+    console.warn('Bottom drawer fetch went wrong.', err);
   });
 }
