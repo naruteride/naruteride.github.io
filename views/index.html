@@ -10,7 +10,8 @@
     <link rel="shortcut icon" href="./../public/images/logo_.jpeg">
 
     <!-- 구글 폰트 -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;400&display=swap" rel="stylesheet">
 
     <!-- 부트스트랩 -->
@@ -22,11 +23,13 @@
 
     <title>뮤집</title>
 
+    <!-- 내부 index CSS -->
     <link rel="stylesheet" href="../public/stylesheets/index.css">
 
     <!-- Google Map API JS -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
+    <!-- 내부 index JS -->
     <script src="./../public/scripts/index.js"></script>
 </head>
 
@@ -35,7 +38,8 @@
         <div id="map" class="h-100"></div>
 
         <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN-i5kYIaVnYgHVgIwFabg6ORayHadUss&callback=initMap&libraries=&v=weekly"
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN-i5kYIaVnYgHVgIwFabg6ORayHadUss&callback=initMap&libraries=&v=weekly"
             async></script>
     </div>
 

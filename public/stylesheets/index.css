@@ -1,0 +1,35 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bottom-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 160vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    pointer-events: none;
+    background-color: gold;
+}
+
+#bottom-drawer>section {
+    width: 100%;
+    background-color: white;
+    pointer-events: auto;
+}
+
+#bottom-drawer>section:nth-child(1) {
+    height: 20vh;
+    border-radius: 20px 20px 0 0;
+}
+#bottom-drawer>section:nth-child(2) {
+    height: 60vh;
+    background-color: red;
+}
