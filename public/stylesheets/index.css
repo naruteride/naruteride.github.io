@@ -13,7 +13,6 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     pointer-events: none;
-    background-color: gold;
 }
 
 #bottom-drawer>section {
@@ -24,11 +23,11 @@ body {
 }
 
 #bottom-drawer>section:nth-child(1) {
-    height: 20vh;
+    height: 25vh;
     margin-top: 80vh;
     border-radius: 50px 50px 0 0;
 }
 #bottom-drawer>section:nth-child(2) {
-    height: 60vh;
-    background-color: red;
+    height: 65vh;
+    background-color: gold;
 }
