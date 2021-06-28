@@ -27,15 +27,11 @@ body {
 }
 
 #bottom-drawer>section:nth-child(1) {
-    height: 80vh;
-    pointer-events: none;
-    background-color: gray;
+    height: 20vh;
+    margin-top: 80vh;
+    border-radius: 50px 50px 0 0;
 }
 #bottom-drawer>section:nth-child(2) {
-    height: 20vh;
-    border-radius: 20px 20px 0 0;
-}
-#bottom-drawer>section:nth-child(3) {
     height: 60vh;
     background-color: red;
 }
