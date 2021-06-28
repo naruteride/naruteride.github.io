@@ -1,12 +1,12 @@
-let map;
+// let map;
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 37.5575312, lng: 126.9222782 },
-    zoom: 17,
-    disableDefaultUI: true,
-  });
-}
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: 37.5575312, lng: 126.9222782 },
+//     zoom: 17,
+//     disableDefaultUI: true,
+//   });
+// }
 
 onload = function() {
 
