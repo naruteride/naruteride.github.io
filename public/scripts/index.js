@@ -27,4 +27,7 @@ onload = function() {
   document.querySelector("#map").addEventListener("click", function() {
     alert("맵을 클릭함")
   })
+  document.querySelector("#bottom-drawer>section").addEventListener("click", function() {
+    alert("섹션을 클릭함")
+  })
 }
