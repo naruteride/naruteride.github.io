@@ -12,11 +12,11 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 /* 스크롤바 제거 */
-
+/*****************************
 #bottom-drawer {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -24,7 +24,7 @@ body {
 #bottom-drawer::-webkit-scrollbar {
     display: none;
 }
-
+******************************/
 
 #bottom-drawer>section {
     width: 100%;
