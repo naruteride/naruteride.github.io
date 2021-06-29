@@ -1,12 +1,12 @@
-// let map;
+let map;
 
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: 37.5575312, lng: 126.9222782 },
-//     zoom: 17,
-//     disableDefaultUI: true,
-//   });
-// }
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 37.5575312, lng: 126.9222782 },
+    zoom: 17,
+    disableDefaultUI: true,
+  });
+}
 
 onload = function() {
 
@@ -24,9 +24,9 @@ onload = function() {
 
 
 
-  document.querySelector("#map").addEventListener("click", function() {
-    alert("맵을 클릭함")
-  })
+  // document.querySelector("#map").addEventListener("click", function() {
+  //   alert("맵을 클릭함")
+  // })
 
   this.setTimeout(function() {
     document.querySelector("#bottom-drawer>section").addEventListener("click", function() {
