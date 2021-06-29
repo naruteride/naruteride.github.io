@@ -20,4 +20,11 @@ onload = function() {
   }).catch(function (err) {
     console.warn('Bottom drawer fetch went wrong.', err);
   });
+
+
+
+
+  document.querySelector("#map").addEventListener("click", function() {
+    alert("맵을 클릭함")
+  })
 }
