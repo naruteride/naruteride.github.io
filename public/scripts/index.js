@@ -24,12 +24,12 @@ onload = function () {
       let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
 
       drawerSection1.addEventListener("touchstart", function () {
-        // bottomDrawer.classList.add("pointer-events-auto");
+        bottomDrawer.classList.add("pointer-events-auto");
         console.log("섹션 1이 터치됨");
       });
       drawerSection1.addEventListener("touchend", function () {
-        // bottomDrawer.classList.remove("pointer-events-auto");
-        alert("섹션 1이 떨어짐");
+        bottomDrawer.classList.remove("pointer-events-auto");
+        console.log("섹션 1이 떨어짐");
       });
     })
     .catch(function (err) {
