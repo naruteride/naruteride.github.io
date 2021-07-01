@@ -12,7 +12,7 @@ onload = function() {
 
   let bottomDrawer = document.querySelector("#bottom-drawer");
 
-  // 바텀 드로워
+  // 바텀 드로워 fetch
   fetch('./bottom-drawer.html').then(function (response) {
     return response.text();
   }).then(function (html) {
@@ -24,13 +24,10 @@ onload = function() {
 
 
 
-  // document.querySelector("#map").addEventListener("click", function() {
-  //   alert("맵을 클릭함")
-  // })
+  let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
+  let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
 
-  this.setTimeout(function() {
-    document.querySelector("#bottom-drawer>section").addEventListener("click", function() {
-      alert("섹션을 클릭함")
-    })
-  }, 500)
+  drawerSection1.addEventListener("touchstart", function() {
+    alert("섹션 1에 터치를 함");
+  })
 }

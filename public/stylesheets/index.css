@@ -16,7 +16,6 @@ body {
 }
 
 /* 스크롤바 제거 */
-/*****************************
 #bottom-drawer {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -24,7 +23,6 @@ body {
 #bottom-drawer::-webkit-scrollbar {
     display: none;
 }
-******************************/
 
 #bottom-drawer>section {
     width: 100%;
@@ -37,6 +35,7 @@ body {
     height: 25vh;
     margin-top: 80vh;
     border-radius: 50px 50px 0 0;
+    box-shadow: 0 -2px 15px rgb(0 0 0 / 25%);
 }
 #bottom-drawer>section:nth-child(2) {
     height: 65vh;
