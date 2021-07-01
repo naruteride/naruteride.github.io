@@ -25,7 +25,11 @@ onload = function () {
 
       drawerSection1.addEventListener("touchstart", function () {
         // bottomDrawer.classList.add("pointer-events-auto");
-        alert("섹션 1이 터치됨")
+        console.log("섹션 1이 터치됨");
+      });
+      drawerSection1.addEventListener("touchend", function () {
+        // bottomDrawer.classList.remove("pointer-events-auto");
+        alert("섹션 1이 떨어짐");
       });
     })
     .catch(function (err) {
