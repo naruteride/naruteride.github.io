@@ -1,3 +1,5 @@
+import "./bottom-drawer.js";
+
 let map;
 
 function initMap() {
