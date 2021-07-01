@@ -22,12 +22,4 @@ onload = function() {
   });
 
 
-
-
-  let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
-  let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
-
-  drawerSection1.addEventListener("touchstart", function() {
-    alert("섹션 1에 터치를 함");
-  })
 }
