@@ -117,3 +117,7 @@ a {
 .outline-none {
     outline: none;
 }
+
+.pointer-events-auto {
+    pointer-events: auto !important;
+}

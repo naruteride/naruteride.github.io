@@ -23,10 +23,10 @@ onload = function () {
       let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
       let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
 
-      drawerSection1.addEventListener("click", function () {
-        alert("섹션 1에 터치를 함");
+      drawerSection1.addEventListener("touchstart", function () {
+        // bottomDrawer.classList.add("pointer-events-auto");
+        alert("섹션 1이 터치됨")
       });
-      console.log("코드 합치기 성공");
     })
     .catch(function (err) {
       console.warn("Bottom drawer fetch went wrong.", err);
