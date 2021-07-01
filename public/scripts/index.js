@@ -29,20 +29,24 @@ onload = function () {
         // 섹션 1
         drawerSection1.addEventListener("touchstart", function () {
           bottomDrawer.classList.add("pointer-events-auto");
+          console.log("touch start");
         });
         drawerSection1.addEventListener("touchend", function () {
           setTimeout(() => {
             bottomDrawer.classList.remove("pointer-events-auto");
-          }, 100);
+            console.log("touch end");
+          }, 500);
         });
         // 섹션 2
         drawerSection2.addEventListener("touchstart", function () {
           bottomDrawer.classList.add("pointer-events-auto");
+          console.log("touch start");
         });
         drawerSection2.addEventListener("touchend", function () {
           setTimeout(() => {
             bottomDrawer.classList.remove("pointer-events-auto");
-          }, 100);
+            console.log("touch end");
+          }, 500);
         });
       }
     })
