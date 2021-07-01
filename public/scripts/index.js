@@ -1,4 +1,4 @@
-import "./bottom-drawer.js";
+// import "./bottom-drawer.js";
 
 let map;
 
@@ -10,18 +10,27 @@ function initMap() {
   });
 }
 
-onload = function() {
 
+onload = function () {
   let bottomDrawer = document.querySelector("#bottom-drawer");
 
   // 바텀 드로워 fetch
-  fetch('./bottom-drawer.html').then(function (response) {
-    return response.text();
-  }).then(function (html) {
-    bottomDrawer.innerHTML = html
-  }).catch(function (err) {
-    console.warn('Bottom drawer fetch went wrong.', err);
+  fetch("./bottom-drawer.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      bottomDrawer.innerHTML = html;
+    })
+    .catch(function (err) {
+      console.warn("Bottom drawer fetch went wrong.", err);
+    });
+
+  let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
+  let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
+
+  drawerSection1.addEventListener("click", function () {
+    alert("섹션 1에 터치를 함");
   });
-
-
-}
+  console.log("코드 합치기 성공")
+};
