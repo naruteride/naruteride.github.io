@@ -19,7 +19,8 @@ function initMap() {
 
   funckingMarker = new google.maps.Marker({
     position: { lat: 37.5575314, lng: 126.9222784 },
-    title:"fuuuuuuuuuuuncccccccccking Marker!!"
+    map,
+    title:"fuuuuuuuuuuuncccccccccking Marker!!",
   });
 }
 
