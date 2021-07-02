@@ -1,10 +1,7 @@
 let map;
 let myLatLng = { lat: 37.5575312, lng: 126.9222782 }
+let funckingMarker;
 
-let funckingMarker = new google.maps.Marker({
-  position: { lat: 37.5575314, lng: 126.9222784 },
-  title:"fuuuuuuuuuuuncccccccccking Marker!!"
-});
 
 function initMap() {
 
@@ -13,10 +10,16 @@ function initMap() {
     zoom: 17,
     disableDefaultUI: true,
   });
+
   new google.maps.Marker({
     position: myLatLng,
     map,
     title: "Hello World!",
+  });
+
+  funckingMarker = new google.maps.Marker({
+    position: { lat: 37.5575314, lng: 126.9222784 },
+    title:"fuuuuuuuuuuuncccccccccking Marker!!"
   });
 }
 
@@ -49,7 +52,7 @@ onload = function () {
             console.log("touch end");
 
             funckingMarker.setMap(map);
-            
+
           }, 500);
         });
         // 섹션 2
