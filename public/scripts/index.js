@@ -1,6 +1,11 @@
 let map;
 let myLatLng = { lat: 37.5575312, lng: 126.9222782 }
 
+let funckingMarker = new google.maps.Marker({
+  position: { lat: 37.5575314, lng: 126.9222784 },
+  title:"fuuuuuuuuuuuncccccccccking Marker!!"
+});
+
 function initMap() {
 
   map = new google.maps.Map(document.getElementById("map"), {
@@ -42,6 +47,9 @@ onload = function () {
           setTimeout(() => {
             bottomDrawer.classList.remove("pointer-events-auto");
             console.log("touch end");
+
+            funckingMarker.setMap(map);
+            
           }, 500);
         });
         // 섹션 2
