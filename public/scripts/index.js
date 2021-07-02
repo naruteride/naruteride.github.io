@@ -18,7 +18,7 @@ function initMap() {
   });
 
   new google.maps.Marker({
-    position: { lat: 37.5575324, lng: 126.9222794 },
+    position: { lat: 37.5574111, lng: 126.9245447 },
     map,
     title:"fuuuuuuuuuuuncccccccccking Marker!!",
   });
