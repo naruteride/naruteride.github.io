@@ -1,6 +1,6 @@
 let map;
 let myLatLng = { lat: 37.5575312, lng: 126.9222782 }
-// let funckingMarker;
+let funckingMarker;
 
 
 function initMap() {
@@ -17,10 +17,10 @@ function initMap() {
     title: "Hello World!",
   });
 
-  new google.maps.Marker({
+  funckingMarker = new google.maps.Marker({
     position: { lat: 37.5574111, lng: 126.9245447 },
     map,
-    title:"fuuuuuuuuuuuncccccccccking Marker!!",
+    title:"fuuuuuuuuuuucccccccccking Marker!!",
   });
 }
 
@@ -52,7 +52,7 @@ onload = function () {
             bottomDrawer.classList.remove("pointer-events-auto");
             console.log("touch end");
 
-            // funckingMarker.setMap(map);
+            funckingMarker.setMap(map);
 
           }, 500);
         });
