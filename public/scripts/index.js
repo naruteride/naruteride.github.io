@@ -18,11 +18,11 @@ function initMap() {
   });
 }
 
-function addMarker(markerPosition) {
+function addMarker(markerPosition, title) {
   new google.maps.Marker({
     position: markerPosition,
     map,
-    title:"fuuuuuuuuuuucccccccccking Marker!!",
+    title: this.title,
   });
 }
 
@@ -53,10 +53,7 @@ onload = function () {
           setTimeout(() => {
             bottomDrawer.classList.remove("pointer-events-auto");
             console.log("touch end");
-
-            addMarker(funckingMarkerPosition);
-
-          }, 500);
+          }, 600);
         });
         // 섹션 2
         drawerSection2.addEventListener("touchstart", function () {
@@ -67,7 +64,7 @@ onload = function () {
           setTimeout(() => {
             bottomDrawer.classList.remove("pointer-events-auto");
             console.log("touch end");
-          }, 500);
+          }, 600);
         });
       }
     })
