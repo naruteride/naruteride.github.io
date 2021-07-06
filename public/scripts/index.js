@@ -6,7 +6,7 @@ onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
 
   // 바텀 드로워 fetch
-  fetch("./bottom-drawer.html")
+  fetch("/views/bottom-category/posts.html")
     .then(function (response) {
       return response.text();
     })

@@ -2,6 +2,7 @@ html {
     height: 99.9%;
     overflow: hidden;
 }
+
 body {
     height: 100%;
     overflow: hidden;
@@ -19,15 +20,6 @@ body {
     pointer-events: none;
 }
 
-/* 스크롤바 제거 */
-#bottom-drawer {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-#bottom-drawer::-webkit-scrollbar {
-    display: none;
-}
-
 #bottom-drawer>section {
     width: 100%;
     background-color: white;
@@ -41,6 +33,18 @@ body {
     border-radius: 50px 50px 0 0;
     box-shadow: 0 -2px 15px rgb(0 0 0 / 25%);
 }
+
 #bottom-drawer>section:nth-child(2) {
     height: 65vh;
+}
+
+/* 스크롤바 제거 */
+
+#bottom-drawer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#bottom-drawer::-webkit-scrollbar {
+    display: none;
 }
