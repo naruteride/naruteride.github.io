@@ -1,3 +1,5 @@
+import { bottomDrawer } from "./index.js";
+
 export function chromeBugFixer() {
 	console.log("크롬버그해결사 켜짐 3")
 

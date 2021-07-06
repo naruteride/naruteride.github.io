@@ -1,7 +1,7 @@
 import { chromeBugFixer } from "./bottom-drawer.js";
 
 onload = function () {
-  let bottomDrawer = document.querySelector("#bottom-drawer");
+  export let bottomDrawer = document.querySelector("#bottom-drawer");
 
   // 바텀 드로워 fetch
   fetch("./bottom-drawer.html")
@@ -19,3 +19,4 @@ onload = function () {
       console.warn("Bottom drawer fetch went wrong.", err);
     });
 };
+
