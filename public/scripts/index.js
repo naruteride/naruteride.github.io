@@ -1,7 +1,9 @@
 import { chromeBugFixer } from "./bottom-drawer.js";
 
+export let bottomDrawer;
+
 onload = function () {
-  export let bottomDrawer = document.querySelector("#bottom-drawer");
+  bottomDrawer = document.querySelector("#bottom-drawer");
 
   // 바텀 드로워 fetch
   fetch("./bottom-drawer.html")
