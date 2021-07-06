@@ -1,4 +1,4 @@
-import "./bottom-drawer.js";
+import { chromeBugFixer } from "./bottom-drawer.js";
 
 onload = function () {
   let bottomDrawer = document.querySelector("#bottom-drawer");

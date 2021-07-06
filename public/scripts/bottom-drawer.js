@@ -1,5 +1,7 @@
-function chromeBugFixer() {
-// 크롬일 경우에만 아래 코드를 통해, 바텀드로워 버그 해결
+export function chromeBugFixer() {
+	console.log("크롬버그해결사 켜짐 3")
+
+	// 크롬일 경우에만 아래 코드를 통해, 바텀드로워 버그 해결
 	if (!!window.chrome) {
 		let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
 		let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
