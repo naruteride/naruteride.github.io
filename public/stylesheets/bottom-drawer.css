@@ -9,3 +9,7 @@
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.25);
 }
+
+#bottom-drawer .nav-tabs>.nav-item {
+    width: 50%;
+}
