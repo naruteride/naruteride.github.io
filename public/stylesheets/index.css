@@ -20,6 +20,7 @@ body {
     pointer-events: none;
 }
 
+/* 바텀드로워 */
 #bottom-drawer>section {
     width: 100%;
     background-color: white;
@@ -28,6 +29,8 @@ body {
 }
 
 #bottom-drawer>section:nth-child(1) {
+    display: flex;
+    flex-direction: column;
     height: 25vh;
     margin-top: 80vh;
     border-radius: 50px 50px 0 0;

@@ -10,11 +10,24 @@
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-#bottom-drawer .nav-tabs {
-    margin-bottom: 1rem;
+#bottom-drawer>section:nth-child(1)>.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
 }
 
-#bottom-drawer .nav-tabs>.nav-item {
+#bottom-drawer .content .nav-tabs {
+    margin-bottom: 2rem;
+}
+
+#bottom-drawer .content .nav-tabs>.nav-item {
     width: 50%;
     text-align: center;
+}
+
+#bottom-drawer .content .search-bar-cover {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
 }
