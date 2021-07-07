@@ -29,3 +29,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.search-bar-cover input {
+    width: 85%;
+}
