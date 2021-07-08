@@ -35,9 +35,9 @@ export function chromeBugFixer() {
 
 let knob;
 
-setTimeout(function () {
+// setTimeout(function () {
 	knob = bottomDrawer.querySelector(".knob");
 	knob.addEventListener("click", function () {
 		alert("손잡이 클릭됨!");
 	})
-}, 5000);
+// }, 5000);
