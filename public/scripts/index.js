@@ -1,9 +1,5 @@
 import { bottomDrawerInit } from "./bottom-drawer.js";
 
-// export let bottomDrawer;
-// export let drawerSection1;
-// export let drawerSection2;
-// export let knob;
 let bottomDrawer;
 let drawerSection1;
 let drawerSection2;
