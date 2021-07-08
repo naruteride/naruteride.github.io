@@ -1,9 +1,9 @@
 import { bottomDrawerInit } from "./bottom-drawer.js";
 
-export let bottomDrawer;
-export let drawerSection1;
-export let drawerSection2;
-export let knob;
+// export let bottomDrawer;
+// export let drawerSection1;
+// export let drawerSection2;
+// export let knob;
 
 onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
@@ -23,7 +23,7 @@ onload = function () {
     })
     .then(function () {
       // 바텀 드로워 이벤트 초기화
-      bottomDrawerInit();
+      bottomDrawerInit(bottomDrawer, drawerSection1, drawerSection2, knob);
     })
     .catch(function (err) {
       console.warn("Bottom drawer fetch went wrong.", err);

@@ -1,6 +1,6 @@
-import { bottomDrawer, drawerSection1, drawerSection2, knob } from "./index.js";
+// import { bottomDrawer, drawerSection1, drawerSection2, knob } from "./index.js";
 
-function chromeBugFixer() {
+function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
   // 터치 할 때 .pointer-events-auto가 추가되고 땔 때 지워짐.
   // 섹션 1
   drawerSection1.addEventListener("touchstart", function () {
@@ -26,10 +26,10 @@ function chromeBugFixer() {
   });
 }
 
-export function bottomDrawerInit() {
-  knob.addEventListener("click", function () {
-    alert("손잡이 클릭됨!");
-  });
-
-  chromeBugFixer();
+export function bottomDrawerInit(bottomDrawer, drawerSection1, drawerSection2, knob) {
+	chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2);
+	
+	knob.addEventListener("click", function () {
+	  alert("손잡이 클릭됨!");
+	});
 }
