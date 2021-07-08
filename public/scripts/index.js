@@ -17,6 +17,7 @@ onload = function () {
       bottomDrawer.innerHTML = html;
     })
     .then(function () {
+      // 바텀 드로워 돔 정의
       drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
       drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
       knob = bottomDrawer.querySelector(".knob");
