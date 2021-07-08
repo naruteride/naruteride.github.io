@@ -1,6 +1,6 @@
 import { bottomDrawer, drawerSection1, drawerSection2, knob } from "./index.js";
 
-export function chromeBugFixer() {
+function chromeBugFixer() {
   // 터치 할 때 .pointer-events-auto가 추가되고 땔 때 지워짐.
   // 섹션 1
   drawerSection1.addEventListener("touchstart", function () {

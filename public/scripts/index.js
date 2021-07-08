@@ -1,4 +1,4 @@
-import { bottomDrawerInit, bottomDrawerInit } from "./bottom-drawer.js";
+import { bottomDrawerInit } from "./bottom-drawer.js";
 
 export let bottomDrawer;
 export let drawerSection1;
@@ -22,7 +22,7 @@ onload = function () {
       knob = bottomDrawer.querySelector(".knob");
     })
     .then(function () {
-      // 바텀 드로워 이벤트 설정
+      // 바텀 드로워 이벤트 초기화
       bottomDrawerInit();
     })
     .catch(function (err) {
