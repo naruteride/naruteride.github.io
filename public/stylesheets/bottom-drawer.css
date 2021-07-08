@@ -31,5 +31,9 @@
 }
 
 .search-bar-cover input {
-    width: 85%;
+    width: 80%;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+.search-bar-cover button {
+    border-radius: 0 0.25rem 0.25rem 0;
 }
