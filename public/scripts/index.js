@@ -4,6 +4,10 @@ import { bottomDrawerInit } from "./bottom-drawer.js";
 // export let drawerSection1;
 // export let drawerSection2;
 // export let knob;
+let bottomDrawer;
+let drawerSection1;
+let drawerSection2;
+let knob;
 
 onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
