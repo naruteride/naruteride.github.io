@@ -1,6 +1,9 @@
-import { chromeBugFixer } from "./bottom-drawer.js";
+import { bottomDrawerInit, bottomDrawerInit } from "./bottom-drawer.js";
 
 export let bottomDrawer;
+export let drawerSection1;
+export let drawerSection2;
+export let knob;
 
 onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
@@ -13,9 +16,14 @@ onload = function () {
     .then(function (html) {
       bottomDrawer.innerHTML = html;
     })
-    // 크롬 버그 해결
     .then(function () {
-      chromeBugFixer();
+      drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
+      drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
+      knob = bottomDrawer.querySelector(".knob");
+    })
+    .then(function () {
+      // 바텀 드로워 이벤트 설정
+      bottomDrawerInit();
     })
     .catch(function (err) {
       console.warn("Bottom drawer fetch went wrong.", err);
