@@ -1,4 +1,4 @@
-export function bottomDrawerInit(
+export function bottomDrawerEventInit(
   bottomDrawer,
   drawerSection1,
   drawerSection2,
@@ -9,13 +9,12 @@ export function bottomDrawerInit(
   }
 
   knob.addEventListener("click", function () {
-    console.log("손잡이 클릭됨!");
 	drawerSection2.scrollIntoView({ behavior: "smooth", block: "start"});
   });
 }
 
 function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
-  // 터치 할 때 .pointer-events-auto가 추가되고 땔 때 지워짐.
+  // 터치 할 때 .pointer-events-auto가 추가되고, 땔 때 지워짐.
   // 섹션 1
   drawerSection1.addEventListener("touchstart", function () {
     bottomDrawer.classList.add("pointer-events-auto");
@@ -25,7 +24,7 @@ function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
     setTimeout(() => {
       bottomDrawer.classList.remove("pointer-events-auto");
       console.log("touch end");
-    }, 500);
+    }, 600);
   });
   // 섹션 2
   drawerSection2.addEventListener("touchstart", function () {
@@ -36,6 +35,6 @@ function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
     setTimeout(() => {
       bottomDrawer.classList.remove("pointer-events-auto");
       console.log("touch end");
-    }, 500);
+    }, 600);
   });
 }

@@ -1,4 +1,4 @@
-import { bottomDrawerInit } from "./bottom-drawer.js";
+import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
 let bottomDrawer;
 let drawerSection1;
@@ -23,7 +23,7 @@ onload = function () {
     })
     .then(function () {
       // 바텀 드로워 이벤트 초기화
-      bottomDrawerInit(bottomDrawer, drawerSection1, drawerSection2, knob);
+      bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
     })
     .catch(function (err) {
       console.warn("Bottom drawer fetch went wrong.", err);
