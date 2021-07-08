@@ -29,4 +29,3 @@ onload = function () {
       console.warn("Bottom drawer fetch went wrong.", err);
     });
 };
-

@@ -1,9 +1,17 @@
-export function bottomDrawerInit(bottomDrawer, drawerSection1, drawerSection2, knob) {
-	chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2);
-	
-	knob.addEventListener("click", function () {
-	  alert("손잡이 클릭됨!");
-	});
+export function bottomDrawerInit(
+  bottomDrawer,
+  drawerSection1,
+  drawerSection2,
+  knob
+) {
+  if (!!window.chrome) {
+    chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2);
+  }
+
+  knob.addEventListener("click", function () {
+    console.log("손잡이 클릭됨!");
+	drawerSection2.scrollIntoView({ behavior: "smooth", block: "start"});
+  });
 }
 
 function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
