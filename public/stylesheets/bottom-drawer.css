@@ -40,6 +40,7 @@
 
 .list-group-item>* {
     width: calc(100% - 90px);
+    margin-left: auto;
 }
 
 .list-group-item>img {
@@ -47,4 +48,8 @@
     width: 80px !important;
     height: 80px;
     background-color: coral;
+}
+
+.list-group-item>small {
+    display: block;
 }
