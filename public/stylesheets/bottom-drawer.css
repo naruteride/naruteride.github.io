@@ -45,9 +45,9 @@
 
 .list-group-item>img {
     float: left;
-    width: 80px !important;
-    height: 80px;
-    background-color: coral;
+    width: 77px !important;
+    height: 77px;
+    object-fit: cover;
 }
 
 .list-group-item>small {
