@@ -19,14 +19,14 @@ onload = function() {
     let scrollSnap = document.querySelector(".scroll-snap");
     scrollSnap.addEventListener("scroll", function() {
 
-        if(scrollSnap.scrollTop <= markerOnMapLocation.top) {
+        if(scrollSnap.scrollTop >= markerOnMapLocation.top) {
             for(let li of markerOnMap.querySelectorAll("ol>li")) {
                 li.classList.add("animation-on");
             }
         }
 
 
-        if(scrollSnap.scrollTop <= friendsLocation.top) {
+        if(scrollSnap.scrollTop >= friendsLocation.top) {
             for(let title of friends.querySelectorAll("h2, h1")) {
                 title.classList.add("animation-on");
             }
