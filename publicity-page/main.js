@@ -38,9 +38,10 @@ onload = function() {
         // }
 
         setTimeout(function() {
+            console.log("포인터이벤츠 넌");
             scrollSnap.classList.add("pointer-events-none");
             scrollSnap.classList.remove("pointer-events-none");
-        }, 100)
+        }, 50)
     })
 }
 
