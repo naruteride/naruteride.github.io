@@ -373,3 +373,6 @@ li {
 .pointer-events-none {
     pointer-events: none;
 }
+.overflow-hidden {
+    overflow: hidden;
+}

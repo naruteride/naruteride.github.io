@@ -38,12 +38,12 @@ onload = function() {
         // }
 
         setTimeout(function() {
-            console.log("포인터이벤츠 넌");
-            scrollSnap.classList.add("pointer-events-none");
+            console.log("오버플로 히든");
+            scrollSnap.classList.add("overflow-hidden");
         }, 50)
         setTimeout(function() {
-            console.log("포인터이벤츠 오토");
-            scrollSnap.classList.remove("pointer-events-none");
+            console.log("오버플로 스크롤");
+            scrollSnap.classList.remove("overflow-hidden");
         }, 100)
     })
 }
