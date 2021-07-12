@@ -31,14 +31,14 @@ li {
 .scroll-snap {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 100vh;
+    height: calc(100vh - 1px);
 }
 
 .scroll-snap>section {
     position: relative;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     overflow-x: hidden;
-    height: 95vh;
+    height: calc(100vh - 1px);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
