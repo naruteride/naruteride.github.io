@@ -37,6 +37,10 @@ onload = function() {
         //     hole.querySelector("#hole > span").classList.add("animation-on");
         // }
 
+        setTimeout(function() {
+            scrollSnap.classList.add("pointer-events-none");
+            scrollSnap.classList.remove("pointer-events-none");
+        }, 100)
     })
 }
 
