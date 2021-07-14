@@ -30,7 +30,7 @@ onload = function () {
         friends.classList.remove("display-none");
         markerOnMap.scrollIntoView(true);
         console.log("세번째 섹션 display: flex && 두번째 섹션으로 뷰포트 이동");
-      }, 1000);
+      }, 400);
     }
 
     if (
@@ -47,7 +47,7 @@ onload = function () {
         lastSection.classList.remove("display-none");
         friends.scrollIntoView(true);
         console.log("네번째 섹션 display: flex && 세번째 섹션으로 뷰포트 이동");
-      }, 1000);
+      }, 400);
     }
 
     if (
@@ -60,7 +60,7 @@ onload = function () {
         footer.classList.remove("display-none");
         lastSection.scrollIntoView(true);
         console.log("푸터 display: flex  && 네번째 섹션으로 뷰포트 이동");
-      }, 1000);
+      }, 400);
     }
   });
 };
