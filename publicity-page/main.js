@@ -22,7 +22,7 @@ onload = function () {
       }, 3000);
     }
 
-    if (scrollSnap.scrollTop >= friendsLocation.top) {
+    if (scrollSnap.scrollTop >= markerOnMapLocation.top * 2) {
       for (let title of friends.querySelectorAll("h2, h1")) {
         title.classList.add("animation-on");
       }
@@ -31,7 +31,7 @@ onload = function () {
       }, 3000);
     }
 
-    if (scrollSnap.scrollTop >= lastSectionLocation.top) {
+    if (scrollSnap.scrollTop >= markerOnMapLocation.top * 3) {
       setTimeout(function () {
         footer.classList.remove("display-none");
       }, 3000);
