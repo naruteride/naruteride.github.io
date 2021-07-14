@@ -26,10 +26,14 @@ onload = function () {
         li.classList.add("animation-on");
       }
 
+      scrollSnap.classList.add("overflow-hidden");
+
       setTimeout(function () {
         friends.classList.remove("display-none");
         markerOnMap.scrollIntoView(true);
         console.log("세번째 섹션 display: flex && 두번째 섹션으로 뷰포트 이동");
+
+        scrollSnap.classList.remove("overflow-hidden");
       }, 400);
     }
 
@@ -43,10 +47,14 @@ onload = function () {
         title.classList.add("animation-on");
       }
 
+      scrollSnap.classList.add("overflow-hidden");
+
       setTimeout(function () {
         lastSection.classList.remove("display-none");
         friends.scrollIntoView(true);
         console.log("네번째 섹션 display: flex && 세번째 섹션으로 뷰포트 이동");
+
+        scrollSnap.classList.remove("overflow-hidden");
       }, 400);
     }
 
@@ -56,10 +64,14 @@ onload = function () {
     ) {
       didlastSectionIsWork = true;
 
+      scrollSnap.classList.add("overflow-hidden");
+
       setTimeout(function () {
         footer.classList.remove("display-none");
         lastSection.scrollIntoView(true);
         console.log("푸터 display: flex  && 네번째 섹션으로 뷰포트 이동");
+
+        scrollSnap.classList.remove("overflow-hidden");
       }, 400);
     }
   });
