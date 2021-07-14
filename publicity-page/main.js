@@ -28,8 +28,10 @@ onload = function () {
 
       setTimeout(function () {
         friends.classList.remove("display-none");
-				console.log("세번째 섹션 display: flex");
+				friends.scrollIntoView();
+				console.log("세번째 섹션 display: flex && 세번째 섹션으로 뷰포트 이동");
       }, 2000);
+
 			setTimeout(function () {
 				scrollSnap.classList.remove("overflow-hidden");
 				console.log("스크롤 스냅은 오버플로 스크롤");
@@ -48,8 +50,10 @@ onload = function () {
 
       setTimeout(function () {
         lastSection.classList.remove("display-none");
-				console.log("네번째 섹션 display: flex");
+				lastSection.scrollIntoView();
+				console.log("네번째 섹션 display: flex && 네번째 섹션으로 뷰포트 이동");
       }, 2000);
+
 			setTimeout(function () {
 				scrollSnap.classList.remove("overflow-hidden");
 				console.log("스크롤 스냅은 오버플로 스크롤");
@@ -64,8 +68,10 @@ onload = function () {
 
       setTimeout(function () {
         footer.classList.remove("display-none");
-				console.log("푸터 display: flex");
+				footer.scrollIntoView();
+				console.log("푸터 display: flex  && 푸터로 뷰포트 이동");
       }, 2000);
+
 			setTimeout(function () {
 				scrollSnap.classList.remove("overflow-hidden");
 				console.log("스크롤 스냅은 오버플로 스크롤");
