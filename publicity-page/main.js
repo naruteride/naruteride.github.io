@@ -27,8 +27,10 @@ onload = function () {
 
       setTimeout(function () {
         friends.classList.remove("display-none");
-				scrollSnap.classList.remove("pointer-events-none");
       }, 500);
+			setTimeout(function () {
+				scrollSnap.classList.remove("pointer-events-none");
+			}, 520)
     }
 
     if (scrollSnap.scrollTop >= markerOnMapLocation.top * 2 && !didfriendsIsWork) {
@@ -42,8 +44,10 @@ onload = function () {
 
       setTimeout(function () {
         lastSection.classList.remove("display-none");
-				scrollSnap.classList.remove("pointer-events-none");
       }, 500);
+			setTimeout(function () {
+				scrollSnap.classList.remove("pointer-events-none");
+			}, 520)
     }
 
     if (scrollSnap.scrollTop >= markerOnMapLocation.top * 3 && !didlastSectionIsWork) {
@@ -53,8 +57,10 @@ onload = function () {
 
       setTimeout(function () {
         footer.classList.remove("display-none");
-				scrollSnap.classList.remove("pointer-events-none");
       }, 500);
+			setTimeout(function () {
+				scrollSnap.classList.remove("pointer-events-none");
+			}, 520)
     }
   });
 };
