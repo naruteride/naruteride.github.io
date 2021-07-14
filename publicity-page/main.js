@@ -28,7 +28,7 @@ onload = function () {
 
       setTimeout(function () {
         friends.classList.remove("display-none");
-				friends.scrollIntoView(true);
+				markerOnMap.scrollIntoView(true);
 				console.log("세번째 섹션 display: flex && 세번째 섹션으로 뷰포트 이동");
       }, 2000);
 
@@ -50,7 +50,7 @@ onload = function () {
 
       setTimeout(function () {
         lastSection.classList.remove("display-none");
-				lastSection.scrollIntoView(true);
+				friends.scrollIntoView(true);
 				console.log("네번째 섹션 display: flex && 네번째 섹션으로 뷰포트 이동");
       }, 2000);
 
@@ -68,7 +68,7 @@ onload = function () {
 
       setTimeout(function () {
         footer.classList.remove("display-none");
-				footer.scrollIntoView(true);
+				lastSection.scrollIntoView(true);
 				console.log("푸터 display: flex  && 푸터로 뷰포트 이동");
       }, 2000);
 
