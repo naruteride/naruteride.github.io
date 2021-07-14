@@ -373,3 +373,6 @@ li {
 .display-none {
     display: none !important;
 }
+.pointer-events-none {
+    pointer-events: none;
+}

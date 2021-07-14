@@ -17,8 +17,12 @@ onload = function () {
       for (let li of markerOnMap.querySelectorAll("ol>li")) {
         li.classList.add("animation-on");
       }
+
+			scrollSnap.classList.add("pointer-events-none");
+
       setTimeout(function () {
         friends.classList.remove("display-none");
+				scrollSnap.classList.remove("pointer-events-none");
       }, 500);
     }
 
@@ -26,14 +30,22 @@ onload = function () {
       for (let title of friends.querySelectorAll("h2, h1")) {
         title.classList.add("animation-on");
       }
+
+			scrollSnap.classList.add("pointer-events-none");
+
       setTimeout(function () {
         lastSection.classList.remove("display-none");
+				scrollSnap.classList.remove("pointer-events-none");
       }, 500);
     }
 
     if (scrollSnap.scrollTop >= markerOnMapLocation.top * 3) {
+
+			scrollSnap.classList.add("pointer-events-none");
+
       setTimeout(function () {
         footer.classList.remove("display-none");
+				scrollSnap.classList.remove("pointer-events-none");
       }, 500);
     }
   });
