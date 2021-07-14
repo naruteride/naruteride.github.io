@@ -44,7 +44,7 @@ onload = function() {
         setTimeout(function() {
             console.log("터치 이벤트 언셋");
             scrollSnap.classList.remove("touch-action-none");
-        }, 100)
+        }, 1000)
     })
 }
 
