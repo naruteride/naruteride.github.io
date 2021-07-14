@@ -19,7 +19,7 @@ onload = function () {
       }
       setTimeout(function () {
         friends.classList.remove("display-none");
-      }, 1000);
+      }, 3000);
     }
 
     if (scrollSnap.scrollTop >= friendsLocation.top) {
@@ -28,13 +28,13 @@ onload = function () {
       }
       setTimeout(function () {
         lastSection.classList.remove("display-none");
-      }, 1000);
+      }, 3000);
     }
 
     if (scrollSnap.scrollTop >= lastSectionLocation.top) {
       setTimeout(function () {
         footer.classList.remove("display-none");
-      }, 100);
+      }, 3000);
     }
   });
 };
