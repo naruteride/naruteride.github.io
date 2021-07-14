@@ -233,7 +233,7 @@ li {
 
 /* 푸터 섹션 ------------------------------------ */
 
-#footer-section {
+#footer {
     height: fit-content;
     padding: 2rem 1rem;
     font-size: 0.75em;
@@ -370,12 +370,6 @@ li {
     opacity: 0.25;
 }
 
-/* .pointer-events-none {
-    pointer-events: none;
-}
-.overflow-hidden {
-    overflow: hidden;
-} */
-.touch-action-none {
-    touch-action: none;
+.display-none {
+    display: none;
 }

@@ -8,11 +8,14 @@ onload = function() {
     let friendsLocation = friends.getBoundingClientRect();
 
 
-    // let hole = document.querySelector("#hole");
-    // let holeLocation = hole.getBoundingClientRect();
+    let lastSection = document.querySelector("#last-section");
+    let lastSectionLocation = lastSection.getBoundingClientRect();
 
 
+    let footer = document.querySelector("#footer");
+    let footerLocation = footer.getBoundingClientRect();
 
+    
 
 
 
@@ -23,6 +26,7 @@ onload = function() {
             for(let li of markerOnMap.querySelectorAll("ol>li")) {
                 li.classList.add("animation-on");
             }
+            friends.classList.remove("display-none");
         }
 
 
@@ -30,21 +34,13 @@ onload = function() {
             for(let title of friends.querySelectorAll("h2, h1")) {
                 title.classList.add("animation-on");
             }
+            lastSection.classList.remove("display-none");
         }
 
 
-        // if(scrollSnap.scrollTop == holeLocation.top) {
-        //     hole.querySelector("#hole > span").classList.add("animation-on");
-        // }
-
-        setTimeout(function() {
-            console.log("터치 이벤트 꺼짐");
-            event.preventDefault();
-        }, 50)
-        setTimeout(function() {
-            console.log("터치 이벤트 켜짐");
-            
-        }, 1000)
+        if(scrollSnap.scrollTop >= lastSectionLocation.top) {
+            footer.classList.remove("display-none");
+        }
     })
 }
 
