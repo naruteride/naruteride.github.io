@@ -23,16 +23,16 @@ onload = function () {
         li.classList.add("animation-on");
       }
 
-			scrollSnap.classList.add("pointer-events-none");
-			console.log("스크롤 스냅은 포인터이벤츠 넌");
+			scrollSnap.classList.add("overflow-hidden");
+			console.log("스크롤 스냅은 오버플로 히든")
 
       setTimeout(function () {
         friends.classList.remove("display-none");
 				console.log("세번째 섹션 display: flex");
       }, 2000);
 			setTimeout(function () {
-				scrollSnap.classList.remove("pointer-events-none");
-				console.log("스크롤 스냅은 포인터이벤츠 오토");
+				scrollSnap.classList.remove("overflow-hidden");
+				console.log("스크롤 스냅은 오버플로 스크롤");
 			}, 4000)
     }
 
@@ -43,33 +43,33 @@ onload = function () {
         title.classList.add("animation-on");
       }
 
-			scrollSnap.classList.add("pointer-events-none");
-			console.log("스크롤 스냅은 포인터이벤츠 넌")
+			scrollSnap.classList.add("overflow-hidden");
+			console.log("스크롤 스냅은 오버플로 히든")
 
       setTimeout(function () {
         lastSection.classList.remove("display-none");
 				console.log("네번째 섹션 display: flex");
       }, 2000);
 			setTimeout(function () {
-				scrollSnap.classList.remove("pointer-events-none");
-				console.log("스크롤 스냅은 포인터이벤츠 오토");
+				scrollSnap.classList.remove("overflow-hidden");
+				console.log("스크롤 스냅은 오버플로 스크롤");
 			}, 4000)
     }
 
     if (scrollSnap.scrollTop >= markerOnMapLocation.top * 3 && !didlastSectionIsWork) {
 			didlastSectionIsWork = true;
 
-			scrollSnap.classList.add("pointer-events-none");
-			console.log("스크롤 스냅은 포인터이벤츠 넌")
+			scrollSnap.classList.add("overflow-hidden");
+			console.log("스크롤 스냅은 오버플로 히든")
 
       setTimeout(function () {
         footer.classList.remove("display-none");
 				console.log("푸터 display: flex");
-      }, 500);
+      }, 2000);
 			setTimeout(function () {
-				scrollSnap.classList.remove("pointer-events-none");
-				console.log("스크롤 스냅은 포인터이벤츠 오토");
-			}, 520)
+				scrollSnap.classList.remove("overflow-hidden");
+				console.log("스크롤 스냅은 오버플로 스크롤");
+			}, 4000)
     }
   });
 };

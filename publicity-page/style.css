@@ -241,13 +241,14 @@ li {
 }
 
 /* 갤럭시 5에서 ------------------------------------ */
+
 @media screen and (max-height: 800px) {
     #marker-on-map>img {
         width: 150px;
     }
     #friends>img {
         width: 175px;
-    }    
+    }
 }
 
 /* 데스크톱에서 ------------------------------------ */
@@ -373,6 +374,10 @@ li {
 .display-none {
     display: none !important;
 }
+
 .pointer-events-none {
     pointer-events: none;
+}
+.overflow-hidden {
+    overflow: hidden;
 }
