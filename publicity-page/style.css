@@ -370,9 +370,12 @@ li {
     opacity: 0.25;
 }
 
-.pointer-events-none {
+/* .pointer-events-none {
     pointer-events: none;
 }
 .overflow-hidden {
     overflow: hidden;
+} */
+.touch-action-none {
+    touch-action: none;
 }

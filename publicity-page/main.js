@@ -38,12 +38,12 @@ onload = function() {
         // }
 
         setTimeout(function() {
-            console.log("오버플로 히든");
-            scrollSnap.classList.add("overflow-hidden");
+            console.log("터치 이벤트 넌");
+            scrollSnap.classList.add("touch-action-none");
         }, 50)
         setTimeout(function() {
-            console.log("오버플로 스크롤");
-            scrollSnap.classList.remove("overflow-hidden");
+            console.log("터치 이벤트 언셋");
+            scrollSnap.classList.remove("touch-action-none");
         }, 100)
     })
 }
