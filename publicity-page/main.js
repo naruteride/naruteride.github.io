@@ -17,7 +17,7 @@ onload = function() {
 
 
     let scrollSnap = document.querySelector(".scroll-snap");
-    scrollSnap.addEventListener("scroll", function() {
+    scrollSnap.addEventListener("scroll", function(event) {
 
         if(scrollSnap.scrollTop >= markerOnMapLocation.top) {
             for(let li of markerOnMap.querySelectorAll("ol>li")) {
@@ -38,12 +38,12 @@ onload = function() {
         // }
 
         setTimeout(function() {
-            console.log("터치 이벤트 넌");
-            scrollSnap.classList.add("touch-action-none");
+            console.log("터치 이벤트 꺼짐");
+            event.preventDefault();
         }, 50)
         setTimeout(function() {
-            console.log("터치 이벤트 언셋");
-            scrollSnap.classList.remove("touch-action-none");
+            console.log("터치 이벤트 켜짐");
+            
         }, 1000)
     })
 }
