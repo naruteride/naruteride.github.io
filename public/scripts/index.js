@@ -1,4 +1,5 @@
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
+import { postsEventsInit } from "./posts.js";
 
 let bottomDrawer;
 let drawerSection1;
@@ -17,8 +18,7 @@ onload = function () {
       return response.text();
     })
     .then(function (html) {
-      posts = html;
-      bottomDrawer.innerHTML = html;
+      bottomDrawer.innerHTML = posts = html;
     })
     .then(function () {
       // 바텀 드로워 돔 정의
@@ -29,6 +29,9 @@ onload = function () {
     .then(function () {
       // 바텀 드로워 이벤트 초기화
       bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
+      // 게시판 이벤트 초기화
+      postsEventsInit(bottomDrawer, post)
+      
     })
     .catch(function (err) {
       console.warn("posts of bottom drawer fetch went wrong.", err);
