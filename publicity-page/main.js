@@ -34,7 +34,7 @@ onload = function () {
         console.log("세번째 섹션 display: flex && 두번째 섹션으로 뷰포트 이동");
 
         scrollSnap.classList.remove("overflow-hidden");
-      }, 400);
+      }, 300);
     }
 
     if (
@@ -55,7 +55,7 @@ onload = function () {
         console.log("네번째 섹션 display: flex && 세번째 섹션으로 뷰포트 이동");
 
         scrollSnap.classList.remove("overflow-hidden");
-      }, 400);
+      }, 300);
     }
 
     if (
@@ -72,7 +72,7 @@ onload = function () {
         console.log("푸터 display: flex  && 네번째 섹션으로 뷰포트 이동");
 
         scrollSnap.classList.remove("overflow-hidden");
-      }, 400);
+      }, 300);
     }
   });
 };
