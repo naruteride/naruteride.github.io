@@ -5,19 +5,15 @@ let drawerSection1;
 let drawerSection2;
 let knob;
 
-let posts;
-let post;
-
 onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
 
-  // 게시판 fetch
+  // 바텀 드로워 fetch
   fetch("/views/bottom-category/posts.html")
     .then(function (response) {
       return response.text();
     })
     .then(function (html) {
-      posts = html;
       bottomDrawer.innerHTML = html;
     })
     .then(function () {
@@ -34,19 +30,7 @@ onload = function () {
       }
     })
     .catch(function (err) {
-      console.warn("posts of bottom drawer fetch went wrong.", err);
-    });
-
-  // 게시글 fetch
-  fetch("/views/bottom-category/post.html")
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (html) {
-      post = html;
-    })
-    .catch(function (err) {
-      console.warn("post of bottom drawer fetch went wrong.", err);
+      console.warn("Bottom drawer fetch went wrong.", err);
     });
 };
 
