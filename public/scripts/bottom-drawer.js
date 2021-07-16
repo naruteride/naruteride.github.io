@@ -9,7 +9,7 @@ export function bottomDrawerEventInit(
   // }
 
   knob.addEventListener("click", function () {
-	drawerSection2.scrollIntoView({ behavior: "smooth", block: "start"});
+    drawerSection2.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
 
