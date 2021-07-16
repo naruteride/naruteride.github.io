@@ -1,15 +1,15 @@
 onload = function () {
   let markerOnMap = document.querySelector("#marker-on-map");
   let markerOnMapLocation = markerOnMap.getBoundingClientRect();
-  let didMarkerOnMapIsWork = false;
+  let didMarkerOnMapWork = false;
 
   let friends = document.querySelector("#friends");
   let friendsLocation = friends.getBoundingClientRect();
-  let didfriendsIsWork = false;
+  let didFriendsWork = false;
 
   let lastSection = document.querySelector("#last-section");
   let lastSectionLocation = lastSection.getBoundingClientRect();
-  let didlastSectionIsWork = false;
+  let didLastSectionWork = false;
 
   let footer = document.querySelector("#footer");
   let footerLocation = footer.getBoundingClientRect();
@@ -18,9 +18,9 @@ onload = function () {
   scrollSnap.addEventListener("scroll", function (event) {
     if (
       scrollSnap.scrollTop >= markerOnMapLocation.top &&
-      !didMarkerOnMapIsWork
+      !didMarkerOnMapWork
     ) {
-      didMarkerOnMapIsWork = true;
+      didMarkerOnMapWork = true;
 
       for (let li of markerOnMap.querySelectorAll("ol>li")) {
         li.classList.add("animation-on");
@@ -39,9 +39,9 @@ onload = function () {
 
     if (
       scrollSnap.scrollTop >= markerOnMapLocation.top * 2 &&
-      !didfriendsIsWork
+      !didFriendsWork
     ) {
-      didfriendsIsWork = true;
+      didFriendsWork = true;
 
       for (let title of friends.querySelectorAll("h2, h1")) {
         title.classList.add("animation-on");
@@ -60,9 +60,9 @@ onload = function () {
 
     if (
       scrollSnap.scrollTop >= markerOnMapLocation.top * 3 &&
-      !didlastSectionIsWork
+      !didLastSectionWork
     ) {
-      didlastSectionIsWork = true;
+      didLastSectionWork = true;
 
       scrollSnap.classList.add("overflow-hidden");
 
