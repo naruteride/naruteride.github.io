@@ -1,7 +1,11 @@
-Gothic A1(Thin 200, Regular 400)
+Gothic A1(Extra-light 200, Regular 400)
+Noto Sans KR(Thin 100, Regular 400)
+Roboto(Light 300)
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;400&family=Noto+Sans+KR:wght@100;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 font-family: 'Gothic A1', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto', sans-serif;
