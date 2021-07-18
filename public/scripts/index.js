@@ -6,8 +6,8 @@ let drawerSection1;
 let drawerSection2;
 let knob;
 
-let posts;
-let post;
+let postsHTML;
+let postHTML;
 
 onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
@@ -18,7 +18,7 @@ onload = function () {
       return response.text();
     })
     .then(function (html) {
-      bottomDrawer.innerHTML = posts = html;
+      bottomDrawer.innerHTML = postsHTML = html;
     })
     .then(function () {
       // 바텀 드로워 돔 정의
@@ -30,7 +30,7 @@ onload = function () {
       // 바텀 드로워 이벤트 초기화
       bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
       // 게시판 이벤트 초기화
-      postsEventsInit(bottomDrawer, post)
+      postsEventsInit(bottomDrawer, postHTML)
       
     })
     .catch(function (err) {
@@ -43,7 +43,7 @@ onload = function () {
       return response.text();
     })
     .then(function (html) {
-      post = html;
+      postHTML = html;
     })
     .catch(function (err) {
       console.warn("post of bottom drawer fetch went wrong.", err);
