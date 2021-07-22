@@ -1,6 +1,7 @@
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
 export function postsEventsInit(bottomDrawer, postHtml) {
+  console.log("게시판 이벤트 초기화")
   let posts = bottomDrawer.querySelectorAll(".list-group>a");
 
   for (post of posts) {
@@ -13,9 +14,9 @@ export function postsEventsInit(bottomDrawer, postHtml) {
       })
         .then(() => {
           // 바텀 드로워 돔 정의
-          drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
-          drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
-          knob = bottomDrawer.querySelector(".knob");
+          let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
+          let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
+          let knob = bottomDrawer.querySelector(".knob");
 
           return { drawerSection1, drawerSection2, knob };
         })
@@ -28,7 +29,7 @@ export function postsEventsInit(bottomDrawer, postHtml) {
           );
         })
         .catch(err => {
-          console.warn("post click event went wrong.", err);
+          console.warn("post click event Promise went wrong.", err);
         })
 
       alert("게시글 클릭 이벤트 끝");
