@@ -12,7 +12,7 @@ export function postsEventsInit(bottomDrawer, postHtml) {
         window.location.hash = "post";
         bottomDrawer.innerHTML = postHtml;
 
-        resolve();
+        // resolve();
       })
         .then(() => {
           // 바텀 드로워 돔 정의
