@@ -12,6 +12,20 @@ let postHTML;
 onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
 
+  // 게시글 fetch
+  fetch("/views/drawer-category/post.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      postHTML = html;
+      console.log("게시글 fetch의 postHTML \n" + postHTML);
+    })
+    .catch(function (err) {
+      console.warn("post of bottom drawer fetch went wrong.", err);
+    });
+
+
   // 게시판 fetch
   fetch("/views/drawer-category/posts.html")
     .then(function (response) {
@@ -19,7 +33,7 @@ onload = function () {
     })
     .then(function (html) {
       bottomDrawer.innerHTML = postsHTML = html;
-      postFetch();
+      // postFetch();
     })
     .then(function () {
       // 바텀 드로워 돔 정의
@@ -39,17 +53,17 @@ onload = function () {
     });
 };
 
-function postFetch() {
-  // 게시글 fetch
-  fetch("/views/drawer-category/post.html")
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (html) {
-      postHTML = html;
-      console.log("게시글 fetch의 postHTML \n" + postHTML);
-    })
-    .catch(function (err) {
-      console.warn("post of bottom drawer fetch went wrong.", err);
-    });
-}
+// function postFetch() {
+//   // 게시글 fetch
+//   fetch("/views/drawer-category/post.html")
+//     .then(function (response) {
+//       return response.text();
+//     })
+//     .then(function (html) {
+//       postHTML = html;
+//       console.log("게시글 fetch의 postHTML \n" + postHTML);
+//     })
+//     .catch(function (err) {
+//       console.warn("post of bottom drawer fetch went wrong.", err);
+//     });
+// }
