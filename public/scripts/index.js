@@ -19,6 +19,7 @@ onload = function () {
     })
     .then(function (html) {
       bottomDrawer.innerHTML = postsHTML = html;
+      postFetch();
     })
     .then(function () {
       // 바텀 드로워 돔 정의
@@ -36,7 +37,9 @@ onload = function () {
     .catch(function (err) {
       console.warn("posts of bottom drawer fetch went wrong.", err);
     });
+};
 
+function postFetch() {
   // 게시글 fetch
   fetch("/views/drawer-category/post.html")
     .then(function (response) {
@@ -44,10 +47,9 @@ onload = function () {
     })
     .then(function (html) {
       postHTML = html;
-      console.log("게시글 fetch의 html \n" + html);
       console.log("게시글 fetch의 postHTML \n" + postHTML);
     })
     .catch(function (err) {
       console.warn("post of bottom drawer fetch went wrong.", err);
     });
-};
+}
