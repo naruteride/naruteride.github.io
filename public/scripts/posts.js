@@ -4,11 +4,11 @@ export function postsEventsInit(bottomDrawer, postHtml) {
   console.log("게시판 이벤트 초기화")
   let postList = bottomDrawer.querySelectorAll(".list-group>a");
 
-  for (post of postList) {
+  for (let post of postList) {
     console.log(postList[i].innerHTML);
   }
 
-  for (post of postList) {
+  for (let post of postList) {
     post.addEventListener("click", function () {
       console.log("게시글 클릭 이벤트 시작");
 
