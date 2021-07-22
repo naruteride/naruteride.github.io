@@ -30,27 +30,24 @@ onload = function () {
       // 바텀 드로워 이벤트 초기화
       bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
       // 게시판 이벤트 초기화
-      
-      
+      postsEventsInit(bottomDrawer, postHTML);
     })
     .catch(function (err) {
       console.warn("posts of bottom drawer fetch went wrong.", err);
     });
 
-  // 게시글 fetch
-  fetch("/views/drawer-category/post.html")
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (html) {
-      postHTML = html;
-      console.log("postHTML 정의")
-    })
-    .then(function () {
-      console.log("포스츠 이벤트 초기화")
-      postsEventsInit(bottomDrawer, postHTML)
-    })
-    .catch(function (err) {
-      console.warn("post of bottom drawer fetch went wrong.", err);
-    });
+    
+    // 게시글 fetch
+    fetch("/views/drawer-category/post.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        postHTML = html;
+        console.log("postHTML 정의");
+      })
+      .catch(function (err) {
+        console.warn("post of bottom drawer fetch went wrong.", err);
+      });
 };
+
