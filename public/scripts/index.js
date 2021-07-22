@@ -43,7 +43,7 @@ onload = function () {
       // 바텀 드로워 이벤트 초기화
       bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
       // 게시판 이벤트 초기화
-      console.log("게시판 fetch의 bottomDrawer \n" + bottomDrawer.textContent);
+      // console.log("게시판 fetch의 bottomDrawer \n" + bottomDrawer.textContent);
       postsEventsInit(bottomDrawer, postHTML);
     })
     .catch(function (err) {
