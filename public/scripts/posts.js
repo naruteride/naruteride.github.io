@@ -32,7 +32,7 @@ export function postsEventsInit(bottomDrawer, postHtml) {
           console.warn("post click event Promise went wrong.", err);
         })
 
-      alert("게시글 클릭 이벤트 끝");
+      console.log("게시글 클릭 이벤트 끝");
     });
   }
 }
