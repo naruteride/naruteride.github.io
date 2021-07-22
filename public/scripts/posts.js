@@ -4,7 +4,7 @@ export function postsEventsInit(bottomDrawer, postHtml) {
   console.log("게시판 이벤트 초기화")
   let postList = bottomDrawer.querySelectorAll(".list-group>a");
 
-  for (let i = 0; i < 3; i++) {
+  for (post of postList) {
     console.log(postList[i].innerHTML);
   }
 
