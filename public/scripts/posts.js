@@ -5,8 +5,8 @@ export function postsEventsInit(bottomDrawer, postHTML) {
   let postList = bottomDrawer.querySelectorAll(".list-group>a");
 
   for (let post of postList) {
-    post.addEventListener("click", function () {
-      console.log("게시글 클릭 이벤트 시작 \n" + postHTML);
+    post.addEventListener("click", function (event) {
+      event.preventDefault();
 
       new Promise((resolve, reject) => {
         window.location.hash = "post";
