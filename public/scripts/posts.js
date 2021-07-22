@@ -1,16 +1,16 @@
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
-export function postsEventsInit(bottomDrawer, postHtml) {
+export function postsEventsInit(bottomDrawer, postHTML) {
   console.log("게시판 이벤트 초기화");
   let postList = bottomDrawer.querySelectorAll(".list-group>a");
 
   for (let post of postList) {
     post.addEventListener("click", function () {
-      console.log("게시글 클릭 이벤트 시작");
+      console.log("게시글 클릭 이벤트 시작 \n" + postHTML);
 
       new Promise((resolve, reject) => {
         window.location.hash = "post";
-        bottomDrawer.innerHTML = postHtml;
+        bottomDrawer.innerHTML = postHTML;
 
         resolve();
       })
