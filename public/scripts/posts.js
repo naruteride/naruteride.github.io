@@ -9,7 +9,7 @@ export function postsEventsInit(bottomDrawer, postHTML) {
       event.preventDefault();
 
       new Promise((resolve, reject) => {
-        window.location.hash = "post";
+        // window.location.hash = "post";
         bottomDrawer.innerHTML = postHTML;
 
         resolve();
