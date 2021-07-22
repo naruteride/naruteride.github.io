@@ -2,8 +2,11 @@ import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
 export function postsEventsInit(bottomDrawer, postHtml) {
   console.log("게시판 이벤트 초기화")
-  let postList = document.querySelectorAll(".list-group>a");
-  console.log(bottomDrawer.innerHTML)
+  let postList = bottomDrawer.querySelectorAll(".list-group>a");
+
+  for (let i = 0; i < 3; i++) {
+    console.log(postList[i].innerHTML);
+  }
 
   for (post of postList) {
     post.addEventListener("click", function () {
