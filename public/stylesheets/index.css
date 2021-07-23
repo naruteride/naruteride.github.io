@@ -110,7 +110,7 @@ body {
     display: block;
 }
 
-.list-group-item>small>svg {
-    width: .875em;
-    height: .875em;
+.list-group-item small>svg {
+    width: 20px;
+    height: 20px;
 }
