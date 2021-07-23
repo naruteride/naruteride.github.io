@@ -2,9 +2,6 @@ import { bottomDrawerEventInit } from "./bottom-drawer.js";
 import { postsEventsInit } from "./posts.js";
 
 let bottomDrawer;
-let drawerSection1;
-let drawerSection2;
-let knob;
 
 let postsHTML;
 let postHTML;
@@ -33,15 +30,6 @@ onload = function () {
       bottomDrawer.innerHTML = postsHTML = html;
     })
     .then(function () {
-      // 바텀 드로워 돔 정의
-      // drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
-      // drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
-      // knob = bottomDrawer.querySelector(".knob");
-    })
-    .then(function () {
-      // 바텀 드로워 이벤트 초기화
-      // bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
-      // 게시판 이벤트 초기화
       postsEventsInit(bottomDrawer, postHTML);
     })
     .catch(function (err) {
@@ -49,8 +37,20 @@ onload = function () {
     });
 };
 
+// 해쉬 변화 감지
 onhashchange = function () {
+  // 만약 해쉬가 비어있다면 == 게시글에서 뒤로가기 버튼을 눌렀다면
   if (location.hash == "") {
-    alert("사용자가 뒤로 감!!");
+    new Promise(function (resolve, reject) {
+      bottomDrawer.innerHTML = postsHTML;
+
+      resolve();
+    })
+      .then(function () {
+        postsEventsInit(bottomDrawer, postHTML);
+      })
+      .catch(function (err) {
+        console.warn("return to posts Promise went wrong.", err);
+      });
   }
 };
