@@ -109,11 +109,8 @@ body {
 .list-group-item>small {
     display: block;
 }
-/* 
-.list-group-item .likecomment-box {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: fit-content;
-    text-align: right;
-} */
+
+.list-group-item>small>svg {
+    width: .875em;
+    height: .875em;
+}
