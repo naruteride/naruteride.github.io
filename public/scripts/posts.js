@@ -1,7 +1,6 @@
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
 export function postsEventsInit(bottomDrawer, postHTML) {
-  console.log("게시판 이벤트 초기화");
   let postList = bottomDrawer.querySelectorAll(".list-group>a");
 
   for (let post of postList) {
@@ -31,8 +30,6 @@ export function postsEventsInit(bottomDrawer, postHTML) {
             postDOM.drawerSection2,
             postDOM.knob
           );
-
-          console.log("게시글 클릭 이벤트 끝");
         })
         .catch((err) => {
           console.warn("post click event Promise went wrong.", err);

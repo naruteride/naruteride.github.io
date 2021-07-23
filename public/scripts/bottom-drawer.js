@@ -4,6 +4,8 @@ export function bottomDrawerEventInit(
   drawerSection2,
   knob
 ) {
+  console.log("바텀드로워 초기화 이벤트 실행됨")
+
   if (!!window.chrome) {
     chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2);
   }

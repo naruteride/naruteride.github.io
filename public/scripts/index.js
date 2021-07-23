@@ -1,4 +1,3 @@
-import { bottomDrawerEventInit } from "./bottom-drawer.js";
 import { postsEventsInit } from "./posts.js";
 
 let bottomDrawer;
@@ -50,7 +49,7 @@ onhashchange = function () {
         postsEventsInit(bottomDrawer, postHTML);
       })
       .catch(function (err) {
-        console.warn("return to posts Promise went wrong.", err);
+        console.warn("Promise returning to posts went wrong.", err);
       });
   }
 };
