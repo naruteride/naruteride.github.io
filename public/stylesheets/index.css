@@ -51,3 +51,61 @@ body {
 #bottom-drawer::-webkit-scrollbar {
     display: none;
 }
+
+
+
+#bottom-drawer .knob {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#bottom-drawer .knob>div {
+    width: 150px;
+    height: 4px;
+    margin: 1rem auto;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#bottom-drawer>section:nth-child(1)>.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#bottom-drawer .content .nav-tabs {}
+
+#bottom-drawer .content .nav-tabs>.nav-item {
+    width: 50%;
+    text-align: center;
+}
+
+#bottom-drawer .content .search-bar-cover {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-cover input {
+    width: 80%;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+.search-bar-cover button {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.list-group-item>* {
+    width: calc(100% - 90px);
+    margin-left: auto;
+}
+
+.list-group-item>img {
+    float: left;
+    width: 77px !important;
+    height: 77px;
+    object-fit: cover;
+}
+
+.list-group-item>small {
+    display: block;
+}
