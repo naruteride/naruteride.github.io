@@ -34,15 +34,14 @@ onload = function () {
     })
     .then(function () {
       // 바텀 드로워 돔 정의
-      drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
-      drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
-      knob = bottomDrawer.querySelector(".knob");
+      // drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
+      // drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
+      // knob = bottomDrawer.querySelector(".knob");
     })
     .then(function () {
       // 바텀 드로워 이벤트 초기화
-      bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
+      // bottomDrawerEventInit(bottomDrawer, drawerSection1, drawerSection2, knob);
       // 게시판 이벤트 초기화
-      // console.log("게시판 fetch의 bottomDrawer \n" + bottomDrawer.textContent);
       postsEventsInit(bottomDrawer, postHTML);
     })
     .catch(function (err) {
