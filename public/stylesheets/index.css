@@ -21,6 +21,7 @@ body {
 }
 
 /* 바텀드로워 */
+
 #bottom-drawer>section {
     width: 100%;
     background-color: white;
@@ -51,8 +52,6 @@ body {
 #bottom-drawer::-webkit-scrollbar {
     display: none;
 }
-
-
 
 #bottom-drawer .knob {
     border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -90,6 +89,7 @@ body {
     width: 80%;
     border-radius: 0.25rem 0 0 0.25rem;
 }
+
 .search-bar-cover button {
     border-radius: 0 0.25rem 0.25rem 0;
 }
@@ -109,3 +109,11 @@ body {
 .list-group-item>small {
     display: block;
 }
+/* 
+.list-group-item .likecomment-box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: fit-content;
+    text-align: right;
+} */

@@ -1,0 +1,4 @@
+#bottom-drawer > section:nth-child(1) > .content {
+    display: grid;
+    
+}
