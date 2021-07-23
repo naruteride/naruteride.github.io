@@ -6,12 +6,12 @@ export function postsEventsInit(bottomDrawer, postHTML) {
   for (let post of postList) {
     post.addEventListener("click", function (event) {
 
-      new Promise(function (resolve, reject) {
+      new Promise((resolve, reject) => {
         bottomDrawer.innerHTML = postHTML;
 
         resolve();
       })
-        .then(function () {
+        .then(() => {
           // 바텀 드로워 돔 정의
           let drawerSection1 = bottomDrawer.querySelector(
             "section:nth-child(1)"

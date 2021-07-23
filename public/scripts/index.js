@@ -10,28 +10,28 @@ onload = function () {
 
   // 게시글 fetch
   fetch("/views/drawer-category/post.html")
-    .then(function (response) {
+    .then(response => {
       return response.text();
     })
-    .then(function (html) {
+    .then(html => {
       postHTML = html;
     })
-    .catch(function (err) {
+    .catch(err => {
       console.warn("post of bottom drawer fetch went wrong.", err);
     });
 
   // 게시판 fetch
   fetch("/views/drawer-category/posts.html")
-    .then(function (response) {
+    .then((response) => {
       return response.text();
     })
-    .then(function (html) {
+    .then(html => {
       bottomDrawer.innerHTML = postsHTML = html;
     })
-    .then(function () {
+    .then(() => {
       postsEventsInit(bottomDrawer, postHTML);
     })
-    .catch(function (err) {
+    .catch(err => {
       console.warn("posts of bottom drawer fetch went wrong.", err);
     });
 };
