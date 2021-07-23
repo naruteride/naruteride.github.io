@@ -24,7 +24,6 @@ onload = function () {
       console.warn("post of bottom drawer fetch went wrong.", err);
     });
 
-
   // 게시판 fetch
   fetch("/views/drawer-category/posts.html")
     .then(function (response) {
@@ -49,4 +48,10 @@ onload = function () {
     .catch(function (err) {
       console.warn("posts of bottom drawer fetch went wrong.", err);
     });
+};
+
+onhashchange = function () {
+  if (location.hash == "") {
+    alert("사용자가 뒤로 감!!");
+  }
 };
