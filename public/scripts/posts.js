@@ -3,12 +3,16 @@ import { bottomDrawerEventInit } from "./bottom-drawer.js";
 export function postsEventsInit(bottomDrawer, postHTML) {
 
   console.log("게시판 이벤트 초기화 실행됨.");
-  
+
   let postList = bottomDrawer.querySelectorAll(".list-group>a");
 
   for (let post of postList) {
-    console.log("for of 문 실행 됨")
+
+    console.log("for of 문 실행 됨");
+
     post.addEventListener("click", function (event) {
+
+      console.log("for of 문 안쪽의 post.addEventListener 실행됨.");
 
       new Promise((resolve, reject) => {
 
