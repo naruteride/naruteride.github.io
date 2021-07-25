@@ -1,10 +1,9 @@
-export function bottomDrawerEventInit(
-  bottomDrawer,
-  drawerSection1,
-  drawerSection2,
-  knob
-) {
-  console.log("바텀드로워 초기화 이벤트 실행됨")
+export function bottomDrawerEventInit(bottomDrawer) {
+
+  // 바텀 드로워 돔 정의
+  let drawerSection1 = bottomDrawer.querySelector("section:nth-child(1)");
+  let drawerSection2 = bottomDrawer.querySelector("section:nth-child(2)");
+  let knob = drawerSection1.querySelector(".knob");
 
   if (!!window.chrome) {
     chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2);
@@ -13,7 +12,7 @@ export function bottomDrawerEventInit(
   knob.addEventListener("click", function () {
     drawerSection2.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-}
+};
 
 // 크롬 스크롤 버그 고치는 함수
 function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
@@ -40,4 +39,4 @@ function chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2) {
       console.log("touch end");
     }, 600);
   });
-}
+};

@@ -1,44 +1,20 @@
+import { bottomDrawer, postsHTML } from "./index.js";
+import { postEventsInit } from "./post.js";
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
-export function postsEventsInit(bottomDrawer, postHTML) {
+export function postsEventsInit() {
+  new Promise((resolve, reject) => {
+    bottomDrawer.innerHTML = postsHTML;
 
-  let postList = bottomDrawer.querySelectorAll(".list-group>a");
+    resolve();
+  }).then(() => {
+    bottomDrawerEventInit(bottomDrawer);
 
-  for (let post of postList) {
-
-    post.addEventListener("click", function () {
-
-      new Promise((resolve, reject) => {
-        bottomDrawer.innerHTML = postHTML;
-
-        resolve();
-      })
-        .then(() => {
-          // 바텀 드로워 돔 정의
-          let drawerSection1 = bottomDrawer.querySelector(
-            "section:nth-child(1)"
-          );
-          let drawerSection2 = bottomDrawer.querySelector(
-            "section:nth-child(2)"
-          );
-          let knob = bottomDrawer.querySelector(".knob");
-
-          return { drawerSection1, drawerSection2, knob };
-        })
-        .then(postDOM => {
-
-          console.log(bottomDrawer + "\n" + postDOM.drawerSection1 + "\n" + postDOM.drawerSection1  + "\n" + postDOM.knob);
-
-          bottomDrawerEventInit(
-            bottomDrawer,
-            postDOM.drawerSection1,
-            postDOM.drawerSection2,
-            postDOM.knob
-          );
-        })
-        .catch((err) => {
-          console.warn("post click event Promise went wrong.", err);
-        });
-    });
-  }
-}
+    let postList = bottomDrawer.querySelectorAll(".list-group>a");
+    for (let post of postList) {
+      post.addEventListener("click", function () {
+        postEventsInit();
+      });
+    }
+  });
+};
