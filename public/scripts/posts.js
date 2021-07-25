@@ -24,6 +24,7 @@ export function postsEventsInit(bottomDrawer, postHTML) {
           return { drawerSection1, drawerSection2, knob };
         })
         .then(postDOM => {
+          console.log(bottomDrawer + "\n" + postDOM.drawerSection1 + "\n" + postDOM.drawerSection1  + "\n" + postDOM.knob);
           bottomDrawerEventInit(
             bottomDrawer,
             postDOM.drawerSection1,
