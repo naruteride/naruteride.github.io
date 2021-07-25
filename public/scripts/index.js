@@ -23,6 +23,9 @@ onload = function () {
   // 게시판 fetch
   fetch("/views/drawer-category/posts.html")
     .then((response) => {
+
+      console.log("게시판 fetch 실행됨.");
+      
       return response.text();
     })
     .then(html => {
