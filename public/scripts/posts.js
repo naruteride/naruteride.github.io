@@ -10,7 +10,7 @@ export function postsEventsInit(bottomDrawer, postHTML) {
 
     console.log("for of 문 실행 됨");
 
-    post.addEventListener("click", function (event) {
+    post.addEventListener("click", function () {
 
       console.log("for of 문 안쪽의 post.addEventListener 실행됨.");
 
