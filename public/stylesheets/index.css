@@ -1,3 +1,9 @@
+:root {
+    /* 첫 번째 섹션의 '콘텐츠 영역(손잡이(knob)를 제외한 영역)' 높이 */
+    /* index.js에서 새로운 값을 할당받는다. */
+    --first-section-height: 134px;
+}
+
 html {
     height: 99.9%;
     overflow: hidden;
