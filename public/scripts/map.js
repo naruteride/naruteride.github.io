@@ -1,27 +1,27 @@
-let map;
-let myLatLng = { lat: 37.5575312, lng: 126.9222782 }
-let funckingMarkerPosition = { lat: 37.5574111, lng: 126.9245447 };
+// let map;
+// let myLatLng = { lat: 37.5575312, lng: 126.9222782 }
+// let funckingMarkerPosition = { lat: 37.5574111, lng: 126.9245447 };
 
 
-function initMap() {
+// function initMap() {
 
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 37.5575312, lng: 126.9222782 },
-    zoom: 17,
-    disableDefaultUI: true,
-  });
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: 37.5575312, lng: 126.9222782 },
+//     zoom: 17,
+//     disableDefaultUI: true,
+//   });
 
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
-  });
-}
+//   new google.maps.Marker({
+//     position: myLatLng,
+//     map,
+//     title: "Hello World!",
+//   });
+// }
 
-function addMarker(markerPosition, title) {
-  new google.maps.Marker({
-    position: markerPosition,
-    map,
-    title: this.title,
-  });
-}
+// function addMarker(markerPosition, title) {
+//   new google.maps.Marker({
+//     position: markerPosition,
+//     map,
+//     title: this.title,
+//   });
+// }
