@@ -1,3 +1,21 @@
-#bottom-drawer > section:nth-child(1) > .content {
+#bottom-drawer>section:nth-child(1)>.content {
+    justify-content: center;
+    padding: 1rem;
+}
+
+#post-summary-information {
     display: grid;
+    height: 100%;
+    max-height: 100px;
+    grid-template-columns: minmax(auto, 100px), 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr;
+    grid-template-areas: "album-cover  title" "album-cover singer" "album-cover writer";
+}
+
+#post-summary-information>img {
+    grid-area: album-cover;
+    width: var(--first-section-content-height);
+    max-width: 100px;
+    height: 100%;
+    background-color: aquamarine;
 }
