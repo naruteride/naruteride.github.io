@@ -19,7 +19,7 @@
     max-width: 100px;
     height: 100%;
 }
-#post-summary-information .flex-vertical-alignment {
+#post-summary-information .flex-vertical-alignment>div {
     width: 100%;
 }
 
