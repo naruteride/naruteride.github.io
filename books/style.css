@@ -5,6 +5,12 @@ body {
     font-family: 'Gowun Batang', serif;
     line-height: 1.75;
 }
-i {
+
+ol {
+    padding-inline-end: 40px;
+}
+
+a>i {
+    float: right;
     font-size: .875em;
 }
