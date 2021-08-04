@@ -45,6 +45,8 @@ body {
 
 #bottom-drawer>section:nth-child(2) {
     height: 65vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 /* 스크롤바 제거 */

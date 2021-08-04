@@ -36,3 +36,15 @@
 #post-summary-information small {
     float: right;
 }
+
+#bottom-drawer>section:nth-child(2)>.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+}
+#bottom-drawer>section:nth-child(2)>.content>img {
+    width: 100%;
+}
