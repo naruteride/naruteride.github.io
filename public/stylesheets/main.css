@@ -135,5 +135,5 @@ img {
 }
 
 .float-unset {
-    float: unset;
+    float: unset !important;
 }
