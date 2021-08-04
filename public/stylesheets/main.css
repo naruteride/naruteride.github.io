@@ -128,3 +128,8 @@ img {
 .pointer-events-auto {
     pointer-events: auto !important;
 }
+
+.flex-vertical-alignment {
+    display: flex;
+    align-items: center;
+}
