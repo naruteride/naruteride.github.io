@@ -19,3 +19,13 @@
     max-width: 100px;
     height: 100%;
 }
+
+#post-summary-information i {
+    float: right;
+}
+#post-summary-information small {
+    float: right;
+}
+.float-unset {
+    float: unset;
+}
