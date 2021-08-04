@@ -48,3 +48,12 @@
 #bottom-drawer>section:nth-child(2)>.content>img {
     width: 100%;
 }
+
+#likeit {
+    width: 100%;
+    text-align: center;
+}
+#comment {
+    width: 100%;
+    border: 3px solid #00000055;
+}
