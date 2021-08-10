@@ -37,6 +37,11 @@
     float: right;
 }
 
+#post-summary-information button {
+    padding: unset;
+    border: 0;
+}
+
 #bottom-drawer>section:nth-child(2)>.content {
     display: flex;
     flex-direction: column;
