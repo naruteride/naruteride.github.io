@@ -50,15 +50,21 @@
     height: fit-content;
     padding: 1rem;
 }
+
 #bottom-drawer>section:nth-child(2)>.content>img {
     width: 100%;
 }
 
-#likeit {
+#bottom-drawer>section:nth-child(2)>.content>iframe {
     width: 100%;
-    text-align: center;
+    margin: 2rem 0;
 }
+
+#likeit {
+    align-self: flex-end;
+    margin: 2rem 0;
+}
+
 #comment {
     width: 100%;
-    border: 3px solid #00000055;
 }
