@@ -81,8 +81,9 @@
 }
 
 #comment>hr {
-    opacity: 0.25;
+    margin-top: 2rem;
     overflow: visible;
+    opacity: 0.25;
 }
 #comment>hr:after {
     display: inline-block;
@@ -91,4 +92,8 @@
     font-size: 0.875rem;
     background-color: #ffffff;
     transform: translateY(calc(-50% - 2px));
+}
+
+#comment-input-section {
+    margin-top: 1.5rem;
 }
