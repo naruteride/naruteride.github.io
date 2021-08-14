@@ -61,12 +61,11 @@
 }
 
 #bottom-drawer>section:nth-child(2)>.content>p {
-    margin: 3rem 0;
+    margin: 3rem 0 1.5rem;
 }
 
 #likeit {
     align-self: flex-end;
-    margin-top: 2rem;
 }
 
 #comment {
@@ -80,6 +79,12 @@
     margin: 0.75rem 0;
 }
 
-#comment>small {
+#comment>hr {
     opacity: 0.25;
+}
+#comment>hr::after {
+    background-color: #ffffff;
+    font-size: 0.875rem;
+    content: 'Comments';
+    transform: translateY(-13px);
 }
