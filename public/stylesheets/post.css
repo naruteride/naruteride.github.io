@@ -81,10 +81,13 @@
 
 #comment>hr {
     opacity: 0.25;
+    overflow: visible;
 }
-#comment>hr::after {
-    background-color: #ffffff;
+#comment>hr:after {
+    display: inline-block;
+    padding-right: 1em;
+    content: "Comments";
     font-size: 0.875rem;
-    content: 'Comments';
-    transform: translateY(-13px);
+    background-color: #ffffff;
+    transform: translateY(calc(-50% - 2px));
 }
