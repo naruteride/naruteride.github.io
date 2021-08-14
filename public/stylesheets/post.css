@@ -66,18 +66,20 @@
 
 #likeit {
     align-self: flex-end;
-    margin: 2rem 0;
+    margin-top: 2rem;
 }
 
 #comment {
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-#comment>section:nth-child(1) {
-    margin: 0 0 1rem 0;
+    font-size: 0.9em;
 }
 
 #comment>section {
-    margin: 1rem 0;
+    margin: 0.75rem 0;
+}
+
+#comment>small {
+    opacity: 0.25;
 }
