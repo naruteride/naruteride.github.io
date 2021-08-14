@@ -60,11 +60,24 @@
     margin: 2rem 0;
 }
 
+#bottom-drawer>section:nth-child(2)>.content>p {
+    margin: 3rem 0;
+}
+
 #likeit {
     align-self: flex-end;
     margin: 2rem 0;
 }
 
 #comment {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+}
+#comment>section:nth-child(1) {
+    margin: 0 0 1rem 0;
+}
+
+#comment>section {
+    margin: 1rem 0;
 }
