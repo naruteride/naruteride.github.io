@@ -49,6 +49,7 @@
     width: 100%;
     height: fit-content;
     padding: 1rem;
+    padding-bottom: 5rem;
 }
 
 #bottom-drawer>section:nth-child(2)>.content>img {
@@ -85,7 +86,7 @@
 }
 #comment>hr:after {
     display: inline-block;
-    padding-right: 1em;
+    padding-right: 0.25em;
     content: "Comments";
     font-size: 0.875rem;
     background-color: #ffffff;
