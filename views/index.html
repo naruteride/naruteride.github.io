@@ -85,10 +85,12 @@
     </script>
 
     <script>
+        // Add a second document with a generated ID.
         db.collection("users").add({
-            first: "Ada",
-            last: "Lovelace",
-            born: 1815
+            first: "Alan",
+            middle: "Mathison",
+            last: "Turing",
+            born: 1912
         })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
