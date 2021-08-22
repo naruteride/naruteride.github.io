@@ -22,7 +22,7 @@ function initMap() {
   map.addListener("mousedown", (mapsMouseEvent) => {
     isMouseUp = setTimeout(() => {
       alert("맵이 홀드됨");
-    }, 1500)
+    }, 1000)
   });
 
   map.addListener("mouseup", (mapsMouseEvent) => {
