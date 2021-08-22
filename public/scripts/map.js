@@ -15,19 +15,10 @@ function initMap() {
     title: "Hello World!",
   });
 
-  infoWindow.open(map);
+
   // Configure the click listener.
   map.addListener("click", (mapsMouseEvent) => {
-    // Close the current InfoWindow.
-    infoWindow.close();
-    // Create a new InfoWindow.
-    infoWindow = new google.maps.InfoWindow({
-      position: mapsMouseEvent.latLng,
-    });
-    infoWindow.setContent(
-      JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-    );
-    infoWindow.open(map);
+    alert("맵을 클릭함");
   });
 }
 
