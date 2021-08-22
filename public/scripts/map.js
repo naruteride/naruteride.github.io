@@ -22,6 +22,7 @@ function initMap() {
   map.addListener("mousedown", (mapsMouseEvent) => {
     isMouseUp = setTimeout(() => {
       window.writeLatLng = mapsMouseEvent.latLng;
+      location.hash = "write";
     }, 1000)
   });
 
