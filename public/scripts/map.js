@@ -27,7 +27,11 @@ function initMap() {
 
   map.addListener("mouseup", (mapsMouseEvent) => {
     clearTimeout(isMouseUp);
-  })
+  });
+
+  map.addListener("dragstart", (mapsMouseEvent) => {
+    clearTimeout(isMouseUp);
+  });
 }
 
 function addMarker(markerPosition, title) {
