@@ -1,10 +1,12 @@
 import { postsEventsInit } from "./posts.js";
 import { postEventsInit } from "./post.js";
+import { writeEventsInit } from "./write.js";
 
 
 export let bottomDrawer;
 export let postsHTML;
 export let postHTML;
+export let writeHTML;
 
 
 onload = function () {
@@ -13,6 +15,7 @@ onload = function () {
   // 게시판 fetch와 게시글fetch가 모두 완료되면 route 함수를 실행시킴
   Promise.all([postsFetch(), postFetch()]).then(() => {
     route();
+    writeFetch();
   });
 };
 
@@ -41,6 +44,20 @@ function postFetch() {
     })
     .catch((err) => {
       console.warn("post of bottom drawer fetch went wrong.", err);
+    });
+};
+
+// 글쓰기 fetch
+function writeFetch() {
+  return fetch("/views/drawer-category/write.html")
+    .then((response) => {
+      return response.text();
+    })
+    .then((html) => {
+      writeHTML = html;
+    })
+    .catch((err) => {
+      console.warn("write of bottom drawer fetch went wrong.", err);
     });
 };
 

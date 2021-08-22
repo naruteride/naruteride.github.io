@@ -21,15 +21,15 @@ function initMap() {
   // Configure the click listener.
   map.addListener("mousedown", (mapsMouseEvent) => {
     isMouseUp = setTimeout(() => {
-      alert("맵이 홀드됨");
+      alert("맵이 홀드됨 \n\n" + mapsMouseEvent.latLng);
     }, 1000)
   });
 
-  map.addListener("mouseup", (mapsMouseEvent) => {
+  map.addListener("mouseup", () => {
     clearTimeout(isMouseUp);
   });
 
-  map.addListener("dragstart", (mapsMouseEvent) => {
+  map.addListener("dragstart", () => {
     clearTimeout(isMouseUp);
   });
 }
