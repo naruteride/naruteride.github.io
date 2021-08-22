@@ -63,8 +63,10 @@ function writeFetch() {
 
 // 로케이션 해시에 "#post"가 있다면 '게시글' 페이지로, 그렇지 않다면 '게시판' 페이지로 간다.
 function route() {
-  if (location.hash.indexOf("#post") != -1) {
+  if (location.hash.includes("#post")) {
     postEventsInit();
+  } else if (location.hash.includes("#write")) {
+    writeEventsInit();
   } else {
     postsEventsInit();
   }
