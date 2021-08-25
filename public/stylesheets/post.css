@@ -130,5 +130,6 @@
 }
 
 #write-first-section-grid label {
+    top: -12px;
     font-size: 10px;
 }
