@@ -11,10 +11,9 @@ export function writeEventsInit() {
       bottomDrawerEventInit(bottomDrawer);
     })
     .then(() => {
-      console.log(window.writeLatLng);
       // 만약 글쓰기 페이지가 로드 되었는데 마커를 찍지 않았다면
       if ((window.writeLatLng == undefined)) {
-        alert("지도를 꾹 눌러 생성하고픈 위치에 마커를 생성하세요!");
+        alert("지도 위에 원하는 위치를 꾹 눌러 마커를 생성하세요!");
       }
     })
     .catch((err) => {
