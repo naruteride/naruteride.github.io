@@ -109,7 +109,6 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "nickname password" "youtube-address youtube-address";
     align-items: center;
-    font-size: .875em;
 }
 
 #write-first-section-grid>.nickname.input-field {
