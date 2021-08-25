@@ -107,6 +107,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "nickname password" "youtube-address youtube-address";
+    row-gap: 1rem;
 }
 
 #write-first-section-grid>.nickname.input-field {
