@@ -85,6 +85,7 @@
     overflow: visible;
     opacity: 0.25;
 }
+
 #comment>hr:after {
     display: inline-block;
     padding-right: 0.25em;
@@ -96,4 +97,17 @@
 
 #comment-input-section {
     margin-top: 1.5rem;
+}
+
+/* 글쓰기 첫 번째 섹션 */
+
+#write-first-section-grid {
+    display: grid;
+    height: 100%;
+    max-height: 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 13px;
+    grid-template-areas: "nickname password" "youtube-address youtube-address";
+    font-size: .875em;
 }
