@@ -49,6 +49,7 @@
     align-items: center;
     width: 100%;
     height: fit-content;
+    min-height: 100%;
     padding: 1rem;
     padding-bottom: 5rem;
 }
@@ -140,4 +141,5 @@
 #write-submit {
     position: absolute;
     bottom: 1rem;
+    margin: 0 1rem;
 }
