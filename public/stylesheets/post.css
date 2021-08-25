@@ -111,3 +111,13 @@
     grid-template-areas: "nickname password" "youtube-address youtube-address";
     font-size: .875em;
 }
+
+#write-first-section-grid>.nickname.input-field {
+    grid-area: nickname;
+}
+#write-first-section-grid>.password.input-field {
+    grid-area: password;
+}
+#write-first-section-grid>.youtube-address.input-field {
+    grid-area: youtube-address;
+}
