@@ -13,9 +13,8 @@ onload = function () {
   bottomDrawer = document.querySelector("#bottom-drawer");
 
   // 게시판 fetch와 게시글fetch가 모두 완료되면 route 함수를 실행시킴
-  Promise.all([postsFetch(), postFetch()]).then(() => {
+  Promise.all([postsFetch(), postFetch(), writeFetch()]).then(() => {
     route();
-    writeFetch();
   });
 };
 
