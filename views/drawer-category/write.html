@@ -6,15 +6,16 @@
     <div class="content">
         <div id="write-first-section-grid">
             <div class="input-field nickname">
-                <input id="write-nickname" type="email" class="input-underline" placeholder="anonymous">
+                <input id="write-nickname" type="text" class="input-underline" placeholder="anonymous">
                 <label for="write-nickname">닉네임</label>
             </div>
             <div class="input-field password">
-                <input id="write-password" type="email" class="input-underline" placeholder="••••">
+                <input id="write-password" type="password" class="input-underline" placeholder="••••">
                 <label for="write-password">비밀번호</label>
             </div>
             <div class="input-field youtube-address">
-                <input id="write-youtube-address" type="email" class="input-underline" placeholder="https://youtu.be/xXxxXxXXxXX">
+                <input id="write-youtube-address" type="text" class="input-underline"
+                    placeholder="https://youtu.be/xXxxXxXXxXX">
                 <label for="write-youtube-address">유튜브 주소</label>
             </div>
         </div>
@@ -22,8 +23,9 @@
 </section>
 <section>
     <div class="content">
-
-
+        <label for="write-content" class="form-label">게시글 내용</label>
+        <textarea class="form-control" id="write-content" rows="5"></textarea>
+        <input type="submit" value="저장">
     </div>
 </section>
 
