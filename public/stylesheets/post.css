@@ -103,12 +103,10 @@
 
 #write-first-section-grid {
     display: grid;
-    height: 100%;
     max-height: 100px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "nickname password" "youtube-address youtube-address";
-    align-items: center;
 }
 
 #write-first-section-grid>.nickname.input-field {
@@ -132,5 +130,5 @@
 }
 
 #write-first-section-grid label {
-    font-size: .375rem;
+    font-size: 10px;
 }
