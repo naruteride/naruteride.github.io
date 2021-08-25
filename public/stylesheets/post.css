@@ -43,6 +43,7 @@
 }
 
 #bottom-drawer>section:nth-child(2)>.content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,4 +135,9 @@
 #write-first-section-grid label {
     top: -12px;
     font-size: 10px;
+}
+
+#write-submit {
+    position: absolute;
+    bottom: 1rem;
 }
