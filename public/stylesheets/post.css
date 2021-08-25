@@ -107,17 +107,31 @@
     max-height: 100px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    row-gap: 13px;
     grid-template-areas: "nickname password" "youtube-address youtube-address";
+    align-items: center;
     font-size: .875em;
 }
 
 #write-first-section-grid>.nickname.input-field {
     grid-area: nickname;
 }
+
 #write-first-section-grid>.password.input-field {
     grid-area: password;
 }
+
 #write-first-section-grid>.youtube-address.input-field {
     grid-area: youtube-address;
+}
+
+#write-first-section-grid .input-field {
+    margin: 0.5rem 0;
+}
+
+#write-first-section-grid input {
+    font-size: 14px;
+}
+
+#write-first-section-grid label {
+    font-size: .375rem;
 }
