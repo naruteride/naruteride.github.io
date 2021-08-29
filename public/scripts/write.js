@@ -13,7 +13,9 @@ export function writeEventsInit() {
       // 만약 form이 동작한다면
       bottomDrawer.querySelector("#write-form").addEventListener("formdata", (e) => {
         e.preventDefault();
-        console.log("글쓰기 서브밋이 동작함. \n" + e);
+        for (var value of e.formData.values()) {
+          console.log(value);
+        }
       })
     })
     .then(() => {
