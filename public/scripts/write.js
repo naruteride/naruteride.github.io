@@ -11,7 +11,7 @@ export function writeEventsInit() {
       bottomDrawerEventInit(bottomDrawer);
 
       // 만약 form이 동작한다면
-      bottomDrawer.querySelector("#write-form").addEventListener("submit", (e) => {
+      bottomDrawer.querySelector("#write-form").addEventListener("formdata", (e) => {
         e.preventDefault();
         console.log("글쓰기 서브밋이 동작함. \n" + e);
       })
