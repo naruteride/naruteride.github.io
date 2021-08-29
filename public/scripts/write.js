@@ -11,16 +11,25 @@ export function writeEventsInit() {
       bottomDrawerEventInit(bottomDrawer);
 
       // 만약 form이 동작한다면
-      bottomDrawer.querySelector("#write-form").addEventListener("formdata", (e) => {
-        e.preventDefault();
-        for (var value of e.formData.values()) {
-          console.log(value);
-        }
-      })
+      bottomDrawer
+        .querySelector("#write-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          new FormData(bottomDrawer);
+        });
+
+      bottomDrawer
+        .querySelector("#write-form")
+        .addEventListener("formdata", (e) => {
+          for (var value of e.formData.values()) {
+            console.log(value);
+          }
+        });
     })
     .then(() => {
       // 만약 글쓰기 페이지가 로드 되었는데 마커를 찍지 않았다면
-      if ((window.writeLatLng == undefined)) {
+      if (window.writeLatLng == undefined) {
         alert("지도 위에 원하는 위치를 꾹 눌러 마커를 생성하세요!");
       }
     })
@@ -29,7 +38,4 @@ export function writeEventsInit() {
     });
 }
 
-export function write() {
-  
-
-}
+export function write() {}
