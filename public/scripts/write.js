@@ -19,11 +19,12 @@ export function writeEventsInit() {
       });
 
       writeForm.addEventListener("formdata", (e) => {
-        console.log("formdata fired");
-
-        // Get the form data from the event object
-        let data = e.formData;
-        for (var value of data.values()) {
+        console.log("formdata fired:");
+        console.log(e);
+        console.log(e.formData);
+        console.log(e.formData.get())
+        
+        for (let value of e.formData.values()) {
           console.log(value);
         }
       });
