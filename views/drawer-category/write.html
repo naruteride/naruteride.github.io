@@ -6,27 +6,27 @@
     <div class="content">
         <div id="write-first-section-grid">
             <div class="input-field nickname">
-                <input id="write-nickname" type="text" class="input-underline" placeholder="anonymous">
+                <input id="write-nickname" type="text" class="input-underline" placeholder="anonymous" form="write-form" required>
                 <label for="write-nickname">닉네임</label>
             </div>
             <div class="input-field password">
-                <input id="write-password" type="password" class="input-underline" placeholder="••••">
+                <input id="write-password" type="password" class="input-underline" placeholder="••••" form="write-form" required>
                 <label for="write-password">비밀번호</label>
             </div>
             <div class="input-field youtube-address">
                 <input id="write-youtube-address" type="text" class="input-underline"
-                    placeholder="https://youtu.be/xXxxXxXXxXX">
+                    placeholder="https://youtu.be/xXxxXxXXxXX" form="write-form" required>
                 <label for="write-youtube-address">유튜브 주소</label>
             </div>
         </div>
     </div>
 </section>
 <section>
-    <div class="content">
+    <form id="write-form" class="content">
         <label for="write-content" class="form-label">게시글 내용</label>
         <textarea id="write-content" class="form-control" rows="12" placeholder="곡에 대한 당신의 의견을 알려주세요..."></textarea>
         <input id="write-submit" class="btn btn-primary w-100" type="submit" value="저장">
-    </div>
+    </form>
 </section>
 
 <link rel="stylesheet" href="/public/stylesheets/post.css">
