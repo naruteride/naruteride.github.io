@@ -10,22 +10,19 @@ export function writeEventsInit() {
     .then(() => {
       bottomDrawerEventInit(bottomDrawer);
 
-      // 만약 form이 동작한다면
-      bottomDrawer
-        .querySelector("#write-form")
-        .addEventListener("submit", (e) => {
-          e.preventDefault();
+      // 만약 form의 submit이 동작한다면
+      let writeForm = bottomDrawer.querySelector("#write-form");
+      writeForm.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-          new FormData(bottomDrawer);
-        });
+        new FormData(writeForm);
+      });
 
-      bottomDrawer
-        .querySelector("#write-form")
-        .addEventListener("formdata", (e) => {
-          for (var value of e.formData.values()) {
-            console.log(value);
-          }
-        });
+      writeForm.addEventListener("formdata", (e) => {
+        for (var value of e.formData.values()) {
+          console.log(value);
+        }
+      });
     })
     .then(() => {
       // 만약 글쓰기 페이지가 로드 되었는데 마커를 찍지 않았다면
