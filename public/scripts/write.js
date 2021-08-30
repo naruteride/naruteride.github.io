@@ -38,8 +38,8 @@ function write(values) {
   db.collection("posts").add({
     nickname: values.get("nickname"),
     password: values.get("password"),
-    lat: window.writeLatLng[0],
-    lng: window.writeLatLng[1],
+    lat: window.writeLatLng.lat(),
+    lng: window.writeLatLng.lng(),
     youtubeAddress: values.get("youtubeAddress"),
     content : values.get("content")
   })
