@@ -35,7 +35,6 @@ export function writeEventsInit() {
 }
 
 function write(values) {
-  console.log(values.get("nickname"));
   db.collection("posts").add({
     nickname: values.get("nickname"),
     password: values.get("password"),

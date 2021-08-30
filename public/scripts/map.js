@@ -21,7 +21,10 @@ function initMap() {
   // 맵 홀드 시 발생하는 이벤트
   map.addListener("mousedown", (mapsMouseEvent) => {
     isMouseUp = setTimeout(() => {
-      window.writeLatLng = mapsMouseEvent.latLng;
+      console.log("-----------------------------------");
+      console.log(mapsMouseEvent.latLng.lat);
+
+      window.writeLatLng = mapsMouseEvent.latLng.slice(1, -1).split(", ");
       console.log("위치: " + window.writeLatLng);
       addMarker(window.writeLatLng, "글쓰기 마커 타이틀");
       location.hash = "write";
