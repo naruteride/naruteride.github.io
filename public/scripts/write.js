@@ -10,7 +10,7 @@ export function writeEventsInit() {
     .then(() => {
       bottomDrawerEventInit(bottomDrawer);
 
-      // 만약 form의 submit이 동작한다면
+      // 만약 글쓰기 form의 submit이 동작한다면, 해당 form에 formdata이벤트를 발생시킴
       let writeForm = bottomDrawer.querySelector("#write-form");
       writeForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -18,15 +18,9 @@ export function writeEventsInit() {
         new FormData(writeForm);
       });
 
+      // 만약 글쓰기 form의 formdata 이벤트가 발생한다면, 
       writeForm.addEventListener("formdata", (e) => {
-        console.log("formdata fired:");
-        console.log(e);
-        console.log(e.formData);
-        console.log(e.formData.get())
-        
-        for (let value of e.formData.values()) {
-          console.log(value);
-        }
+        write(e.formData.values());
       });
     })
     .then(() => {
@@ -40,4 +34,10 @@ export function writeEventsInit() {
     });
 }
 
-export function write() {}
+function write(values) {
+  console.log("----------------");
+  console.log(values);
+  for (value of values) {
+    console.log(value);
+  };
+};
