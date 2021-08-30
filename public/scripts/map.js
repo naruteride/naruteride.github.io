@@ -22,6 +22,7 @@ function initMap() {
   map.addListener("mousedown", (mapsMouseEvent) => {
     isMouseUp = setTimeout(() => {
       window.writeLatLng = mapsMouseEvent.latLng;
+      console.log("위치: " + window.writeLatLng);
       addMarker(window.writeLatLng, "글쓰기 마커 타이틀");
       location.hash = "write";
     }, 1000)

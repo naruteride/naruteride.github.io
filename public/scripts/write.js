@@ -20,7 +20,7 @@ export function writeEventsInit() {
 
       // 만약 글쓰기 form의 formdata 이벤트가 발생한다면, 
       writeForm.addEventListener("formdata", (e) => {
-        write(e.formData.values());
+        write(e.formData);
       });
     })
     .then(() => {
@@ -35,9 +35,11 @@ export function writeEventsInit() {
 }
 
 function write(values) {
-  console.log("----------------");
-  console.log(values);
-  for (value of values) {
-    console.log(value);
-  };
+  console.log(values.get("nickname"));
+  db.collection("posts").add({
+    nickname: values.get("nickname"),
+    password: values.get("password"),
+    youtubeAddress: values.get("youtubeAddress"),
+    content : values.get("content")
+  })
 };
