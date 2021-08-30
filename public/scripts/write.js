@@ -18,7 +18,7 @@ export function writeEventsInit() {
         new FormData(writeForm);
       });
 
-      // 만약 글쓰기 form의 formdata 이벤트가 발생한다면, 
+      // 만약 글쓰기 form의 formdata 이벤트가 발생한다면,
       writeForm.addEventListener("formdata", (e) => {
         write(e.formData);
       });
@@ -41,6 +41,14 @@ function write(values) {
     lat: window.writeLatLng.lat(),
     lng: window.writeLatLng.lng(),
     youtubeAddress: values.get("youtubeAddress"),
-    content : values.get("content")
-  })
-};
+    content: values.get("content"),
+  });
+
+  db.collection("posts")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+      });
+    });
+}
