@@ -52,7 +52,6 @@ function write(values) {
 
 function sendToNode(documentId) {
   fetch("https://happy-engelbart-5479aa.netlify.app/functions/index.js", {
-    credentials: 'include',
     method: "POST",
     body: JSON.stringify({
       documentId: documentId,
