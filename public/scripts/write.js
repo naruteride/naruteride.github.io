@@ -34,27 +34,32 @@ export function writeEventsInit() {
     });
 }
 
+// function write(values) {
+//   db.collection("posts")
+//     .add({
+//       nickname: values.get("nickname"),
+//       password: values.get("password"),
+//       lat: window.writeLatLng.lat(),
+//       lng: window.writeLatLng.lng(),
+//       youtubeAddress: values.get("youtubeAddress"),
+//       content: values.get("content"),
+//     })
+//     .then(function (docRef) {
+//       console.log("Document written with ID: ", docRef.id);
+//       sendToNode(docRef.id)
+//     });
+// }
+
 function write(values) {
-  db.collection("posts")
-    .add({
+  fetch("https://happy-engelbart-5479aa.netlify.app/.netlify/functions/index", {
+    method: "POST",
+    body: JSON.stringify({
       nickname: values.get("nickname"),
       password: values.get("password"),
       lat: window.writeLatLng.lat(),
       lng: window.writeLatLng.lng(),
       youtubeAddress: values.get("youtubeAddress"),
       content: values.get("content"),
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      sendToNode(docRef.id)
-    });
-}
-
-function sendToNode(documentId) {
-  fetch("https://happy-engelbart-5479aa.netlify.app/.netlify/functions/index", {
-    method: "POST",
-    body: JSON.stringify({
-      documentId: documentId,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
