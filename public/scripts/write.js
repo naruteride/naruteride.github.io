@@ -53,16 +53,16 @@ export function writeEventsInit() {
 function write(values) {
   fetch("https://happy-engelbart-5479aa.netlify.app/.netlify/functions/index", {
     method: "POST",
-    body: {
+    body: JSON.stringify({
       nickname: values.get("nickname"),
       password: values.get("password"),
       lat: window.writeLatLng.lat(),
       lng: window.writeLatLng.lng(),
       youtubeAddress: values.get("youtubeAddress"),
       content: values.get("content"),
-    },
+    }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-}
+};
