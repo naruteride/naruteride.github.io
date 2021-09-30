@@ -56,7 +56,8 @@ function write(values) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-      console.log(JSON.parse(data));
+      alert(data.message);
+      // console.log(JSON.parse(data));
+      location.hash = "";
     });
 }
