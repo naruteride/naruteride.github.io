@@ -49,6 +49,6 @@ function write(values) {
       "Content-type": "application/json; charset=UTF-8",
     },
   }).then((response) => {
-    console.log(JSON.parse(response));
+    console.log(response);
   });
 }
