@@ -53,7 +53,7 @@ function write(values) {
       console.log(response);
       console.log(response.message);
       // console.log(JSON.parse(response));
-      response.json();
+      return response.json();
     })
     .then((data) => {
       console.log(data);
