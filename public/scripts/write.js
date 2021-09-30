@@ -52,5 +52,5 @@ function write(values) {
     .then((response) => {
       response.json();
     })
-    .then((data) => console.log(JSON.stringify(data)));
+    .then((data) => console.log(JSON.parse(data)));
 }
