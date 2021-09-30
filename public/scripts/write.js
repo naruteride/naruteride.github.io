@@ -52,7 +52,7 @@ function write(values) {
     .then((response) => {
       console.log(response);
       console.log(response.message);
-      console.log(JSON.parse(response));
+      // console.log(JSON.parse(response));
       response.json();
     })
     .then((data) => {
