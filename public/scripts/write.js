@@ -34,22 +34,6 @@ export function writeEventsInit() {
     });
 }
 
-// function write(values) {
-//   db.collection("posts")
-//     .add({
-//       nickname: values.get("nickname"),
-//       password: values.get("password"),
-//       lat: window.writeLatLng.lat(),
-//       lng: window.writeLatLng.lng(),
-//       youtubeAddress: values.get("youtubeAddress"),
-//       content: values.get("content"),
-//     })
-//     .then(function (docRef) {
-//       console.log("Document written with ID: ", docRef.id);
-//       sendToNode(docRef.id)
-//     });
-// }
-
 function write(values) {
   fetch("https://happy-engelbart-5479aa.netlify.app/.netlify/functions/index", {
     method: "POST",
@@ -64,8 +48,7 @@ function write(values) {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  })
-    .then((res) => res.json())
-    .then((response) => console.log("Success:", JSON.stringify(response)))
-    .catch((error) => console.error("Error:", error));
+  }).then((response) => {
+    console.log(JSON.parse(response));
+  });
 }
