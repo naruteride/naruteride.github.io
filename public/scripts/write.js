@@ -52,9 +52,11 @@ function write(values) {
     .then((response) => {
       console.log(response);
       console.log(response.message);
+      console.log(JSON.parse(response));
       response.json();
     })
     .then((data) => {
+      console.log(data);
       console.log(JSON.parse(data));
     });
 }
