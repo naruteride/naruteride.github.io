@@ -48,9 +48,7 @@ function write(values) {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  })
-    .then((response) => {
-      response.json();
-    })
-    .then((data) => console.log(JSON.parse(data)));
+  }).then((response) => console.log(JSON.parse(data)));
+  // .then((response) => response.json())
+  // .then((data) => console.log(JSON.parse(data)));
 }
