@@ -50,8 +50,7 @@ function write(values) {
     },
   })
     .then((response) => {
-      console.log(JSON.parse(response));
       response.json();
     })
-    .then((data) => console.log(data));
+    .then((data) => console.log(JSON.stringify(data)));
 }
