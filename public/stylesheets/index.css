@@ -44,6 +44,7 @@ body {
 }
 
 #bottom-drawer>section:nth-child(2) {
+    position: relative;
     height: 65vh;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -123,4 +124,13 @@ body {
 
 .list-group-item.active svg {
     fill: white !important;
+}
+
+#write-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 0 1rem 1rem;
+    background-color: var(--point-color);
+    opacity: 0.75;
 }
