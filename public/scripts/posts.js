@@ -10,5 +10,6 @@ export function postsEventsInit() {
     resolve();
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
+    
   });
 };
