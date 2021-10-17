@@ -14,9 +14,11 @@ export function postsEventsInit() {
     db.collection("posts")
       .get()
       .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
-        });
+        let size = querySnapshot.size;
+        
+        for (let i = 0; i < size; i++) {
+          console.log(i);
+        }
       });
   });
 }
