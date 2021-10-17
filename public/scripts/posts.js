@@ -20,6 +20,8 @@ export function postsEventsInit() {
           console.log(i);
         }
       });
+      
+      db.collection("posts").orderBy("date")
   });
 }
 
