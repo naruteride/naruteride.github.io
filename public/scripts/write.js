@@ -47,6 +47,7 @@ function write(values) {
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
+      "Origin": "https://naruteride.github.io"
     },
   })
     .then((response) => {
