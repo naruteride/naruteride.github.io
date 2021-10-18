@@ -53,12 +53,11 @@ function write(values) {
       console.log(response);
       console.log(response.message);
       console.log(response.status);
-      return {data: response.json(), statusCode: response.status};
+      response.json().then((resData) => {
+        alert(resData.message);
+        if (response.status == 202) {
+          location.hash = "";
+        }
+      });
     })
-    .then((res) => {
-      alert(res.data.message);
-      if (res.statusCode == 202) {
-        location.hash = "";
-      }
-    });
 }
