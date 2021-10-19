@@ -16,6 +16,7 @@ export function postsEventsInit() {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           let data = doc.data();
+          postElement.href = "#post:" + doc.id;
           postElement.querySelector("img").src = "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
           postElement.querySelector("h5").innerText = data.nickname;  // 노래 제목
           postElement.querySelector("p").innerText = data.content;  // 게시글 내용
@@ -32,7 +33,6 @@ export function postsEventsInit() {
 }
 
 let postElement = document.createElement("a");
-postElement.href = "#post";
 postElement.classList.add("list-group-item", "list-group-item-action");
 postElement.setAttribute("aria-current", "true");
 
@@ -42,7 +42,7 @@ postElement.innerHTML = `
 <h5 class="mb-1"></h5>
 <small> days ago</small>
 </div>
-<p class="mb-1" text-overflow="ellipsis"></p>
+<p class="mb-1 text-overflow-ellipsis"></p>
 <div class="d-flex justify-content-between">
 <small class="nickname">@</small>
 <small class="text-end">
