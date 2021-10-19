@@ -11,11 +11,13 @@ export function postsEventsInit() {
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
 
-    db.collection("cities")
+    db.collection("posts")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          // console.log(doc.id, " => ", doc.data());
+          postElement.querySelector("img").src = "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
+          // postElement.querySelector("h5").innerText = doc.nickname;
+          console.log(doc.nickname + ", " + doc.content);
           document.querySelector("#post-board").appendChild(postElement);
         });
       });
