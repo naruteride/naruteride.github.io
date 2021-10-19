@@ -11,17 +11,16 @@ export function postsEventsInit() {
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
 
-    db.collection("posts")
+    db.collection("cities")
       .get()
       .then((querySnapshot) => {
-        let size = querySnapshot.size;
-        
-        for (let i = 0; i < size; i++) {
-          console.log(i);
-        }
+        querySnapshot.forEach((doc) => {
+          // console.log(doc.id, " => ", doc.data());
+          document.querySelector("#post-board").appendChild(postElement);
+        });
       });
-      
-      db.collection("posts").orderBy("date")
+
+    // db.collection("posts").orderBy("date");
   });
 }
 
