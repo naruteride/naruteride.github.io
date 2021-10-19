@@ -17,7 +17,7 @@ export function postsEventsInit() {
         querySnapshot.forEach((doc) => {
           postElement.querySelector("img").src = "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
           // postElement.querySelector("h5").innerText = doc.nickname;
-          console.log(doc.nickname + ", " + doc.content);
+          console.log(doc.data());
           document.querySelector("#post-board").appendChild(postElement);
           postElement = postElement.cloneNode(true);
         });
