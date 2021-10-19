@@ -42,7 +42,7 @@ postElement.innerHTML = `
 <h5 class="mb-1"></h5>
 <small> days ago</small>
 </div>
-<p class="mb-1 text-overflow-ellipsis"></p>
+<p class="mb-1 summary-content"></p>
 <div class="d-flex justify-content-between">
 <small class="nickname">@</small>
 <small class="text-end">

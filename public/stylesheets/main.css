@@ -22,10 +22,6 @@ hr {
     margin: 1rem 0;
 }
 
-.text-overflow-ellipsis {
-    text-overflow: ellipsis;
-}
-
 /* .fullscreen {
     flex: 1;
     display: flex;
