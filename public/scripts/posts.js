@@ -19,6 +19,7 @@ export function postsEventsInit() {
           // postElement.querySelector("h5").innerText = doc.nickname;
           console.log(doc.nickname + ", " + doc.content);
           document.querySelector("#post-board").appendChild(postElement);
+          postElement = postElement.cloneNode(true);
         });
       });
 
