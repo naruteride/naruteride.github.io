@@ -20,7 +20,8 @@ export function postsEventsInit() {
           postElement.querySelector("img").src = "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
           postElement.querySelector("h5").innerText = data.nickname;  // 노래 제목
           console.log(data.content);
-          postElement.querySelector("p").innerText = data.content.replace("<br>", " ");  // 게시글 내용
+          console.log(data.content.replace("\n", " "));
+          postElement.querySelector("p").innerText = data.content.replace("\n", " ");  // 게시글 내용
           postElement.querySelector(".nickname").innerText = "@" + data.nickname  // 닉네임
           postElement.querySelector(".heart-point").innerText = data.heartPoint  // 하트 개수
           postElement.querySelector(".comments-number").innerText = "2";  // 댓글 개수
