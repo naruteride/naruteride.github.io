@@ -21,7 +21,8 @@ export function postsEventsInit() {
           postElement.querySelector("h5").innerText = data.nickname;  // 노래 제목
           console.log(data.content);
           console.log(data.content.replaceAll("\n", " "));
-          postElement.querySelector("p").innerText = data.content.replaceAll("\n", " ");  // 게시글 내용
+          console.log(data.content.replaceAll("<br>", " "));
+          postElement.querySelector("p").innerText = data.content.replaceAll("<br>", " ");  // 게시글 내용
           postElement.querySelector(".nickname").innerText = "@" + data.nickname  // 닉네임
           postElement.querySelector(".heart-point").innerText = data.heartPoint  // 하트 개수
           postElement.querySelector(".comments-number").innerText = "2";  // 댓글 개수
