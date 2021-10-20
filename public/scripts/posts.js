@@ -19,6 +19,7 @@ export function postsEventsInit() {
           postElement.href = "#post:" + doc.id;
           postElement.querySelector("img").src = "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
           postElement.querySelector("h5").innerText = data.nickname;  // 노래 제목
+          console.log(data.content);
           postElement.querySelector("p").innerText = data.content.replace("<br>", " ");  // 게시글 내용
           postElement.querySelector(".nickname").innerText = "@" + data.nickname  // 닉네임
           postElement.querySelector(".heart-point").innerText = data.heartPoint  // 하트 개수
