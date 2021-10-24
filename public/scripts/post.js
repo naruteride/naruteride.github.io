@@ -8,5 +8,7 @@ export function postEventsInit() {
     resolve();
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
+
+    console.log(db.collection("posts").doc(location.hash.split(":")[1]));
   });
-};
+}
