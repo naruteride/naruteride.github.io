@@ -21,7 +21,7 @@ export function postEventsInit() {
 
         // bottomDrawer.querySelector(".post-date").innerText = toStringByFormatting(DateTime.parse(data.date.toDate().toString())); // 글 작성일
         // bottomDrawer.querySelector(".post-date").innerText = data.date.toMillis().toString().split("T")[0];
-        bottomDrawer.querySelector(".post-date").innerText = data.date.toMillis();
+        bottomDrawer.querySelector(".post-date").innerText = data.date.toMillis().toISOString().split('T')[0];
 
         bottomDrawer.querySelector(".summary-content").innerText = data.content; // 게시글 내용
         bottomDrawer.querySelector(".content>p").innerText = data.content; // 게시글 내용
