@@ -9,6 +9,11 @@ export function postEventsInit() {
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
 
-    console.log(db.collection("posts").doc(location.hash.split(":")[1]));
+    
+
+    db.collection("posts").doc(location.hash.split(":")[1]).get().then((doc) => {
+      console.log(doc.data());
+      console.log(doc.data().nickname);
+    })
   });
 }
