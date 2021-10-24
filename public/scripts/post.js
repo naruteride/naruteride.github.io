@@ -30,7 +30,7 @@ export function postEventsInit() {
 
 
 function timeConverter(UNIX_timestamp){
-  let a = new Date(UNIX_timestamp * 1000);
+  let a = new Date(UNIX_timestamp);
   let year = a.getFullYear();
   let month = a.getMonth() + 1;
   let date = a.getDate();
