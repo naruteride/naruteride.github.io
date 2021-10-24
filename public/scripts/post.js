@@ -18,10 +18,17 @@ export function postEventsInit() {
         bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
         bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         bottomDrawer.querySelector(".nickname").innerText = "@" + data.nickname; // 작성자
-        bottomDrawer.querySelector(".post-date").innerText = data.date.toDate(); // 글 작성일
-        bottomDrawer.querySelector(".summary-content").innerText = data.content;  // 게시글 내용
+        bottomDrawer.querySelector(".post-date").innerText = toStringByFormatting(data.date.toDate()); // 글 작성일
+        bottomDrawer.querySelector(".summary-content").innerText = data.content; // 게시글 내용
         bottomDrawer.querySelector(".content>p").innerText = data.content; // 게시글 내용
-        bottomDrawer.querySelector(".heart-point").innerText = data.heartPoint;  // 하트포인트
+        bottomDrawer.querySelector(".heart-point").innerText = data.heartPoint; // 하트포인트
       });
   });
+}
+
+function toStringByFormatting(source) {
+  const year = source.getFullYear();
+  const month = leftPad(source.getMonth() + 1);
+  const day = leftPad(source.getDate());
+  return [year, month, day].join(".");
 }
