@@ -19,9 +19,7 @@ export function postEventsInit() {
         bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         bottomDrawer.querySelector(".nickname").innerText = "@" + data.nickname; // 작성자
 
-        // bottomDrawer.querySelector(".post-date").innerText = toStringByFormatting(DateTime.parse(data.date.toDate().toString())); // 글 작성일
-        // bottomDrawer.querySelector(".post-date").innerText = data.date.toMillis().toString().split("T")[0];
-        bottomDrawer.querySelector(".post-date").innerText = data.date.toMillis().toISOString().split('T')[0];
+        bottomDrawer.querySelector(".post-date").innerText = timeConverter(data.date.toMillis());
 
         bottomDrawer.querySelector(".summary-content").innerText = data.content; // 게시글 내용
         bottomDrawer.querySelector(".content>p").innerText = data.content; // 게시글 내용
@@ -30,9 +28,12 @@ export function postEventsInit() {
   });
 }
 
-function toStringByFormatting(source) {
-  const year = source.getFullYear();
-  const month = leftPad(source.getMonth() + 1);
-  const day = leftPad(source.getDate());
-  return [year, month, day].join(".");
+
+function timeConverter(UNIX_timestamp){
+  let a = new Date(UNIX_timestamp * 1000);
+  let year = a.getFullYear();
+  let month = a.getMonth() + 1;
+  let date = a.getDate();
+  var time = year + ". " + month + ". " + date;
+  return time;
 }
