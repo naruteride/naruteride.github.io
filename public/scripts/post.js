@@ -20,7 +20,7 @@ export function postEventsInit() {
         bottomDrawer.querySelector(".nickname").innerText = "@" + data.nickname; // 작성자
 
         // bottomDrawer.querySelector(".post-date").innerText = toStringByFormatting(DateTime.parse(data.date.toDate().toString())); // 글 작성일
-        bottomDrawer.querySelector(".post-date").innerText = data.date.toLocaleString().toString();
+        bottomDrawer.querySelector(".post-date").innerText = data.date.toDate();
 
         bottomDrawer.querySelector(".summary-content").innerText = data.content; // 게시글 내용
         bottomDrawer.querySelector(".content>p").innerText = data.content; // 게시글 내용
