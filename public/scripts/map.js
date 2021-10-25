@@ -55,5 +55,8 @@ function addMarker(markerPosition, title, image) {
     map,
     title: title,
     icon: image,
-  });
+  }).addListener("click", () => {
+    map.setZoom(8);
+    console.log(markerPosition + ", " + title);
+  });;
 }
