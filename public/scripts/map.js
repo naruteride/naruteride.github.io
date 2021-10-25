@@ -28,8 +28,7 @@ function initMap() {
         addMarker(
           { lat: data.lat, lng: data.lng },
           "게시글들 중 하나", // 곡 제목
-          // data.thumbnail // 엘범 커버 혹은 썸네일 주소 문자열
-          "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ" // 임시 마커용 썸네일
+          data.thumbnail // 엘범 커버 혹은 썸네일 주소 문자열
         );
       });
     });
