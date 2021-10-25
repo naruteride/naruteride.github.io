@@ -49,12 +49,12 @@ postElement.setAttribute("aria-current", "true");
 postElement.innerHTML = `
 <img src="">
 <div class="d-flex justify-content-between">
-<h5 class="mb-1"></h5>
+<h5 class="mb-1 text-ellipsis"></h5>
 <small class="post-date"> days ago</small>
 </div>
-<p class="mb-1 summary-content"></p>
+<p class="mb-1 summary-content text-ellipsis"></p>
 <div class="d-flex justify-content-between">
-<small class="nickname">@</small>
+<small class="nickname text-ellipsis">@</small>
 <small class="text-end">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path fill-rule="evenodd"

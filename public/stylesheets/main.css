@@ -22,14 +22,6 @@ hr {
     margin: 1rem 0;
 }
 
-/* .fullscreen {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-} */
-
 .letter-spacing-2 {
     letter-spacing: -2px;
 }
@@ -141,4 +133,10 @@ hr {
 
 .float-unset {
     float: unset !important;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
