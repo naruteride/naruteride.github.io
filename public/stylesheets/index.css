@@ -117,7 +117,7 @@ body {
     display: block;
 }
 
-.list-group-item .summary-content {
+.summary-content {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
