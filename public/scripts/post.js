@@ -19,7 +19,7 @@ export function postEventsInit() {
         bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         bottomDrawer.querySelector(".nickname").innerText = "@" + data.nickname; // 작성자
         bottomDrawer.querySelector(".post-date").innerText = timeConverter(data.date.toMillis()); // 작성 날짜
-        bottomDrawer.querySelector(".summary-content").innerText = data.content; // 게시글 내용
+        bottomDrawer.querySelector(".summary-content").innerText = data.content.replaceAll("\r\n", "  "); // 게시글 내용
         bottomDrawer.querySelector(".content>p").innerText = data.content; // 게시글 내용
         bottomDrawer.querySelector(".heart-point").innerText = data.heartPoint; // 하트포인트
       });
