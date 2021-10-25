@@ -18,13 +18,18 @@ function initMap() {
     title: "Hello World!",
   });
 
+  // db에서 게시글 데이터 가져옴
   db.collection("posts")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
+        let data = doc.data();
+
         addMarker(
-          { lat: doc.data().lat, lng: doc.data().lng },
-          "게시글들 중 하나"
+          { lat: data.lat, lng: data.lng },
+          "게시글들 중 하나", // 곡 제목
+          // data.thumbnail // 엘범 커버 혹은 썸네일 주소 문자열
+          "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ" // 임시 마커용 썸네일
         );
       });
     });
@@ -45,10 +50,11 @@ function initMap() {
   });
 }
 
-function addMarker(markerPosition, title) {
+function addMarker(markerPosition, title, image) {
   new google.maps.Marker({
     position: markerPosition,
     map,
-    title: this.title,
+    title: title,
+    icon: image,
   });
 }
