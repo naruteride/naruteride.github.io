@@ -19,26 +19,26 @@ export function postsEventsInit() {
           let data = doc.data();
 
           // 날짜
-          let postDateInnerText = postElement.querySelector(".post-date").innerText;
+          let postDate = postElement.querySelector(".post-date");
           let nowDate = new Date();
           if (nowDate.setHours(24, 0, 0, 0) < data.date) { // 오늘 이후에 작성되었다면
-            postDateInnerText = "Future?";
+            postDate.innerText = "Future?";
           } else if (nowDate.setHours(0, 0, 0, 0) < data.date) { // 오늘 작성되었다면
-            postDateInnerText = "Today";
+            postDate.innerText = "Today";
           } else if (nowDate.setHours(-24, 0, 0, 0) < data.date) { // 어제 작성되었다면
-            postDateInnerText = "1 days ago";
+            postDate.innerText = "1 days ago";
           } else if (nowDate.setHours(-48, 0, 0, 0) < data.date) { // 그제 작성되었다면
-            postDateInnerText = "2 days ago";
+            postDate.innerText = "2 days ago";
           } else if (nowDate.setHours(-72, 0, 0, 0) < data.date) { // 3일 전에 작성되었다면
-            postDateInnerText = "3 days ago";
+            postDate.innerText = "3 days ago";
           } else if (nowDate.setHours(-96, 0, 0, 0) < data.date) { // 4일 전에 작성되었다면
-            postDateInnerText = "4 days ago";
+            postDate.innerText = "4 days ago";
           } else if (nowDate.setHours(-120, 0, 0, 0) < data.date) { // 5일 전에 작성되었다면
-            postDateInnerText = "5 days ago";
+            postDate.innerText = "5 days ago";
           } else if (nowDate.setHours(-144, 0, 0, 0) < data.date) { // 6일 전에 작성되었다면
-            postDateInnerText = "6 days ago";
+            postDate.innerText = "6 days ago";
           } else {
-            postDateInnerText = timeConverter(data.date.toMillis());
+            postDate.innerText = timeConverter(data.date.toMillis());
           }
 
 
