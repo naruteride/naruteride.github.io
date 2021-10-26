@@ -21,30 +21,30 @@ export function postsEventsInit() {
           // 날짜
           let postDateElement = postElement.querySelector(".post-date");
           let postDateToMillis = data.date.toMillis();
-          // let nowDate = new Date();
-          console.log("기본: " + new Date().setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          if (new Date().setUTCHours(24, 0, 0, 0) < postDateToMillis) { // 오늘 이후에 작성되었다면
+          let nowDate = new Date();
+          console.log("기본: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
+          if (nowDate.setUTCHours(24, 0, 0, 0) < postDateToMillis) { // 오늘 이후에 작성되었다면
             postDateElement.innerText = "Future?";
             // console.log("미래: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(0, 0, 0, 0) < postDateToMillis) { // 오늘 작성되었다면
+          } else if (nowDate.setUTCHours(0, 0, 0, 0) < postDateToMillis) { // 오늘 작성되었다면
             postDateElement.innerText = "Today";
             // console.log("오늘: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(-24, 0, 0, 0) < postDateToMillis) { // 어제 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 0) < postDateToMillis) { // 어제 작성되었다면
             postDateElement.innerText = "1 days ago";
             // console.log("어제: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(-48, 0, 0, 0) < postDateToMillis) { // 그제 작성되었다면
+          } else if (nowDate.setUTCHours(-48, 0, 0, 0) < postDateToMillis) { // 그제 작성되었다면
             postDateElement.innerText = "2 days ago";
             // console.log("그제: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(-72, 0, 0, 0) < postDateToMillis) { // 3일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-72, 0, 0, 0) < postDateToMillis) { // 3일 전에 작성되었다면
             postDateElement.innerText = "3 days ago";
             // console.log("그끄저께: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(-96, 0, 0, 0) < postDateToMillis) { // 4일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-96, 0, 0, 0) < postDateToMillis) { // 4일 전에 작성되었다면
             postDateElement.innerText = "4 days ago";
             // console.log("나흘 전: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(-120, 0, 0, 0) < postDateToMillis) { // 5일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-120, 0, 0, 0) < postDateToMillis) { // 5일 전에 작성되었다면
             postDateElement.innerText = "5 days ago";
             // console.log("닷세 전: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
-          } else if (new Date().setUTCHours(-144, 0, 0, 0) < postDateToMillis) { // 6일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-144, 0, 0, 0) < postDateToMillis) { // 6일 전에 작성되었다면
             postDateElement.innerText = "6 days ago";
             // console.log("엿세 전: " + nowDate.setUTCHours(0, 0, 0, 0) + ", " + postDateToMillis);
           } else {
