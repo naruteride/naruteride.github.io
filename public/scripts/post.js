@@ -34,6 +34,6 @@ function timeConverter(UNIX_timestamp) {
   let year = a.getFullYear();
   let month = a.getMonth() + 1;
   let date = a.getDate();
-  var time = year + ". " + month + ". " + date;
+  var time = year + ". " + month + ". " + date + ".";
   return time;
 }
