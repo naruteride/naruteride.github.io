@@ -18,7 +18,15 @@ export function postsEventsInit() {
         querySnapshot.forEach((doc) => {
           let data = doc.data();
 
-          postElement.querySelector(".post-date").innerText = "";
+          console.log("db에 기록된 시간: " + data.date);
+          console.log("현재 클라이언트의 시간: " + Date.now());
+
+          if (data.date - Date.now() > 518400) {
+            console.log("6일보다 오래됐습니다.");
+          } else {
+            console.log("6일보다 덜 됐습니다.")
+          }
+          postElement.querySelector(".post-date").innerText = ""; // 날짜
 
           postElement.href = "#post:" + doc.id;
           postElement.querySelector("img").src =
@@ -37,8 +45,6 @@ export function postsEventsInit() {
           postElement = postElement.cloneNode(true);
         });
       });
-
-    // db.collection("posts").orderBy("date");
   });
 }
 
