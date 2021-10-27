@@ -1,6 +1,8 @@
 import { bottomDrawer, writeHTML } from "./index.js";
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
+let snackbar = document.querySelector("#snackbar");
+
 export function writeEventsInit() {
   new Promise((resolve, reject) => {
     bottomDrawer.innerHTML = writeHTML;
@@ -50,17 +52,27 @@ function write(values) {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  })
-    .then((response) => {
-      response.json().then((resData) => {
-        if (response.status == 200) { // 만약 글쓰기 저장에 성공한다면
-          document.querySelector("#loading-cover").classList.remove("on");
-          window.writeLatLng = undefined; // 마커 좌표 전역변수 초기화
-          location.hash = "";
-          alert(resData.message);
-        } else {
-          alert(resData.message);
-        }
-      });
-    })
+  }).then((response) => {
+    response.json().then((resData) => {
+      if (response.status == 200) {
+        // 만약 글쓰기 저장에 성공한다면
+        document.querySelector("#loading-cover").classList.remove("on"); // 로딩창 끔
+        onSnackbar(resData.message);
+        window.writeLatLng = undefined; // 마커 좌표 전역변수 초기화
+
+        location.hash = "";
+      } else {
+        toast.querySelector("toast-body").innerText = resData.message;
+      }
+    });
+  });
+}
+
+function onSnackbar(message) {
+  snackbar.innerText = message;
+  snackbar.classList.add("show");
+
+  setTimeout(() => {
+    snackbar.classList.remove("show");
+  }, 3000);
 }

@@ -40,16 +40,19 @@
 <body>
     <div class="h-100">
         <div id="map" class="h-100"></div>
-        
+
         <!-- 맵을 비활성화 해두었습니다. 활성화가 필요하다면 '아래 스크립트 태그 주석'과 '해드 태그 내의 Google Map API JS 스크립트 태그 주석', 'map.js 파일의 상단의 주석'을 해제하십시오. -->
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN-i5kYIaVnYgHVgIwFabg6ORayHadUss&callback=initMap&libraries=&v=weekly"
             async></script>
     </div>
 
-    <div id="bottom-drawer">
+    <div id="bottom-drawer"></div>
 
-    </div>
+    <div id="loading-cover" class="flex-vertical-alignment"></div>
+
+    <!-- 토스트(스낵바) -->
+    <div id="snackbar"></div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -79,5 +82,4 @@
         var db = firebase.firestore();
 
     </script>
-    <div id="loading-cover" class="flex-vertical-alignment"></div>
 </body>
