@@ -35,6 +35,8 @@ export function writeEventsInit() {
 }
 
 function write(values) {
+  document.querySelector("#loading-cover").classList.add("on");
+
   fetch("https://happy-engelbart-5479aa.netlify.app/.netlify/functions/index", {
     method: "POST",
     body: JSON.stringify({
@@ -50,13 +52,13 @@ function write(values) {
     },
   })
     .then((response) => {
-      console.log(response);
-      console.log(response.message);
-      console.log(response.status);
       response.json().then((resData) => {
-        alert(resData.message);
-        if (response.status == 202) {
+        if (response.status == 200) {
+          document.querySelector("#loading-cover").classList.remove("on");
           location.hash = "";
+          alert(resData.message);
+        } else {
+          alert(resData.message);
         }
       });
     })
