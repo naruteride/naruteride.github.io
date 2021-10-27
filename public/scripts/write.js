@@ -35,7 +35,7 @@ export function writeEventsInit() {
 }
 
 function write(values) {
-  document.querySelector("#loading-cover").classList.add("on");
+  document.querySelector("#loading-cover").classList.add("on"); // 로딩창
 
   fetch("https://happy-engelbart-5479aa.netlify.app/.netlify/functions/index", {
     method: "POST",
@@ -53,8 +53,9 @@ function write(values) {
   })
     .then((response) => {
       response.json().then((resData) => {
-        if (response.status == 200) {
+        if (response.status == 200) { // 만약 글쓰기 저장에 성공한다면
           document.querySelector("#loading-cover").classList.remove("on");
+          window.writeLatLng = undefined; // 마커 좌표 전역변수 초기화
           location.hash = "";
           alert(resData.message);
         } else {
