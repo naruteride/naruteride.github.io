@@ -22,28 +22,35 @@ export function postsEventsInit() {
           let postDateElement = postElement.querySelector(".post-date");
           let postDateToMillis = data.date.toMillis();
           let nowDate = new Date();
-          if (nowDate.setUTCHours(24, 0, 0, 1) < postDateToMillis) { // 오늘 이후에 작성되었다면
+          if (nowDate.setUTCHours(24, 0, 0, 1) < postDateToMillis) {
+            // 오늘 이후에 작성되었다면
             postDateElement.innerText = "Future?";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 오늘 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 오늘 작성되었다면
             postDateElement.innerText = "Today";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 어제 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 어제 작성되었다면
             postDateElement.innerText = "1 days ago";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 그제 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 그제 작성되었다면
             postDateElement.innerText = "2 days ago";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 3일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 3일 전에 작성되었다면
             postDateElement.innerText = "3 days ago";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 4일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 4일 전에 작성되었다면
             postDateElement.innerText = "4 days ago";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 5일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 5일 전에 작성되었다면
             postDateElement.innerText = "5 days ago";
-          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) { // 6일 전에 작성되었다면
+          } else if (nowDate.setUTCHours(-24, 0, 0, 1) < postDateToMillis) {
+            // 6일 전에 작성되었다면
             postDateElement.innerText = "6 days ago";
           } else {
             postDateElement.innerText = timeConverter(postDateToMillis);
           }
 
-
-          postElement.href = "#post:" + doc.id;
+          postElement.href = "post:" + doc.id;
           postElement.querySelector("img").src =
             "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
           postElement.querySelector("h5").innerText = data.nickname; // 노래 제목
@@ -95,8 +102,7 @@ postElement.innerHTML = `
 </div>
 `;
 
-
-function timeConverter(UNIX_timestamp){
+function timeConverter(UNIX_timestamp) {
   let a = new Date(UNIX_timestamp);
   let year = a.getFullYear();
   let month = a.getMonth() + 1;
