@@ -11,12 +11,6 @@ function initMap() {
     zoom: 17,
     disableDefaultUI: true,
   });
-  // 기본 마커
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
-  });
 
   // db에서 게시글 데이터 가져옴
   db.collection("posts")
