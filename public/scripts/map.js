@@ -25,13 +25,10 @@ function initMap() {
       querySnapshot.forEach((doc) => {
         let data = doc.data();
 
-        console.log(doc.id);
-        console.log(doc.id());
-        console.log(data.id);
         addMarker(
           { lat: data.lat, lng: data.lng }, // 마커 위치
           "게시글들 중 하나", // 곡 제목
-          // doc.id,
+          doc.id,
           data.thumbnail // 엘범 커버 혹은 썸네일 주소 문자열
         );
       });
@@ -53,12 +50,12 @@ function initMap() {
   });
 }
 
-function addMarker(markerPosition, title, image) {
+function addMarker(markerPosition, title, docID, image) {
   new google.maps.Marker({
     position: markerPosition,
     map,
     title: title,
-    // postID:
+    postID: docID,
     icon: image,
   }).addListener("click", () => {
     console.log(markerPosition + ", " + title);
