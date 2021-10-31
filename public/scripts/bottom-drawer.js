@@ -8,8 +8,15 @@ export function bottomDrawerEventInit(bottomDrawer) {
     chromeBugFixer(bottomDrawer, drawerSection1, drawerSection2);
   }
 
+  // 바텀드로워의 손잡이를 클릭했을 때
   knob.addEventListener("click", function () {
-    drawerSection2.scrollIntoView({ behavior: "smooth", block: "start" });
+    // 만약 바텀드로워가 닫혀있으면 열고, 열려있다면 닫음.
+    if (bottomDrawer.scrollTop < 50) {
+      drawerSection2.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      drawerSection1.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+      
   });
 }
 
