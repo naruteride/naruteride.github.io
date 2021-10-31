@@ -24,7 +24,7 @@ export function writeEventsInit() {
         ) {
           new FormData(writeForm);
         } else {
-          onSnackbar("마커를 찍어 위치를 지정해주세요.")
+          onSnackbar("마커를 찍어 위치를 지정해주세요.");
         }
       });
 
