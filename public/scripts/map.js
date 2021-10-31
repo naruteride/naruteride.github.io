@@ -57,7 +57,8 @@ function addMarker(markerPosition, title, docID, image) {
     title: title,
     postID: docID,
     icon: image,
-  }).addListener("click", () => {
-    console.log(markerPosition + ", " + title);
+  }).addListener("click", () => { // 마커 클릭 시 발생
+    console.log(title + ", " + postID);
+    location.hash = "post:" + postID;
   });
 }

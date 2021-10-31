@@ -42,6 +42,7 @@ export function writeEventsInit() {
     });
 }
 
+// 글쓰기 함수
 function write(values) {
   document.querySelector("#loading-cover").classList.add("on"); // 로딩창
 
@@ -74,6 +75,7 @@ function write(values) {
   });
 }
 
+// 스낵바 함수
 function onSnackbar(message) {
   snackbar.innerText = message;
   snackbar.classList.add("show");
