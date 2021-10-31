@@ -19,9 +19,7 @@ export function writeEventsInit() {
 
         // 만약 마커가 찍혀있지 않다면 formdata이벤트를 발생시키지 않고, 마커를 찍으라는 토스트를 띄움.
         if (
-          window.writeLatLng.lat() != undefined &&
-          window.writeLatLng.lng() != undefined
-        ) {
+          window.writeLatLng != undefined) {
           new FormData(writeForm);
         } else {
           onSnackbar("마커를 찍어 위치를 지정해주세요.");
