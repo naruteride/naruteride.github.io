@@ -25,9 +25,13 @@ function initMap() {
       querySnapshot.forEach((doc) => {
         let data = doc.data();
 
+        console.log(doc.id);
+        console.log(doc.id());
+        console.log(data.id);
         addMarker(
-          { lat: data.lat, lng: data.lng },
+          { lat: data.lat, lng: data.lng }, // 마커 위치
           "게시글들 중 하나", // 곡 제목
+          // doc.id,
           data.thumbnail // 엘범 커버 혹은 썸네일 주소 문자열
         );
       });
@@ -54,9 +58,9 @@ function addMarker(markerPosition, title, image) {
     position: markerPosition,
     map,
     title: title,
+    // postID:
     icon: image,
   }).addListener("click", () => {
-    map.setZoom(8);
     console.log(markerPosition + ", " + title);
-  });;
+  });
 }
