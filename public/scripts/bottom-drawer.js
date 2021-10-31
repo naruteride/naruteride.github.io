@@ -11,7 +11,7 @@ export function bottomDrawerEventInit(bottomDrawer) {
   // 바텀드로워의 손잡이를 클릭했을 때
   knob.addEventListener("click", function () {
     // 만약 바텀드로워가 닫혀있으면 열고, 열려있다면 닫음.
-    if (bottomDrawer.scrollTop < 50) {
+    if (bottomDrawer.scrollTop < 100) {
       drawerSection2.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       drawerSection1.scrollIntoView({ behavior: "smooth", block: "end" });
