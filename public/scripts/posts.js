@@ -50,7 +50,7 @@ export function postsEventsInit() {
             postDateElement.innerText = timeConverter(postDateToMillis);
           }
 
-          postElement.href = "post:" + doc.id;
+          postElement.href = "#post:" + doc.id;
           postElement.querySelector("img").src =
             "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
           postElement.querySelector("h5").innerText = data.nickname; // 노래 제목
