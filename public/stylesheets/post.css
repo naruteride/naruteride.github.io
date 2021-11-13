@@ -108,7 +108,7 @@
     max-height: 100px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "nickname password" "youtube-address youtube-address";
+    grid-template-areas: "nickname password" "album-name album-name";
     row-gap: 1rem;
 }
 
@@ -120,8 +120,8 @@
     grid-area: password;
 }
 
-#write-first-section-grid>.youtube-address {
-    grid-area: youtube-address;
+#write-first-section-grid>.album-name {
+    grid-area: album-name;
 }
 
 #write-first-section-grid .input-field {
