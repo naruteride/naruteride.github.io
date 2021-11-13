@@ -13,7 +13,10 @@ export function writeEventsInit() {
       bottomDrawerEventInit(bottomDrawer);
 
       // 만약 음악 검색 버튼을 누른다면, 음악 검색 함수를 실행시킴
-      
+      let albumName = bottomDrawer.querySelector(".album-name");
+      albumName.querySelector("button").addEventListener("click", (e) => {
+        searchMusic(albumName.querySelector("input").value);
+      })
 
       // 만약 글쓰기 form의 submit이 동작한다면, 해당 form에 formdata이벤트를 발생시킴
       let writeForm = bottomDrawer.querySelector("#write-form");
@@ -47,7 +50,7 @@ export function writeEventsInit() {
 
 // 음악 검색
 function searchMusic(albumName) {
-  fetch("http://ws.audioscrobbler.com/2.0/?method=track.search&track=the&api_key=발급받은key값&format=json", {
+  fetch("http://ws.audioscrobbler.com/2.0/?method=track.search&track=the&api_key=5e7cebcc2b92f7dcf0355d95bb852771&format=json", {
     method: "GET",
   }).then((response) => {
     alert("success");
