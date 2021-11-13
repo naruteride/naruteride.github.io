@@ -112,15 +112,15 @@
     row-gap: 1rem;
 }
 
-#write-first-section-grid>.nickname.input-field {
+#write-first-section-grid>.nickname {
     grid-area: nickname;
 }
 
-#write-first-section-grid>.password.input-field {
+#write-first-section-grid>.password {
     grid-area: password;
 }
 
-#write-first-section-grid>.youtube-address.input-field {
+#write-first-section-grid>.youtube-address {
     grid-area: youtube-address;
 }
 
