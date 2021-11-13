@@ -50,7 +50,7 @@ export function writeEventsInit() {
 
 // 음악 검색
 function searchMusic(albumName) {
-  fetch("http://ws.audioscrobbler.com/2.0/?method=track.search&track=the&api_key=5e7cebcc2b92f7dcf0355d95bb852771&format=json", {
+  fetch("http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=5e7cebcc2b92f7dcf0355d95bb852771&format=json", {
     method: "GET",
   }).then((response) => {
     alert("success");
