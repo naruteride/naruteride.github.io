@@ -54,10 +54,10 @@ export function postsEventsInit() {
 
 
           postElement.href = "#post:" + doc.id;
-          if (doc.id.indexOf("o0hO0mdcKkGwu35M6xNJ")) {
+          if (doc.id == "o0hO0mdcKkGwu35M6xNJ") {
             postElement.querySelector("img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
-          } else if (doc.id.indexOf("asdf")) {
-            postElement.querySelector("img").src = ""
+          } else if (doc.id == "R61CZyL9mD791Vz1hJFs") {
+            postElement.querySelector("img").src = "https://i.ytimg.com/vi/xfJPCenjZzY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuVutkCsFnsKo7YYa35AO6r2HjmQ"
           } else {
             postElement.querySelector("img").src =
               "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
@@ -74,7 +74,7 @@ export function postsEventsInit() {
           postElement.querySelector(".nickname").innerText =
             "@" + data.nickname; // 닉네임
           postElement.querySelector(".heart-point").innerText = data.heartPoint; // 하트 개수
-          postElement.querySelector(".comments-number").innerText = "0"; // 댓글 개수
+          postElement.querySelector(".comments-number").innerText = data.comments; // 댓글 개수
 
           document.querySelector("#post-board").appendChild(postElement);
           postElement = postElement.cloneNode(true);
