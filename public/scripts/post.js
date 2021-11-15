@@ -13,6 +13,8 @@ export function postEventsInit() {
       .doc(location.hash.split(":")[1])
       .get()
       .then((doc) => {
+        let data = doc.data();
+
         if (location.hash.indexOf("o0hO0mdcKkGwu35M6xNJ")) {
           bottomDrawer.querySelector(".title>b").innerText = "사계"; // 곡 이름
         } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
