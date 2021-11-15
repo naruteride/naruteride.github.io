@@ -17,16 +17,22 @@ export function postEventsInit() {
 
         if (location.hash.indexOf("o0hO0mdcKkGwu35M6xNJ")) {
           bottomDrawer.querySelector(".title>b").innerText = "사계"; // 곡 이름
+          bottomDrawer.querySelector("post-summary-information>img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
         } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
+          bottomDrawer.querySelector("post-summary-information>img").src = "https://i.ytimg.com/vi/xfJPCenjZzY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuVutkCsFnsKo7YYa35AO6r2HjmQ"
         } else if (location.hash.indexOf("adC5370lnrsWVT2cmWJn")) {
           bottomDrawer.querySelector(".title>b").innerText = "10,000 hour"; // 곡 이름
+          bottomDrawer.querySelector("post-summary-information>img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
         } else if (location.hash.indexOf("uTIcsjJpCLysr57eCem5")) {
           bottomDrawer.querySelector(".title>b").innerText = "Coin"; // 곡 이름
-        } else if (location.hash.indexOf("uTIcsjJpCLysr57eCem5")) {
-          bottomDrawer.querySelector(".title>b").innerText = "Coin"; // 곡 이름
-        } else if (location.hash.indexOf("fffffffffffffff")) {
-          bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
+          bottomDrawer.querySelector("post-summary-information>img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q" // 엘범 표지
+        } else if (location.hash.indexOf("")) {
+          bottomDrawer.querySelector(".title>b").innerText = ""; // 곡 이름
+          bottomDrawer.querySelector("post-summary-information>img").src = "" // 엘범 표지
+        } else if (location.hash.indexOf("")) {
+          bottomDrawer.querySelector(".title>b").innerText = ""; // 곡 이름
+          bottomDrawer.querySelector("post-summary-information>img").src = "" // 엘범 표지
         } else {
           bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
         }

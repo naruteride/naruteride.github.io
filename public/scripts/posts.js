@@ -67,17 +67,17 @@ export function postsEventsInit() {
             postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
             postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
           } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
-            postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
+            postElement.querySelector("img").src = ""
+            postElement.querySelector("h5").innerText = ""; // 노래 제목
           } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
-            postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
+            postElement.querySelector("img").src = ""
+            postElement.querySelector("h5").innerText = ""; // 노래 제목
           } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
-            postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
+            postElement.querySelector("img").src = ""
+            postElement.querySelector("h5").innerText = ""; // 노래 제목
           } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
-            postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
+            postElement.querySelector("img").src = ""
+            postElement.querySelector("h5").innerText = ""; // 노래 제목
           } else {
             postElement.querySelector("img").src =
               "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
