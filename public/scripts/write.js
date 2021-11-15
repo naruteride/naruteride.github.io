@@ -78,11 +78,12 @@ function write(values) {
     response.json().then((resData) => {
       if (response.status == 200) {
         // 만약 글쓰기 저장에 성공한다면
-        document.querySelector("#loading-cover").classList.remove("on"); // 로딩창 끔
-        onSnackbar(resData.message); // 토스트
-        window.writeLatLng = undefined; // 마커 좌표 전역변수 초기화
-
-        location.hash = "";
+        setTimeout(() => {
+          document.querySelector("#loading-cover").classList.remove("on"); // 로딩창 끔
+          onSnackbar(resData.message); // 토스트
+          window.writeLatLng = undefined; // 마커 좌표 전역변수 초기화
+          location.hash = "";
+        }, 5000)
       } else {
         onSnackbar("Error");
       }
