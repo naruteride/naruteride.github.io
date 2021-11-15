@@ -13,9 +13,18 @@ export function postEventsInit() {
       .doc(location.hash.split(":")[1])
       .get()
       .then((doc) => {
-        let data = doc.data();
+        if (location.hash.indexOf("/* 여기에 이상한 값 */")) {
+          bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
+          bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
+        } else if (location.hash.indexOf("/* 여기에 이상한 값 */")) {
+          bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
+          bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
+        } else {
+          bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
+          bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
+        }
 
-        bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
+
         bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         bottomDrawer.querySelector(".nickname").innerText = "@" + data.nickname; // 작성자
         bottomDrawer.querySelector(".post-date").innerText = timeConverter(
