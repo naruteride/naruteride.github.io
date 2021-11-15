@@ -149,6 +149,6 @@
 #comment>section {
     display: hidden;
 }
-#comment>section .on {
+#comment>section.on {
     display: unset;
 }
