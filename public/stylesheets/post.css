@@ -145,3 +145,10 @@
 #write-submit {
     margin-top: auto;
 }
+
+#comment>section {
+    display: hidden;
+}
+#comment>section .on {
+    display: unset;
+}

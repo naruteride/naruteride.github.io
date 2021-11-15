@@ -23,10 +23,12 @@ export function postEventsInit() {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
           bottomDrawer.querySelector("#post-summary-information>img").src = "https://i.ytimg.com/vi/xfJPCenjZzY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuVutkCsFnsKo7YYa35AO6r2HjmQ"
           bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/xfJPCenjZzY";
+          bottomDrawer.querySelector(".text-me").classList.add("on");
         } else if (location.hash == "#post:adC5370lnrsWVT2cmWJn") {
           bottomDrawer.querySelector(".title>b").innerText = "10,000 hour"; // 곡 이름
           bottomDrawer.querySelector("#post-summary-information>img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
           bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/epYR4Bb3G7w";
+          bottomDrawer.querySelector(".10000").classList.add("on");
         } else if (location.hash == "#post:uTIcsjJpCLysr57eCem5") {
           bottomDrawer.querySelector(".title>b").innerText = "Coin"; // 곡 이름
           bottomDrawer.querySelector("#post-summary-information>img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q" // 엘범 표지
