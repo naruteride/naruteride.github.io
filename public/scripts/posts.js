@@ -81,7 +81,7 @@ export function postsEventsInit() {
           } else {
             postElement.querySelector("img").src =
               "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
-              postElement.querySelector("h5").innerText = LILAC; // 노래 제목
+              postElement.querySelector("h5").innerText = "LILAC"; // 노래 제목
           }
 
 
