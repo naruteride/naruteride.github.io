@@ -12,7 +12,7 @@ export function postsEventsInit() {
     bottomDrawerEventInit(bottomDrawer);
 
     db.collection("posts")
-      .orderBy("date"/*, "desc"*/)
+      .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
