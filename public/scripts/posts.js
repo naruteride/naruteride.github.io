@@ -69,9 +69,9 @@ export function postsEventsInit() {
           } else if (doc.id == "JGQ5J9GgfpG8VG5B2Fp9") {
             postElement.querySelector("img").src = "https://i.ytimg.com/vi/nM0xDI5R50E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC54rlu0sCI-33MNxWaZYuGolYCJQ"
             postElement.querySelector("h5").innerText = "삐삐"; // 노래 제목
-          } else if (doc.id == "") {
-            postElement.querySelector("img").src = ""
-            postElement.querySelector("h5").innerText = ""; // 노래 제목
+          } else if (doc.id == "SB11jNxC3DOxie3tv4AL") {
+            postElement.querySelector("img").src = "https://i.ytimg.com/vi/EtiPbWzUY9o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnd7v7TLYMxoZa9gLo7H-9myff5Q"
+            postElement.querySelector("h5").innerText = "낙하"; // 노래 제목
           } else if (doc.id == "") {
             postElement.querySelector("img").src = ""
             postElement.querySelector("h5").innerText = ""; // 노래 제목

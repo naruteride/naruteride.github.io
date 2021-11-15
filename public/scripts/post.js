@@ -39,12 +39,13 @@ export function postEventsInit() {
           bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         } else if (location.hash == "#post:JGQ5J9GgfpG8VG5B2Fp9") {
           bottomDrawer.querySelector(".title>b").innerText = "삐삐"; // 곡 이름
-          bottomDrawer.querySelector("#post-summary-information>img").src = "JGQ5J9GgfpG8VG5B2Fp9" // 엘범 표지
+          bottomDrawer.querySelector("#post-summary-information>img").src = "https://i.ytimg.com/vi/nM0xDI5R50E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC54rlu0sCI-33MNxWaZYuGolYCJQ" // 엘범 표지
           bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/nM0xDI5R50E";
-        } else if (location.hash == "#post:ㄹㄹㄹㄹㄹㄹㄹㄹ") {
-          bottomDrawer.querySelector(".title>b").innerText = ""; // 곡 이름
-          bottomDrawer.querySelector("#post-summary-information>img").src = "" // 엘범 표지
-          bottomDrawer.querySelector("iframe").src = "";
+          document.querySelectorAll(".beep").classList.add("on") // 댓글
+        } else if (location.hash == "#post:SB11jNxC3DOxie3tv4AL") {
+          bottomDrawer.querySelector(".title>b").innerText = "낙하"; // 곡 이름
+          bottomDrawer.querySelector("#post-summary-information>img").src = "https://i.ytimg.com/vi/EtiPbWzUY9o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnd7v7TLYMxoZa9gLo7H-9myff5Q" // 엘범 표지
+          bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/EtiPbWzUY9o";
         } else if (location.hash == "#post:ㄹㄹㄹㄹㄹㄹㄹㄹ") {
           bottomDrawer.querySelector(".title>b").innerText = ""; // 곡 이름
           bottomDrawer.querySelector("#post-summary-information>img").src = "" // 엘범 표지
