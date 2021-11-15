@@ -37,7 +37,11 @@ export function postEventsInit() {
           bottomDrawer.querySelector("#post-summary-information>img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q" // 엘범 표지
           bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/86BST8NIpNM";
           bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
-        } else if (location.hash == "#post:ㄹㄹㄹㄹㄹㄹㄹㄹㄹ") {
+        } else if (location.hash == "#post:JGQ5J9GgfpG8VG5B2Fp9") {
+          bottomDrawer.querySelector(".title>b").innerText = "삐삐"; // 곡 이름
+          bottomDrawer.querySelector("#post-summary-information>img").src = "JGQ5J9GgfpG8VG5B2Fp9" // 엘범 표지
+          bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/nM0xDI5R50E";
+        } else if (location.hash == "#post:ㄹㄹㄹㄹㄹㄹㄹㄹ") {
           bottomDrawer.querySelector(".title>b").innerText = ""; // 곡 이름
           bottomDrawer.querySelector("#post-summary-information>img").src = "" // 엘범 표지
           bottomDrawer.querySelector("iframe").src = "";

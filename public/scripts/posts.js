@@ -66,16 +66,16 @@ export function postsEventsInit() {
           } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
             postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
             postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
-          } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
+          } else if (doc.id == "JGQ5J9GgfpG8VG5B2Fp9") {
+            postElement.querySelector("img").src = "https://i.ytimg.com/vi/nM0xDI5R50E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC54rlu0sCI-33MNxWaZYuGolYCJQ"
+            postElement.querySelector("h5").innerText = "삐삐"; // 노래 제목
+          } else if (doc.id == "") {
             postElement.querySelector("img").src = ""
             postElement.querySelector("h5").innerText = ""; // 노래 제목
-          } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
+          } else if (doc.id == "") {
             postElement.querySelector("img").src = ""
             postElement.querySelector("h5").innerText = ""; // 노래 제목
-          } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
-            postElement.querySelector("img").src = ""
-            postElement.querySelector("h5").innerText = ""; // 노래 제목
-          } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
+          } else if (doc.id == "") {
             postElement.querySelector("img").src = ""
             postElement.querySelector("h5").innerText = ""; // 노래 제목
           } else {
