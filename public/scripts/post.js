@@ -15,28 +15,20 @@ export function postEventsInit() {
       .then((doc) => {
         if (location.hash.indexOf("o0hO0mdcKkGwu35M6xNJ")) {
           bottomDrawer.querySelector(".title>b").innerText = "사계"; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + "IU"; // 가수
         } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + "DPR LIVE"; // 가수
         } else if (location.hash.indexOf("adC5370lnrsWVT2cmWJn")) {
           bottomDrawer.querySelector(".title>b").innerText = "10,000 hour"; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + "Ella mai"; // 가수
         } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + "DPR LIVE"; // 가수
         } else if (location.hash.indexOf("uTIcsjJpCLysr57eCem5")) {
           bottomDrawer.querySelector(".title>b").innerText = "Coin"; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + "IU"; // 가수
         } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + "DPR LIVE"; // 가수
         } else {
           bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
-          bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         }
-
-
+        
         bottomDrawer.querySelector(".title>i").innerText = "- " + data.singer; // 가수
         bottomDrawer.querySelector(".nickname").innerText = "@" + data.nickname; // 작성자
         bottomDrawer.querySelector(".post-date").innerText = timeConverter(
