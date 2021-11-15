@@ -19,11 +19,11 @@ export function postEventsInit() {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
         } else if (location.hash.indexOf("adC5370lnrsWVT2cmWJn")) {
           bottomDrawer.querySelector(".title>b").innerText = "10,000 hour"; // 곡 이름
-        } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
-          bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
         } else if (location.hash.indexOf("uTIcsjJpCLysr57eCem5")) {
           bottomDrawer.querySelector(".title>b").innerText = "Coin"; // 곡 이름
-        } else if (location.hash.indexOf("R61CZyL9mD791Vz1hJFs")) {
+        } else if (location.hash.indexOf("uTIcsjJpCLysr57eCem5")) {
+          bottomDrawer.querySelector(".title>b").innerText = "Coin"; // 곡 이름
+        } else if (location.hash.indexOf("fffffffffffffff")) {
           bottomDrawer.querySelector(".title>b").innerText = "text me"; // 곡 이름
         } else {
           bottomDrawer.querySelector(".title>b").innerText = data.nickname; // 곡 이름
