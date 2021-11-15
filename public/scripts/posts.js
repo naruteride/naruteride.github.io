@@ -61,7 +61,7 @@ export function postsEventsInit() {
           postElement.querySelector(".nickname").innerText =
             "@" + data.nickname; // 닉네임
           postElement.querySelector(".heart-point").innerText = data.heartPoint; // 하트 개수
-          postElement.querySelector(".comments-number").innerText = "2"; // 댓글 개수
+          postElement.querySelector(".comments-number").innerText = "0"; // 댓글 개수
 
           document.querySelector("#post-board").appendChild(postElement);
           postElement = postElement.cloneNode(true);
