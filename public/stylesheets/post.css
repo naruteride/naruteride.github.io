@@ -147,7 +147,7 @@
 }
 
 #comment>section {
-    display: hidden;
+    display: none;
 }
 #comment>section.on {
     display: unset;
