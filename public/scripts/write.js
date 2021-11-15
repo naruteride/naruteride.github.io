@@ -83,7 +83,7 @@ function write(values) {
           onSnackbar(resData.message); // 토스트
           window.writeLatLng = undefined; // 마커 좌표 전역변수 초기화
           location.hash = "";
-        }, 5000)
+        }, 2000)
       } else {
         onSnackbar("Error");
       }
