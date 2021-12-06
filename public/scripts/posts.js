@@ -3,7 +3,7 @@ import { postEventsInit } from "./post.js";
 import { writeEventsInit } from "./write.js";
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
-export async function postsEventsInit() {
+export function postsEventsInit() {
   new Promise((resolve, reject) => {
     bottomDrawer.innerHTML = postsHTML;
 
@@ -11,7 +11,7 @@ export async function postsEventsInit() {
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
     
-    await db.collection("posts")
+    db.collection("posts")
       .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
@@ -52,7 +52,7 @@ export async function postsEventsInit() {
 
           postElement.href = "#post:" + doc.id;
 
-          await data.song.get().then((songDoc) => {
+          data.song.get().then((songDoc) => {
             let songData = songDoc.data();
             console.log("송 도큐먼트: " + songDoc);
             console.log("송 데이터: " + songData);
