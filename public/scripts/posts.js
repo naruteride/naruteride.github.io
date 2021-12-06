@@ -54,35 +54,44 @@ export function postsEventsInit() {
 
 
           postElement.href = "#post:" + doc.id;
-          if (doc.id == "o0hO0mdcKkGwu35M6xNJ") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
-            postElement.querySelector("h5").innerText = "사계"; // 노래 제목
-          } else if (doc.id == "R61CZyL9mD791Vz1hJFs") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/xfJPCenjZzY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuVutkCsFnsKo7YYa35AO6r2HjmQ"
-            postElement.querySelector("h5").innerText = "text me"; // 노래 제목
-          } else if (doc.id == "adC5370lnrsWVT2cmWJn") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/epYR4Bb3G7w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASfqWshs9h-kg247DHky5xOAvMoA"
-            postElement.querySelector("h5").innerText = "10,000 hour"; // 노래 제목
-          } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
-            postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
-          } else if (doc.id == "JGQ5J9GgfpG8VG5B2Fp9") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/nM0xDI5R50E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC54rlu0sCI-33MNxWaZYuGolYCJQ"
-            postElement.querySelector("h5").innerText = "삐삐"; // 노래 제목
-          } else if (doc.id == "SB11jNxC3DOxie3tv4AL") {
-            postElement.querySelector("img").src = "https://i.ytimg.com/vi/EtiPbWzUY9o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnd7v7TLYMxoZa9gLo7H-9myff5Q"
-            postElement.querySelector("h5").innerText = "낙하"; // 노래 제목
-          } else if (doc.id == "") {
-            postElement.querySelector("img").src = ""
-            postElement.querySelector("h5").innerText = ""; // 노래 제목
-          } else if (doc.id == "") {
-            postElement.querySelector("img").src = ""
-            postElement.querySelector("h5").innerText = ""; // 노래 제목
-          } else {
-            postElement.querySelector("img").src =
-              "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
-              postElement.querySelector("h5").innerText = "LILAC"; // 노래 제목
-          }
+
+          doc.song.get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              postElement.querySelector("img").src = "https://img.youtube.com/vi/" + doc.linkCode + "/0.jpg"; // 썸네일
+              postElement.querySelector("h5").innerText = doc.title; // 노래 제목
+            })
+          })
+
+
+          // if (doc.id == "o0hO0mdcKkGwu35M6xNJ") {
+          //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
+          //   postElement.querySelector("h5").innerText = "사계"; // 노래 제목
+          // } else if (doc.id == "R61CZyL9mD791Vz1hJFs") {
+          //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/xfJPCenjZzY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuVutkCsFnsKo7YYa35AO6r2HjmQ"
+          //   postElement.querySelector("h5").innerText = "text me"; // 노래 제목
+          // } else if (doc.id == "adC5370lnrsWVT2cmWJn") {
+          //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/epYR4Bb3G7w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASfqWshs9h-kg247DHky5xOAvMoA"
+          //   postElement.querySelector("h5").innerText = "10,000 hour"; // 노래 제목
+          // } else if (doc.id == "uTIcsjJpCLysr57eCem5") {
+          //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/86BST8NIpNM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD97smoWGq_cUtP8CnHcxX6dB0y2Q"
+          //   postElement.querySelector("h5").innerText = "Coin"; // 노래 제목
+          // } else if (doc.id == "JGQ5J9GgfpG8VG5B2Fp9") {
+          //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/nM0xDI5R50E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC54rlu0sCI-33MNxWaZYuGolYCJQ"
+          //   postElement.querySelector("h5").innerText = "삐삐"; // 노래 제목
+          // } else if (doc.id == "SB11jNxC3DOxie3tv4AL") {
+          //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/EtiPbWzUY9o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnd7v7TLYMxoZa9gLo7H-9myff5Q"
+          //   postElement.querySelector("h5").innerText = "낙하"; // 노래 제목
+          // } else if (doc.id == "") {
+          //   postElement.querySelector("img").src = ""
+          //   postElement.querySelector("h5").innerText = ""; // 노래 제목
+          // } else if (doc.id == "") {
+          //   postElement.querySelector("img").src = ""
+          //   postElement.querySelector("h5").innerText = ""; // 노래 제목
+          // } else {
+          //   postElement.querySelector("img").src =
+          //     "https://i.ytimg.com/vi/v7bnOxV4jAc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-BbrAziLeGuA-10-FgEtym6bppQ";
+          //     postElement.querySelector("h5").innerText = "LILAC"; // 노래 제목
+          // }
 
 
 
