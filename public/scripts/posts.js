@@ -55,7 +55,7 @@ export function postsEventsInit() {
 
           postElement.href = "#post:" + doc.id;
 
-          doc.song.get().then((querySnapshot) => {
+          data.song.get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               postElement.querySelector("img").src = "https://img.youtube.com/vi/" + doc.linkCode + "/0.jpg"; // 썸네일
               postElement.querySelector("h5").innerText = doc.title; // 노래 제목
