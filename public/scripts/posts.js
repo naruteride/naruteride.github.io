@@ -10,12 +10,13 @@ export function postsEventsInit() {
     resolve();
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
-    
+
     db.collection("posts")
       .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+          let postElement = postTemplate.cloneNode(true);
           let data = doc.data();
 
           // 날짜
@@ -59,7 +60,6 @@ export function postsEventsInit() {
             console.log("송 데이터: " + songData);
             console.log("링크 코드: " + songData.linkCode);
             console.log("제목: " + songData.title);
-
             postElement.querySelector("img").src =
               "https://img.youtube.com/vi/" + songData.linkCode + "/0.jpg"; // 썸네일
             postElement.querySelector("h5").innerText = songData.title; // 노래 제목
@@ -106,18 +106,17 @@ export function postsEventsInit() {
             data.comments; // 댓글 개수
 
           document.querySelector("#post-board").appendChild(postElement);
-          postElement = postElement.cloneNode(true);
         });
       });
   });
 }
 
-let postElement = document.createElement("a");
-postElement.classList.add("list-group-item", "list-group-item-action");
-postElement.setAttribute("aria-current", "true");
+let postTemplate = document.createElement("a");
+postTemplate.classList.add("list-group-item", "list-group-item-action");
+postTemplate.setAttribute("aria-current", "true");
 
-postElement.innerHTML = `
-<img src="">
+postTemplate.innerHTML = `
+<img>
 <div class="d-flex justify-content-between">
 <h5 class="mb-1 text-ellipsis"></h5>
 <small class="post-date"> days ago</small>
