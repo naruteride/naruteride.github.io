@@ -3,15 +3,15 @@ import { postEventsInit } from "./post.js";
 import { writeEventsInit } from "./write.js";
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
-export function postsEventsInit() {
+export async function postsEventsInit() {
   new Promise((resolve, reject) => {
     bottomDrawer.innerHTML = postsHTML;
 
     resolve();
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
-
-    db.collection("posts")
+    
+    await db.collection("posts")
       .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
@@ -52,10 +52,14 @@ export function postsEventsInit() {
 
           postElement.href = "#post:" + doc.id;
 
-          data.song.get().then((doc) => {
+          await data.song.get().then((songDoc) => {
+            let songData = songDoc.data();
+            console.log("송 도큐먼트: " + songDoc);
+            console.log("송 데이터: " + songData);
+
             postElement.querySelector("img").src =
-              "https://img.youtube.com/vi/" + doc.linkCode + "/0.jpg"; // 썸네일
-            postElement.querySelector("h5").innerText = doc.title; // 노래 제목
+              "https://img.youtube.com/vi/" + songData.linkCode + "/0.jpg"; // 썸네일
+            postElement.querySelector("h5").innerText = songData.title; // 노래 제목
           });
 
           // if (doc.id == "o0hO0mdcKkGwu35M6xNJ") {
