@@ -50,18 +50,13 @@ export function postsEventsInit() {
             postDateElement.innerText = timeConverter(postDateToMillis);
           }
 
-
-
-
           postElement.href = "#post:" + doc.id;
 
-          data.song.get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              postElement.querySelector("img").src = "https://img.youtube.com/vi/" + doc.linkCode + "/0.jpg"; // 썸네일
-              postElement.querySelector("h5").innerText = doc.title; // 노래 제목
-            })
-          })
-
+          data.song.get().then((doc) => {
+            postElement.querySelector("img").src =
+              "https://img.youtube.com/vi/" + doc.linkCode + "/0.jpg"; // 썸네일
+            postElement.querySelector("h5").innerText = doc.title; // 노래 제목
+          });
 
           // if (doc.id == "o0hO0mdcKkGwu35M6xNJ") {
           //   postElement.querySelector("img").src = "https://i.ytimg.com/vi/4HG_CJzyX6A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlcukfnsci9YDW1gjPNg1802v9fQ"
@@ -93,9 +88,6 @@ export function postsEventsInit() {
           //     postElement.querySelector("h5").innerText = "LILAC"; // 노래 제목
           // }
 
-
-
-
           postElement.querySelector("p").innerText = data.content.replaceAll(
             "\r\n",
             "  "
@@ -103,7 +95,8 @@ export function postsEventsInit() {
           postElement.querySelector(".nickname").innerText =
             "@" + data.nickname; // 닉네임
           postElement.querySelector(".heart-point").innerText = data.heartPoint; // 하트 개수
-          postElement.querySelector(".comments-number").innerText = data.comments; // 댓글 개수
+          postElement.querySelector(".comments-number").innerText =
+            data.comments; // 댓글 개수
 
           document.querySelector("#post-board").appendChild(postElement);
           postElement = postElement.cloneNode(true);
