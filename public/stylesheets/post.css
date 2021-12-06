@@ -60,6 +60,7 @@
 
 #bottom-drawer>section:nth-child(2)>.content>iframe {
     width: 100%;
+    height: 70px;
     margin: 2rem 0;
 }
 
