@@ -56,12 +56,8 @@ export function postsEventsInit() {
 
           // 곡 참조
           data.song.get().then((songDoc) => {
-            console.log("송 아이디: " + songDoc.id);
-
             let songData = songDoc.data();
-            console.log("송 데이터: " + songData);
-            console.log("링크 코드: " + songData.linkCode);
-            console.log("제목: " + songData.title);
+            
             postElement.querySelector("img").src =
               "https://img.youtube.com/vi/" + songData.linkCode + "/0.jpg"; // 썸네일
             postElement.querySelector("h5").innerText = songData.title; // 곡 제목

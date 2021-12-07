@@ -20,9 +20,6 @@ export function postEventsInit() {
           console.log("송 아이디: " + songDoc.id);
 
           let songData = songDoc.data();
-          console.log("송 데이터: " + songData);
-          console.log("링크 코드: " + songData.linkCode);
-          console.log("제목: " + songData.title);
 
           // 썸네일
           bottomDrawer.querySelector("#post-summary-information>img").src =
