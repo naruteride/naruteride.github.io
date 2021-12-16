@@ -149,7 +149,3 @@ body {
 #loading-cover.on {
     display: flex;
 }
-
-#album-search {
-    position: fixed;
-}

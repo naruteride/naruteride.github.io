@@ -9,6 +9,18 @@ export function postEventsInit() {
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
 
+    // 좋아요 버튼
+    bottomDrawer.querySelector("#likeit").addEventListener("click", () => {
+      db.collection("posts")
+        .doc(location.hash.split(":")[1])
+        .update({
+          heartPoint: firebase.firestore.FieldValue.increment(1)
+        });
+      let haertPointElement = bottomDrawer.querySelector(".heart-point");
+      haertPointElement.innerText += haertPointElement.innerText;
+    });
+
+    // 게시글 생성
     db.collection("posts")
       .doc(location.hash.split(":")[1])
       .get()
@@ -29,11 +41,12 @@ export function postEventsInit() {
           bottomDrawer.querySelector(".title>b").innerText = songData.title;
 
           // 아티스트
-          bottomDrawer.querySelector(".title>i").innerText = "- " + songData.artist;
+          bottomDrawer.querySelector(".title>i").innerText =
+            "- " + songData.artist;
 
           // iframe
-          bottomDrawer.querySelector("iframe").src = "https://www.youtube.com/embed/" + songData.linkCode;
-
+          bottomDrawer.querySelector("iframe").src =
+            "https://www.youtube.com/embed/" + songData.linkCode;
         });
 
         if (location.hash == "#post:o0hO0mdcKkGwu35M6xNJ") {
