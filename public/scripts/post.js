@@ -17,7 +17,7 @@ export function postEventsInit() {
           heartPoint: firebase.firestore.FieldValue.increment(1)
         });
       let haertPointElement = bottomDrawer.querySelector(".heart-point");
-      haertPointElement.innerText += haertPointElement.innerText;
+      haertPointElement.innerText = parseInt(haertPointElement.innerText) + 1;
     });
 
     // 게시글 생성
