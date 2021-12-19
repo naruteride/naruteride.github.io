@@ -14,28 +14,32 @@ export function postEventsInit() {
     // 좋아요 버튼 누름
     bottomDrawer.querySelector("#likeit").addEventListener("click", () => {
       // 쿠키의 liked에 이미 좋아요를 눌렀는지 검사함
-      let likedPostIDs = document.cookie
-        .split("; ")
-        .find((value) => value == "liked") || [];
+      let likedPostIDs =
+        document.cookie.split("; ").find((value) => value == "liked") || [];
+
+      console.log("likedPostIDs: " + likedPostIDs);
 
       for (let likedPostID of likedPostIDs) {
+        console.log("likedPostID in 'for of': " + likedPostID);
         if (likedPostID == postID) {
           onSnackbar("하루에 한 번만 좋아요를 누를 수 있습니다.");
-        } else {
-          db.collection("posts")
-            .doc(location.hash.split(":")[1])
-            .update({
-              heartPoint: firebase.firestore.FieldValue.increment(1),
-            });
-
-          let haertPointElement = bottomDrawer.querySelector(".heart-point");
-          haertPointElement.innerText =
-            parseInt(haertPointElement.innerText) + 1;
-
-          // 쿠키의 liked에 현재 포스트 ID 추가
-          document.cookie = "liked:" + [...likedPostIDs, postID];
+          return;
         }
       }
+
+      db.collection("posts")
+        .doc(location.hash.split(":")[1])
+        .update({
+          heartPoint: firebase.firestore.FieldValue.increment(1),
+        });
+
+      let haertPointElement = bottomDrawer.querySelector(".heart-point");
+      haertPointElement.innerText = parseInt(haertPointElement.innerText) + 1;
+
+      // 쿠키의 liked에 현재 포스트 ID 추가
+      document.cookie = "liked:" + [...likedPostIDs, postID];
+      console.log([...likedPostIDs, postID]);
+      console.log(...likedPostIDs, postID);
     });
 
     // 게시글 노출
