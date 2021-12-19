@@ -14,7 +14,10 @@ export function postEventsInit() {
     // 좋아요 버튼 누름
     bottomDrawer.querySelector("#likeit").addEventListener("click", () => {
       // 쿠키의 liked에 이미 좋아요를 눌렀는지 검사함
-      let likedPostIDs = document.cookie.split("; ").find((value) => value == "liked");
+      let likedPostIDs = document.cookie
+        .split("; ")
+        .find((value) => value == "liked") || [];
+
       for (let likedPostID of likedPostIDs) {
         if (likedPostID == postID) {
           onSnackbar("하루에 한 번만 좋아요를 누를 수 있습니다.");
