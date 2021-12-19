@@ -2,6 +2,8 @@ import { bottomDrawer, postHTML } from "./index.js";
 import { bottomDrawerEventInit } from "./bottom-drawer.js";
 
 export function postEventsInit() {
+  let postID = location.hash.split(":")[1];
+
   new Promise((resolve, reject) => {
     bottomDrawer.innerHTML = postHTML;
 
@@ -9,20 +11,33 @@ export function postEventsInit() {
   }).then(() => {
     bottomDrawerEventInit(bottomDrawer);
 
-    // 좋아요 버튼
+    // 좋아요 버튼 누름
     bottomDrawer.querySelector("#likeit").addEventListener("click", () => {
-      db.collection("posts")
-        .doc(location.hash.split(":")[1])
-        .update({
-          heartPoint: firebase.firestore.FieldValue.increment(1)
-        });
-      let haertPointElement = bottomDrawer.querySelector(".heart-point");
-      haertPointElement.innerText = parseInt(haertPointElement.innerText) + 1;
+      // 쿠키의 liked에 이미 좋아요를 눌렀는지 검사함
+      let likedPostIDs = document.cookie.split("; ").find((value) => value == "liked");
+      for (let likedPostID of likedPostIDs) {
+        if (likedPostID == postID) {
+          onSnackbar("하루에 한 번만 좋아요를 누를 수 있습니다.");
+        } else {
+          db.collection("posts")
+            .doc(location.hash.split(":")[1])
+            .update({
+              heartPoint: firebase.firestore.FieldValue.increment(1),
+            });
+
+          let haertPointElement = bottomDrawer.querySelector(".heart-point");
+          haertPointElement.innerText =
+            parseInt(haertPointElement.innerText) + 1;
+
+          // 쿠키의 liked에 현재 포스트 ID 추가
+          document.cookie = "liked:" + [...likedPostIDs, postID];
+        }
+      }
     });
 
-    // 게시글 생성
+    // 게시글 노출
     db.collection("posts")
-      .doc(location.hash.split(":")[1])
+      .doc(postID)
       .get()
       .then((doc) => {
         let data = doc.data();
@@ -85,4 +100,14 @@ function timeConverter(UNIX_timestamp) {
   let date = a.getDate();
   var time = year + ". " + month + ". " + date + ".";
   return time;
+}
+
+// 스낵바 함수
+function onSnackbar(message) {
+  snackbar.innerText = message;
+  snackbar.classList.add("show");
+
+  setTimeout(() => {
+    snackbar.classList.remove("show");
+  }, 3000);
 }

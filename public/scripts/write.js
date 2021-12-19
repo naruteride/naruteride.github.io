@@ -12,12 +12,6 @@ export function writeEventsInit() {
     .then(() => {
       bottomDrawerEventInit(bottomDrawer);
 
-      // 만약 음악 검색 버튼을 누른다면, 음악 검색 함수를 실행시킴
-      // let albumNameElement = bottomDrawer.querySelector(".album-name");
-      // albumNameElement.querySelector("button").addEventListener("click", (e) => {
-      //   searchMusic(albumNameElement.querySelector("input").value);
-      // })
-
       // 만약 글쓰기 form의 submit이 동작한다면, 해당 form에 formdata이벤트를 발생시킴
       let writeForm = bottomDrawer.querySelector("#write-form");
       writeForm.addEventListener("submit", (e) => {
