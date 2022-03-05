@@ -1,11 +1,20 @@
 :root {
-    --point-color: #00b5e2;
+    --point-color: #6B63FF;
+    --icon-color: #4A31A9;
+    --text-color: #473493;
+    --sub-text-color: #A399C9;
+    --background-color: #E8E6FF;
 }
 
 body {
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden auto;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 a {
@@ -71,52 +80,6 @@ hr {
     color: var(--point-color);
 }
 
-#login-background {
-    width: 100vw;
-    height: 100vh;
-    background-color: antiquewhite;
-}
-
-#login-background>div {
-    margin-top: 17vh;
-    height: 25vh;
-    background: rgb(100, 149, 237)/*url("../images/Funktasy_Plugin_Guitar_Bass_Amp_vs_Real_Amps.jpg") center/cover no-repeat*/
-    ;
-}
-
-.card {
-    background-color: transparent;
-}
-
-.card-header {
-    /* background-color: rgba(255, 255, 255, 0.75); */
-    background-color: rgb(235, 235, 235);
-    backdrop-filter: blur(2px);
-}
-
-#login-card {
-    height: 50%;
-    min-height: 400px;
-    max-height: 450px;
-    width: 100%;
-    max-width: 670px;
-}
-
-#signup-card {
-    height: 65%;
-    min-height: 450px;
-    max-height: 550px;
-    width: 100%;
-    max-width: 670px;
-}
-
-#auth-card {
-    height: 45%;
-    min-height: 370px;
-    max-height: 420px;
-    width: 100%;
-    max-width: 670px;
-}
 
 .outline-none {
     outline: none;
