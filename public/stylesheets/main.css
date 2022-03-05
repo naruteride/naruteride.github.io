@@ -1,186 +1,197 @@
+@font-face {
+  font-family: "GodoM";
+  src: url("../fonts/GodoM.ttf");
+}
+@font-face {
+  font-family: "GodoB";
+  src: url("../fonts/GodoB.ttf");
+}
+
 :root {
-    --point-color: #6B63FF;
-    --icon-color: #4A31A9;
-    --text-color: #473493;
-    --sub-text-color: #A399C9;
-    --background-color: #E8E6FF;
+  --point-color: #6b63ff;
+  --icon-color: #4a31a9;
+  --text-color: #473493;
+  --sub-text-color: #a399c9;
+  --background-color: #e8e6ff;
+}
+
+* {
+    font-family: "GodoM", sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 400;
-    min-width: 100vw;
-    min-height: 100vh;
-    overflow: hidden auto;
-    color: var(--text-color);
-    background-color: var(--background-color);
+  margin: 0;
+  font-weight: 400;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden auto;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 a {
-    color: var(--point-color);
-    text-decoration: none;
+  color: var(--point-color);
+  text-decoration: none;
 }
 
 img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 hr {
-    width: 100%;
-    margin: 1rem 0;
+  width: 100%;
+  margin: 1rem 0;
 }
 
 .letter-spacing-2 {
-    letter-spacing: -2px;
+  letter-spacing: -2px;
 }
 
-.letter-spacing-2>span {
-    letter-spacing: normal;
+.letter-spacing-2 > span {
+  letter-spacing: normal;
 }
 
 .input-field {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0 0.75rem;
-    height: fit-content;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0 0.75rem;
+  height: fit-content;
 }
 
-.input-field>label {
-    display: block;
-    position: absolute;
-    color: #9e9e9e;
-    top: -0.75rem;
-    left: 0.75rem;
-    font-size: .75rem;
-    cursor: text;
-    transition: .2s all;
+.input-field > label {
+  display: block;
+  position: absolute;
+  color: #9e9e9e;
+  top: -0.75rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  cursor: text;
+  transition: 0.2s all;
 }
 
 .input-underline {
-    height: 3rem;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    padding: 0;
-    font-size: 16px;
-    outline: none;
-    transition: .2s all;
+  height: 3rem;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  padding: 0;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s all;
 }
 
 .input-underline:focus {
-    border-bottom: 1px solid var(--point-color);
-    box-shadow: 0 1px 0 0 var(--point-color);
+  border-bottom: 1px solid var(--point-color);
+  box-shadow: 0 1px 0 0 var(--point-color);
 }
 
-.input-underline:focus+label {
-    color: var(--point-color);
+.input-underline:focus + label {
+  color: var(--point-color);
 }
-
 
 .outline-none {
-    outline: none;
+  outline: none;
 }
 
 .pointer-events-auto {
-    pointer-events: auto !important;
+  pointer-events: auto !important;
 }
 
 .flex-vertical-alignment {
-    display: flex;
-    align-items: center;
-    min-width: 0;
+  display: flex;
+  align-items: center;
+  min-width: 0;
 }
 
 .float-unset {
-    float: unset !important;
+  float: unset !important;
 }
 
 .text-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 
 #snackbar {
-    visibility: hidden;
-    /* Hidden by default. Visible on click */
-    min-width: 250px;
-    /* Set a default minimum width */
-    margin-left: -125px;
-    /* Divide value of min-width by 2 */
-    background-color: #333;
-    /* Black background color */
-    color: #fff;
-    /* White text color */
-    text-align: center;
-    /* Centered text */
-    border-radius: 2px;
-    /* Rounded borders */
-    padding: 16px;
-    /* Padding */
-    position: fixed;
-    /* Sit on top of the screen */
-    z-index: 1;
-    /* Add a z-index if needed */
-    left: 50%;
-    /* Center the snackbar */
-    bottom: 30px;
-    /* 30px from the bottom */
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: -125px;
+  /* Divide value of min-width by 2 */
+  background-color: #333;
+  /* Black background color */
+  color: #fff;
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
 }
 
 /* 스낵바 */
 #snackbar.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 @-webkit-keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
