@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29.246" height="33.263" viewBox="0 0 29.246 33.263">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #4a31a9;
+      }
+
+      .cls-1 {
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke-width: 7px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_199" data-name="그룹 199" transform="translate(-8221.585 -2116.237)">
+    <g id="구성_요소_95_34" data-name="구성 요소 95 – 34" transform="translate(8221.585 2116.593)">
+      <g id="그룹_17" data-name="그룹 17">
+        <line id="선_112" data-name="선 112" class="cls-1" x2="13.514" transform="translate(0 12.67)"/>
+        <g id="타원_63" data-name="타원 63" class="cls-2" transform="translate(0 19.983) rotate(-17)">
+          <ellipse class="cls-3" cx="8.869" cy="6.757" rx="8.869" ry="6.757"/>
+          <ellipse class="cls-4" cx="8.869" cy="6.757" rx="5.369" ry="3.257"/>
+        </g>
+        <line id="선_113" data-name="선 113" class="cls-1" x2="13.514" transform="translate(0 7.602)"/>
+        <line id="선_114" data-name="선 114" class="cls-1" x2="13.514" transform="translate(0 2.534)"/>
+        <line id="선_115" data-name="선 115" class="cls-1" y2="22.805" transform="translate(17.738)"/>
+        <path id="패스_9" data-name="패스 9" class="cls-1" d="M-2121-153.091s7.981-1.683,9.707,5.334-4.881,10.084-4.881,10.084" transform="translate(2138.738 154.437)"/>
+      </g>
+    </g>
+  </g>
+</svg>

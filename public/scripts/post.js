@@ -15,7 +15,9 @@ export function postEventsInit() {
     bottomDrawer.querySelector("#likeit").addEventListener("click", () => {
       // 쿠키의 liked의 배열값을 likedPostIDs에 저장함.
       let likedPostIDs =
-        document.cookie.split("; ").find((value) => value == "liked") || [];
+        document.cookie.split("; ").find((value) => {
+          value
+        }).split(",") || [];
 
       console.log("likedPostIDs: " + likedPostIDs);
 
@@ -45,7 +47,7 @@ export function postEventsInit() {
         haertPointElement.innerText = parseInt(haertPointElement.innerText) + 1;
   
         // 쿠키의 liked에 현재 포스트 ID 추가
-        document.cookie = "liked:" + [...likedPostIDs, postID];
+        document.cookie = "liked=" + [...likedPostIDs, postID];
         console.log("추가 될 데이터: " + [...likedPostIDs, postID]);
       };
 

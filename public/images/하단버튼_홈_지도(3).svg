@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35.018" height="35.018" viewBox="0 0 35.018 35.018">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #473493;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_123" data-name="그룹 123" transform="translate(-170 -70)">
+    <g id="타원_86" data-name="타원 86" class="cls-1" transform="translate(179.772 79.772)">
+      <circle class="cls-2" cx="7.736" cy="7.736" r="7.736"/>
+      <circle class="cls-3" cx="7.736" cy="7.736" r="6.236"/>
+    </g>
+    <g id="타원_87" data-name="타원 87" class="cls-1" transform="translate(174.886 74.886)">
+      <circle class="cls-2" cx="12.623" cy="12.623" r="12.623"/>
+      <circle class="cls-3" cx="12.623" cy="12.623" r="11.123"/>
+    </g>
+    <g id="타원_88" data-name="타원 88" class="cls-1" transform="translate(170 70)">
+      <circle class="cls-2" cx="17.509" cy="17.509" r="17.509"/>
+      <circle class="cls-3" cx="17.509" cy="17.509" r="16.009"/>
+    </g>
+  </g>
+</svg>
