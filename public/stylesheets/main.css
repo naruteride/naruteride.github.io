@@ -43,6 +43,10 @@ hr {
   margin: 1rem 0;
 }
 
+.text-point {
+    color: var(--point-color);
+}
+
 .letter-spacing-2 {
   letter-spacing: -2px;
 }
