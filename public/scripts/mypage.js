@@ -1,0 +1,6 @@
+
+postsEventsInit();
+
+export function postsEventsInit() {
+
+}
