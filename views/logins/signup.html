@@ -29,7 +29,7 @@
 
     <title>뮤집 - 회원가입 (1/2)</title>
 
-    <script src="../../public/scripts/signup.js"></script>
+    <script src="../../public/scripts/logins/signup.js"></script>
   </head>
 
   <body>
@@ -38,7 +38,12 @@
         <img src="../../public/images/로고.svg" alt="로고" />
       </div>
       <div class="title">Mugip 회원가입</div>
-      <form class="form-box" method="post">
+      <form
+        class="form-box"
+        method="post"
+        enctype="application/json"
+        action="http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/signup"
+      >
         <div class="input-container">
           이메일 <input class="text-field" type="email" name="email" />
         </div>
@@ -57,12 +62,9 @@
           <input class="text-field" type="password" />
         </div>
 
-        <button
-          class="btn button signup"
-          href="#"
-        >
-          MUGIP과 함께하기
-        </button>
+        <input type="hidden" name="is_agreed" value="true" />
+
+        <button class="btn button signup" href="#">MUGIP과 함께하기</button>
       </form>
     </div>
   </body>
