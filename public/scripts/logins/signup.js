@@ -71,6 +71,7 @@ function signUp() {
     })
   );
 
+  alert("멈춰!");
   fetch(
     "http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/signup",
     {
