@@ -15,6 +15,14 @@ signUpForm.addEventListener("formdata", (e) => {
 function signUp(values) {
   document.querySelector("#loading-cover").classList.add("on"); // 로딩창
 
+  console.log("사랑해~~~");
+  console.log(JSON.stringify({
+    email: values.get("email"),
+    nickname: values.get("nickname"),
+    password: values.get("password"),
+    is_agreed: values.get("is_agreed"),
+  }))
+
   fetch(
     "http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/signup",
     {
