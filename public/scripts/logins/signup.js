@@ -53,7 +53,7 @@
 // }
 
 // 회원가입 함수
-function signUp(values) {
+function signUp() {
   document.querySelector("#loading-cover").classList.add("on"); // 로딩창
 
   console.log("사랑해~~~");
