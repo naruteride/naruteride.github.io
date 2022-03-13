@@ -1,5 +1,5 @@
 // 만약 글쓰기 form의 submit이 동작한다면, 해당 form에 formdata이벤트를 발생시킴
-let signUpForm = bottomDrawer.querySelector("#SignUp form-box");
+let signUpForm = bottomDrawer.querySelector("#SignUp .form-box");
 signUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
