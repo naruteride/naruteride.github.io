@@ -56,7 +56,7 @@
 function signUp() {
   document.querySelector("#loading-cover").classList.add("on"); // 로딩창
 
-  console.log("사랑해~~~");
+  console.log("회원가입 함수 동작");
   console.log(
     JSON.stringify({
       email: document.querySelector("#SignUp .form-box input[name=email]")
@@ -72,6 +72,7 @@ function signUp() {
   );
 
   alert("멈춰!");
+  
   fetch(
     "http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/signup",
     {
