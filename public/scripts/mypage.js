@@ -1,8 +1,10 @@
-let cardList = document.querySelector("#card-list");
+onload = () => {
+    let cardList = document.querySelector("#card-list");
+    console.log(cardList);
+    cardFetch();
+}
 
-console.log(cardList);
 
-cardFetch();
 
 function cardFetch() {
     return fetch("/views/card.html")
