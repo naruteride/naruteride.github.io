@@ -3,7 +3,7 @@ let cardList = document.querySelector("#card-list");
 cardFetch();
 
 function cardFetch() {
-    return fetch("../card.html")
+    return fetch("../../views/card.html")
     .then((response) => {
         return response.text();
     })
@@ -11,6 +11,6 @@ function cardFetch() {
         cardList.innerHTML = html;
     })
     .catch((err) => {
-        console.warn("Card list fetch went wrong.", err);
+        console.error("Card list fetch went wrong.", err);
     })
 }
