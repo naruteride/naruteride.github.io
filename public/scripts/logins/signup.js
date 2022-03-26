@@ -92,6 +92,7 @@ function signUp() {
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "no-cors",
       },
     }
   ).then((response) => {
