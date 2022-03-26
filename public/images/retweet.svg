@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.8" height="32.8" viewBox="0 0 35.8 32.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #00ab6e;
+        stroke-linecap: round;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        filter: url(#선_230);
+      }
+
+      .cls-3 {
+        filter: url(#선_229);
+      }
+
+      .cls-4 {
+        filter: url(#선_228);
+      }
+
+      .cls-5 {
+        filter: url(#선_227);
+      }
+
+      .cls-6 {
+        filter: url(#선_226);
+      }
+
+      .cls-7 {
+        filter: url(#선_225);
+      }
+
+      .cls-8 {
+        filter: url(#선_224);
+      }
+
+      .cls-9 {
+        filter: url(#선_223);
+      }
+    </style>
+    <filter id="선_223" x="9" y="0" width="23.8" height="24.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_224" x="12" y="0" width="23.8" height="24.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_225" x="12.4" y="0.4" width="20" height="32" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_226" x="7.4" y="12.4" width="25" height="20" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_227" x="3" y="8" width="23.8" height="24.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_228" x="0" y="8" width="23.8" height="24.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_229" x="3.4" y="0.4" width="20" height="32" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="선_230" x="3.4" y="0.4" width="25" height="20" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-8"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="구성_요소_96_4" data-name="구성 요소 96 – 4" transform="translate(10.4 4.4)">
+    <g class="cls-9" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_223-2" data-name="선 223" class="cls-1" x1="3" y2="4" transform="translate(19.4 4.4)"/>
+    </g>
+    <g class="cls-8" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_224-2" data-name="선 224" class="cls-1" x1="3" y1="4" transform="translate(22.4 4.4)"/>
+    </g>
+    <g class="cls-7" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_225-2" data-name="선 225" class="cls-1" y2="12" transform="translate(22.4 4.4)"/>
+    </g>
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_226-2" data-name="선 226" class="cls-1" x1="5" transform="translate(17.4 16.4)"/>
+    </g>
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_227-2" data-name="선 227" class="cls-1" x1="3" y2="4" transform="translate(16.4 16.4) rotate(180)"/>
+    </g>
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_228-2" data-name="선 228" class="cls-1" x1="3" y1="4" transform="translate(13.4 16.4) rotate(180)"/>
+    </g>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_229-2" data-name="선 229" class="cls-1" y2="12" transform="translate(13.4 16.4) rotate(180)"/>
+    </g>
+    <g class="cls-2" transform="matrix(1, 0, 0, 1, -10.4, -4.4)">
+      <line id="선_230-2" data-name="선 230" class="cls-1" x2="5" transform="translate(13.4 4.4)"/>
+    </g>
+  </g>
+</svg>

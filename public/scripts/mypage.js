@@ -3,12 +3,10 @@ let cardList;
 onload = () => {
     cardList = document.querySelector("#card-list");
     console.log(cardList);
-    cardFetch();
+    fetchCard();
 }
 
-
-
-function cardFetch() {
+function fetchCard() {
     return fetch("/views/card.html")
     .then((response) => {
         return response.text();
