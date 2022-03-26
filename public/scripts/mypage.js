@@ -4,6 +4,10 @@ onload = () => {
     cardList = document.querySelector("#card-list");
     console.log(cardList);
     fetchCard();
+
+    document.querySelector(".digging").addEventListener("click", () => {
+        alert("digging");
+    })
 }
 
 function fetchCard() {

@@ -129,7 +129,7 @@ hr {
   display: grid;
   grid-template: 1fr 1fr / 110px 1fr fit-content(120px);
   grid-template-areas:
-    "image  title   retweet"
+    "image  title   digging"
     "image  artist  tag";
 
   position: relative;
@@ -164,8 +164,8 @@ hr {
   font-size: 15px;
   color: var(--sub-text-color);
 }
-.card .retweet {
-  grid-area: retweet;
+.card .digging {
+  grid-area: digging;
   justify-self: end;
 }
 .card .tag {
