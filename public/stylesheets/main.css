@@ -167,6 +167,9 @@ hr {
 .card .digging {
   grid-area: digging;
   justify-self: end;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
 }
 .card .tag {
   grid-area: tag;
