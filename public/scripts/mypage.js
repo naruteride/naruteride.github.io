@@ -3,7 +3,7 @@ let cardList = document.querySelector("#card-list");
 cardFetch();
 
 function cardFetch() {
-    return fetch("../../views/card.html")
+    return fetch("/views/card.html")
     .then((response) => {
         return response.text();
     })
