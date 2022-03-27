@@ -4,10 +4,6 @@ onload = () => {
     cardList = document.querySelector("#card-list");
     console.log(cardList);
     fetchCard();
-
-    document.querySelector(".digging").addEventListener("click", () => {
-        alert("digging");
-    })
 }
 
 function fetchCard() {
@@ -17,6 +13,9 @@ function fetchCard() {
     })
     .then((html) => {
         cardList.innerHTML = html;
+        document.querySelector(".digging").addEventListener("click", () => {
+            alert("digging");
+        })
     })
     .catch((err) => {
         console.error("Card list fetch went wrong.", err);
