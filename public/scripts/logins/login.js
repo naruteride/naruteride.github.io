@@ -1,5 +1,8 @@
 let spotifyButton;
-let state = Math.floor(Math.random() * Math.pow(10, 16));
+let state = Math.floor(Math.random() * Math.pow(10, 16)).toString();
+while (state.length < 16) {
+    state = '0' + state;
+}
 onload = () => {
     spotifyButton = document.querySelector("#spotify-login");
     spotifyButton.addEventListener("click", () => {

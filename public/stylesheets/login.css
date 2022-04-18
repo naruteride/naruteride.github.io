@@ -162,6 +162,10 @@ input.text-field {
   color: var(--point-color);
 }
 
+#spotify-login {
+  background-color: #1ed760;
+  color: #ffffff;
+}
 
 #loading-cover {
   position: fixed;
