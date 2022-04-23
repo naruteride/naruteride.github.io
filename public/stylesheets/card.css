@@ -1,6 +1,7 @@
 .card {
 	display: grid;
-	grid-template: 30px min-content min-content 30px / 24px calc(150 - 24px) 1fr 50px;
+	grid-template-rows: 30px min-content min-content 30px;
+	grid-template-columns: 24px calc(150px - 24px) 1fr 50px;
 	grid-template-areas:
 		"profile-image	writer		writer	."
 		"album-image	album-image	title	digging"
@@ -12,8 +13,11 @@
 	min-height: 200px;
 	height: fit-content;
 	padding: 10px;
-	background-color: #ffffff;
-	box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.1);
+	background-color: linear-gradient(108.49deg, #F568EA 0%, #A49AFF 100%);
+	opacity: 0.8;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	border-radius: 12px;
 }
 
 .card .profile-image {
@@ -23,26 +27,37 @@
 	border-radius: 50%;
 	object-fit: cover;
 }
+
 .card .writer {
 	grid-area: writer;
 	align-self: center;
 	margin-left: 10px;
 	font-size: 16px;
 }
+
 .card .album-image {
 	grid-area: album-image;
 	width: 100%;
 	height: 100%;
 }
+
 .card .title {
 	grid-area: title;
 }
+
 .card .address {
 	grid-area: address;
 }
+
 .card .digging {
 	grid-area: digging;
 }
+
 .card .tags {
 	grid-area: tags;
+}
+
+.tags .tag {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 8px;
 }
