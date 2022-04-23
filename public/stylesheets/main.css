@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
   font-family: "GodoM";
   src: url("../fonts/GodoM.ttf");
 }
 @font-face {
   font-family: "GodoB";
   src: url("../fonts/GodoB.ttf");
-}
+} */
 
 :root {
   --point-color: #6b63ff;
