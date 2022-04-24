@@ -71,7 +71,7 @@
 	display: grid;
 	justify-content: start;
 	column-gap: 8px;
-	grid-template-columns: repeat(auto-fill, minmax(50px, 200px));
+	/* grid-template-row: repeat(auto-fill, minmax(50px, 200px)); */
 }
 
 .tags .tag {
