@@ -45,12 +45,18 @@
 .card .title {
 	grid-area: title;
 	margin-top: 8px;
+	font-size: 20px;
 	vertical-align: bottom
+}
+
+.title .artist {
+	font-size: 15px;
 }
 
 .card .address {
 	grid-area: address;
 	align-self: end;
+	font-size: 11px;
 }
 
 .card .digging {
@@ -66,6 +72,9 @@
 }
 
 .tags .tag {
-	background-color: rgba(255, 255, 255, 0.2);
+	height: 30px;
 	border-radius: 8px;
+	padding: 8px;
+	font-size: 12px;
+	background-color: rgba(255, 255, 255, 0.2);
 }
