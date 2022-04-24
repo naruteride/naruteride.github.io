@@ -62,7 +62,7 @@
 .card .digging {
 	grid-area: digging;
 	align-self: center;
-	width: 40px;
+	width: 100%;
 	padding: 0;
 }
 
