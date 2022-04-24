@@ -38,7 +38,6 @@
 .card .album-image {
 	grid-area: album-image;
 	width: calc(100% - 16px);
-	height: calc(100% - 16px);
 }
 
 .card .title {
