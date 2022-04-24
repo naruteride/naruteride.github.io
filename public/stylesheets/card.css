@@ -71,10 +71,11 @@
 	display: grid;
 	justify-content: start;
 	column-gap: 8px;
-	grid-template-columns: repeat(auto-fill, auto);
+	grid-template-columns: repeat(auto-fill, minmax(50px, 200px));
 }
 
 .tags .tag {
+    width: fit-content;
 	height: 30px;
 	border-radius: 8px;
 	padding: 8px;
