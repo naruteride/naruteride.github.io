@@ -46,7 +46,7 @@
 	grid-area: title;
 	margin-top: 8px;
 	font-size: 20px;
-	line-height: 2em;
+	line-height: 1em;
 }
 
 .title .artist {
@@ -68,6 +68,10 @@
 .card .tags {
 	grid-area: tags;
 	align-self: end;
+	display: grid;
+	justify-content: start;
+	column-gap: 8px;
+	grid-template-columns: repeat(auto-fill, auto);
 }
 
 .tags .tag {
@@ -75,6 +79,7 @@
 	border-radius: 8px;
 	padding: 8px;
 	vertical-align: middle;
+	line-height: 1em;
 	font-size: 12px;
 	background-color: rgba(255, 255, 255, 0.2);
 }
