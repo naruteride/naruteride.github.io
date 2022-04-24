@@ -1,7 +1,7 @@
 .card {
 	display: grid;
-	grid-template-rows: 32px min-content min-content 42px;
-	grid-template-columns: 24px calc(110px - 24px + 16px) 1fr 40px;
+	grid-template-rows: 24px min-content min-content 42px;
+	grid-template-columns: 24px min-content 1fr 40px;
 	grid-template-areas:
 		"profile-image	writer		writer	."
 		"album-image	album-image	title	digging"
@@ -37,7 +37,9 @@
 
 .card .album-image {
 	grid-area: album-image;
-	width: calc(100% - 16px);
+	width: 110px;
+	margin-top: 8px;
+	margin-right: 16px;
 }
 
 .card .title {
