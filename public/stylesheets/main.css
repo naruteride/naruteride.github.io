@@ -26,7 +26,8 @@ body {
   min-height: 100vh;
   overflow: hidden auto;
   color: var(--text-color);
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  background-color: #000000;
 }
 
 a {
