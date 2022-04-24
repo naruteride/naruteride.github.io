@@ -44,6 +44,8 @@
 
 .card .title {
 	grid-area: title;
+	margin-top: 8px;
+	vertical-align: bottom
 }
 
 .card .address {
@@ -56,6 +58,7 @@
 
 .card .tags {
 	grid-area: tags;
+	align-self: end;
 }
 
 .tags .tag {
