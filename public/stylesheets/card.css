@@ -50,10 +50,12 @@
 
 .card .address {
 	grid-area: address;
+	align-self: end;
 }
 
 .card .digging {
 	grid-area: digging;
+	align-self: center;
 }
 
 .card .tags {
