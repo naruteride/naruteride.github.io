@@ -1,0 +1,33 @@
+#feeds {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden auto;
+}
+
+#feeds>.content {
+	display: grid;
+	grid-template: auto / 1fr;
+	place-items: center;
+	align-content: start;
+	width: 100%;
+	padding: 5px;
+	overflow: hidden auto;
+}
+
+#feeds-header {
+	display: grid;
+	width: 100%;
+	height: 68px;
+	background-color: gold;
+}
+
+#card-list {
+	display: grid;
+	grid-template: auto / 1fr;
+	place-items: center;
+	align-content: start;
+	width: 100%;
+	padding: 10px;
+	overflow: hidden auto;
+}
