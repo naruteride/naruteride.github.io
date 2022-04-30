@@ -34,6 +34,13 @@
 	padding: 0;
 }
 
+#feeds-header .my-profile-image>img {
+	object-fit: cover;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: solid 2px #ffffff;
+}
 
 #card-list {
 	display: grid;
