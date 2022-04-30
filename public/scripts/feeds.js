@@ -13,7 +13,7 @@ function fetchCard() {
     .then((html) => {
         cardList.innerHTML = html;
         document.querySelector(".digging").addEventListener("click", () => {
-            alert("digging");
+            // alert("digging");
         })
     })
     .catch((err) => {
