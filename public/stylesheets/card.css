@@ -50,17 +50,23 @@
 	font-size: 20px;
 	font-weight: bold;
 	line-height: 1em;
+	letter-spacing: -1%;
+	color: rgba(255, 255, 255, 0.9);
 }
 
 .title .artist {
 	font-size: 15px;
 	font-weight: normal;
+	letter-spacing: -3.5%;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .card .address {
 	grid-area: address;
 	align-self: end;
 	font-size: 11px;
+	letter-spacing: -3.5%;
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .card .digging {
