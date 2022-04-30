@@ -1,71 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 파비콘 -->
-    <link rel="shortcut icon" href="../../public/images/로고.svg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 부트스트랩 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" href="../../public/images/로고.svg" />
 
-    <!-- 내부 CSS -->
-    <link rel="stylesheet" href="../../public/stylesheets/main.css" />
-    <link rel="stylesheet" href="../../public/stylesheets/mypage.css" />
-    <link rel="stylesheet" href="../../public/stylesheets/card.css" />
+  <!-- 구글 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Work+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
 
-    <!-- 내부 JS -->
-    <script src="../../public/scripts/mypage.js"></script>
+  <!-- 부트스트랩 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
 
-    <title>뮤집 - 마이페이지</title>
-  </head>
+  <!-- 내부 CSS -->
+  <link rel="stylesheet" href="../../public/stylesheets/main.css" />
+  <link rel="stylesheet" href="../../public/stylesheets/mypage.css" />
+  <link rel="stylesheet" href="../../public/stylesheets/card.css" />
 
-  <body>
-    <div id="MyPage">
-      <div class="content">
-        <div id="my-profile-card">
-          <img
-            class="profile-image"
-            src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/09/11/0400040911_18591_02403.gif"
-            alt="프로필 사진"
-          />
-          <div class="id-and-name">
-            <span>@parkjw</span>
-            <span>박주원</span>
-          </div>
-          <button
-            class="btn btn-link button-instargram"
-            href="https://www.instargram.com"
-            aria-label="instargram"
-          >
-            <img src="../../public/images/instargram-icon.png" />
-          </button>
-          <button class="btn button-following">프로필 편집</button>
+  <!-- 내부 JS -->
+  <script src="../../public/scripts/mypage.js"></script>
+
+  <title>뮤집 - 마이페이지</title>
+</head>
+
+<body>
+  <div id="MyPage">
+    <div class="content">
+      <div id="my-profile-card">
+        <img class="profile-image"
+          src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/09/11/0400040911_18591_02403.gif"
+          alt="프로필 사진" />
+        <div class="id-and-name">
+          <span>@parkjw</span>
+          <span>박주원</span>
         </div>
-        <!--<div class="mypage-button">
+        <button class="btn btn-link button-instargram" href="https://www.instargram.com" aria-label="instargram">
+          <img src="../../public/images/instargram-icon.png" />
+        </button>
+        <button class="btn button-following">프로필 편집</button>
+      </div>
+      <!--<div class="mypage-button">
           <button class="btn btn-link">History</button>
           <button class="btn btn-link">Other</button>
         </div>-->
-        <!-- <div id="history"></div> -->
-        <!-- <Other></Other> -->
-        <div id="card-list">
-          
-        </div>
-      </div>
+      <!-- <div id="history"></div> -->
+      <!-- <Other></Other> -->
+      <div id="card-list">
 
-      <div class="parallax-scrolling-background">
-        <img
-          src="https://ww.namu.la/s/195cce22bb9a9a3d3c8336c4a4c59a6a691a6eecf1d289f4b23871e8423f364dca1527a4dbb7b99dd14e77419373443352467a8f72b6a95fb0c786ca822499f6c859939e8c68a34d3779cce785c1b87081963719dadac6ac8dfa3d5c93ac4774"
-          alt="프로필 배경 사진"
-        />
       </div>
     </div>
-  </body>
+
+    <div class="parallax-scrolling-background">
+      <img
+        src="https://ww.namu.la/s/195cce22bb9a9a3d3c8336c4a4c59a6a691a6eecf1d289f4b23871e8423f364dca1527a4dbb7b99dd14e77419373443352467a8f72b6a95fb0c786ca822499f6c859939e8c68a34d3779cce785c1b87081963719dadac6ac8dfa3d5c93ac4774"
+        alt="프로필 배경 사진" />
+    </div>
+  </div>
+</body>
+
 </html>
