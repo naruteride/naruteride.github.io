@@ -1,23 +1,10 @@
-/* @font-face {
-  font-family: "GodoM";
-  src: url("../fonts/GodoM.ttf");
-}
-@font-face {
-  font-family: "GodoB";
-  src: url("../fonts/GodoB.ttf");
-} */
-
-:root {
+/* :root {
 	--point-color: #6b63ff;
 	--icon-color: #4a31a9;
 	--text-color: #473493;
 	--sub-text-color: #a399c9;
 	--background-color: #e8e6ff;
-}
-
-* {
-	font-family: "GodoM", sans-serif;
-}
+} */
 
 body {
 	margin: 0;
@@ -26,8 +13,7 @@ body {
 	min-height: 100vh;
 	overflow: hidden auto;
 	color: var(--text-color);
-	/* background-color: var(--background-color); */
-	background-color: #000000;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(169.42deg, #5A39FF 0%, #000000 48.7%);
 }
 
 a {
