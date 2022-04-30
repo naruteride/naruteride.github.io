@@ -22,11 +22,18 @@
 	width: 100%;
 	height: 68px;
 }
+
 #feeds-header .buttons {
 	display: flex;
 	align-items: center;
+	column-gap: calc(16px);
 	width: fit-content;
 }
+
+#feeds-header .buttons>button {
+	padding: 0;
+}
+
 
 #card-list {
 	display: grid;
