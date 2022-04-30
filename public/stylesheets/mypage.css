@@ -114,6 +114,7 @@
 #card-list {
   display: grid;
   grid-template: auto / 1fr;
+	row-gap: 16px;
   place-items: center;
   align-content: start;
   width: 100%;
