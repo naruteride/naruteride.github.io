@@ -11,7 +11,9 @@ function fetchCard() {
         return response.text();
     })
     .then((html) => {
-        cardList.innerHTML = html;
+        for (let i = 0; i < 3; i++) {
+            cardList.innerAdjacentHTML(beforeend, html);
+        }
         document.querySelector(".digging").addEventListener("click", () => {
             // alert("digging");
         })
