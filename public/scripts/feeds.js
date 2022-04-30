@@ -11,7 +11,7 @@ function fetchCard() {
         return response.text();
     })
     .then((html) => {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             cardList.insertAdjacentHTML("beforeend", html);
         }
         document.querySelector(".digging").addEventListener("click", () => {
