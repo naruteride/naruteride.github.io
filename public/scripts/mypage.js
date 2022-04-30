@@ -2,7 +2,6 @@ let cardList;
 
 onload = () => {
     cardList = document.querySelector("#card-list");
-    console.log(cardList);
     fetchCard();
 }
 
