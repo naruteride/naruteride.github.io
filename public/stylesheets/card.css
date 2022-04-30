@@ -46,11 +46,13 @@
 	grid-area: title;
 	margin-top: 8px;
 	font-size: 20px;
+	font-weight: bold;
 	line-height: 1em;
 }
 
 .title .artist {
 	font-size: 15px;
+	font-weight: normal;
 }
 
 .card .address {
