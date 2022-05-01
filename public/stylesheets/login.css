@@ -28,10 +28,13 @@ body {
 	font-size: 40px;
 }
 
-#login button.spotify {
+#login button.spotify,
+#spotify-login {
 	height: 48px;
 	border-radius: 4px;
 	padding: 10px;
 	font-size: 15px;
+	line-height: 19px;
+	color: #ffffff;
 	background: #1DB954;
 }
