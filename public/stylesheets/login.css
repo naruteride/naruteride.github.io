@@ -24,6 +24,10 @@ body {
 	background-color: rgba(255, 217, 0, 0.154);
 }
 
+#Login img.logo {
+	width: 125.56px;
+}
+
 #Login .catch-phrase {
 	font-size: 40px;
 	font-weight: 700;
