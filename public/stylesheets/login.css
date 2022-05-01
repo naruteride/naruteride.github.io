@@ -32,6 +32,9 @@ body {
 	font-weight: 700;
 	line-height: 50px;
 }
+.catch-phrase>.sns {
+	font-weight: 600;
+}
 
 #login button.spotify,
 #spotify-login {
@@ -44,4 +47,10 @@ body {
 	line-height: 19px;
 	color: #ffffff;
 	background: #1DB954;
+}
+
+#spotify-login>img {
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
 }
