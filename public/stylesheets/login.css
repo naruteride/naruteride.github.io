@@ -26,15 +26,18 @@ body {
 
 #Login .catch-phrase {
 	font-size: 40px;
+	font-weight: 700;
+	line-height: 50px;
 }
 
 #login button.spotify,
 #spotify-login {
+	width: 100%;
 	height: 48px;
 	border-radius: 4px;
 	padding: 10px;
 	font-size: 15px;
+	font-weight: 700;
 	line-height: 19px;
-	color: #ffffff;
 	background: #1DB954;
 }
