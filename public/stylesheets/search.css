@@ -10,6 +10,7 @@
     grid-template: auto / 1fr;
     place-items: center;
     align-content: start;
+    row-gap: 9px;
     width: 100%;
     padding: 16px;
     overflow: hidden auto;
@@ -34,6 +35,7 @@
     line-height: 17px;
     background-color: #00000000;
 }
+
 #search-bar>input[type="search"]::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
@@ -43,8 +45,28 @@
     height: fit-content;
     padding: 0;
 }
+
 #search-bar>button>img.off {
     opacity: 0.5;
+}
+
+#search-options {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: stretch;
+    column-gap: 8px;
+}
+
+#search-options>button {
+    flex-grow: 1;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 15px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 #card-list {
