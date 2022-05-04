@@ -45,6 +45,7 @@
     width: fit-content;
     height: fit-content;
     padding: 0;
+    transition: 0.1s;
 }
 
 #search-bar>button>img.off {
