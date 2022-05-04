@@ -17,9 +17,9 @@ onload = () => {
     });
 
 	// 검색 옵션 버튼들
-	searchOptionTag = document.querySelector("#search-option>button.tag");
-	searchOptionUser = document.querySelector("#search-option>button.user");
-	searchOptionSong = document.querySelector("#search-option>button.song");
+	searchOptionTag = document.querySelector("#search-options>button.tag");
+	searchOptionUser = document.querySelector("#search-options>button.user");
+	searchOptionSong = document.querySelector("#search-options>button.song");
 	searchOptionTag.addEventListener("click", (event) => {
 		searchOptionTag.classList.add("on");
 		searchOptionUser.classList.remove("on");
