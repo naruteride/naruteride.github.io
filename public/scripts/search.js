@@ -6,7 +6,7 @@ onload = () => {
     fetchCard();
 
     searchInput = document.querySelector("#search-bar>input[type=search]");
-    searchIcon = document.querySelector("#search-icon>button>img");
+    searchIcon = document.querySelector("#search-bar>button>img");
     searchInput.addEventListener("focus", (event) => {
         searchIcon.classList.remove("off");
     }, true);
