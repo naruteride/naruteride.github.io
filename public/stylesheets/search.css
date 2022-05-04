@@ -46,10 +46,11 @@
     height: fit-content;
     padding: 0;
 }
-
+#search-bar>button>img {
+    transition: 0.1s;
+}
 #search-bar>button>img.off {
     opacity: 0.5;
-    transition: 0.1s;
 }
 
 #search-options {
