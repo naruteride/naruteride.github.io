@@ -24,6 +24,10 @@ body {
 }
 
 #Login img.logo {
+	width: 65px;
+}
+
+#Login img.text-logo {
 	width: 125.56px;
 }
 
