@@ -109,7 +109,7 @@ iframe#spotify-player {
     position: fixed;
     z-index: 100;
     left: 50%;
-    bottom: 16px;
+    bottom: 2px;
     transform: translateX(-50%);
 }
 
