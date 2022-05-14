@@ -103,8 +103,8 @@ hr {
 
 
 iframe#spotify-player {
-	border-radius: 12px;
-    height: 100px;
+	border-radius: 6px;
+    height: 80px;
     width: calc(100% - 16px * 2);
     position: fixed;
     z-index: 100;
