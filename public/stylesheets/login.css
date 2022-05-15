@@ -40,8 +40,23 @@ body {
 	font-weight: 600;
 }
 
-#login button.spotify,
-#spotify-login {
+#login-group {
+	width: 100%;
+}
+
+button#guest-login {
+	width: 100%;
+	height: 48px;
+	margin-bottom: 8px;
+	border-radius: 4px;
+	padding: 10px;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 19px;
+	background: #ffffff;
+}
+
+button#spotify-login {
 	width: 100%;
 	height: 48px;
 	border-radius: 4px;
@@ -53,7 +68,7 @@ body {
 	background: #1DB954;
 }
 
-#spotify-login>img {
+button#spotify-login>img {
 	width: 24px;
 	height: 24px;
 	margin-right: 8px;
