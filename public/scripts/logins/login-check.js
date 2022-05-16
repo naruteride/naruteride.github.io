@@ -1,10 +1,16 @@
 const urlStr = window.location.href;
 const url = new URL(urlStr);
 
-if (location.hash == "#signup") {
-	fetchSignup();
-} else {
-	fetchLogin();
+switch (location.hash) {
+	case "#signup":
+		fetchSignup();
+		break;
+	case "#guest":
+		fetchGuest();
+		break;
+	default:
+		fetchLogin();
+		break;
 }
 
 onload = () => {
@@ -32,22 +38,27 @@ function fetchLogin() {
 			"Content-type": "application/json; charset=UTF-8",
 		},
 	})
-		.then((response) => {
+		.then(response => {
 			resStatus = response.status;
 			return response.json();
 		})
 		.then(response => {
 			switch (resStatus) {
 				case 200:
-					alert("로그인 성공: " + JSON.stringify(response));
-					// location.hash = "/views/feeds";
+					console.log("로그인 성공: " + JSON.stringify(response));
+
+					window.localStorage.setItem("access_token", response.access_token);
+					window.localStorage.setItem("refresh_token", response.refresh_token);
+					window.localStorage.setItem("social_access_token", response.social_access_token);
+					window.localStorage.setItem("social_refresh_token", response.social_refresh_token);
+
+					location.href = "/views/feeds";
 					break;
 				case 409:
 					if (response.detail.code == "not_found_user") {
-						alert("회원가입을 먼저 진행해주세요!");
+						console.log("회원가입을 먼저 진행해주세요!");
 					} else {
 						console.log("로그인 실패: " + JSON.stringify(response));
-						alert("상태 코드는 409이나, detail.code의 값이 \"not_found_user\"가 아님.");
 					}
 					break;
 				case 500:
@@ -88,15 +99,19 @@ function fetchSignup() {
 			switch (resStatus) {
 				case 200:
 					console.log("회원가입 성공: " + JSON.stringify(response));
-					// location.hash = "/views/feeds";
+
+					window.localStorage.setItem("access_token", response.access_token);
+					window.localStorage.setItem("refresh_token", response.refresh_token);
+					window.localStorage.setItem("social_access_token", response.social_access_token);
+					window.localStorage.setItem("social_refresh_token", response.social_refresh_token);
+
+					location.href = "/views/feeds";
 					break;
 				case 409:
 					if (response.detail.code == "already_exist_uid") {
 						console.log("이미 가입한 계정입니다.");
-						alert("이미 가입한 계정입니다.");
 					} else {
 						console.log("회원가입 실패: " + JSON.stringify(response));
-						alert("상태 코드는 409이나, detail.code의 값이 \"already_exist_uid\"가 아님.");
 					}
 					break;
 				case 500:
@@ -111,5 +126,40 @@ function fetchSignup() {
 		})
 		.catch((err) => {
 			console.error("signup fetch error: " + err);
+		})
+}
+
+function fetchGuest() {
+	let resStatus = 0;
+
+	fetch("http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/login/guest", {
+		method: "POST",
+		mode: "cors",
+		body: JSON.stringify({
+			nickname: "Guest",
+			is_agreed: true
+		}),
+		headers: {
+			"Content-type": "application/json; charset=UTF-8",
+		},
+	})
+		.then((response) => {
+			resStatus = response.status;
+			return response.json();
+		})
+		.then(response => {
+			switch (resStatus) {
+				case 200:
+					console.log("게스트 로그인 성공: " + JSON.stringify(response));
+					// location.hash = "/views/feeds";
+					break;
+				default:
+					console.log("게스트 로그인 실패: " + JSON.stringify(response));
+					console.log("unhandled");
+					break;
+			}
+		})
+		.catch((err) => {
+			console.error("guest login fetch error: " + err);
 		})
 }

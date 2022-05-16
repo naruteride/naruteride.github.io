@@ -10,6 +10,6 @@ onload = () => {
 	})
 	guestButton = document.querySelector("#guest-login");
 	guestButton.addEventListener("click", () => {
-		location.href = "/views/feeds";
+		location.href = "/views/logins/login-check#guest";
 	})
 }
