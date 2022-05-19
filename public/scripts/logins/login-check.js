@@ -19,7 +19,7 @@ onload = () => {
 		while (state.length < 16) {
 			state = '0' + state;
 		}
-		location.href = "https://accounts.spotify.com/authorize?response_type=code&client_id=965724cc721a4fa3b21ec344ae31bf12&scope=user-read-private%20user-read-email&redirect_uri=http://localhost:3000/views/logins/login-check&state=" + state + "#signup";
+		location.href = "https://accounts.spotify.com/authorize?response_type=code&client_id=965724cc721a4fa3b21ec344ae31bf12&scope=user-read-private%20user-read-email&redirect_uri=" + window.location.protocol + "//" + window.location.host + "/views/logins/login-check&state=" + state + "#signup";
 	})
 }
 
@@ -31,7 +31,7 @@ function fetchLogin() {
 		mode: "cors",
 		body: JSON.stringify({
 			code: url.searchParams.get("code"),
-			redirect_uri: "http://localhost:3000/views/logins/login-check",
+			redirect_uri: window.location.protocol + "//" + window.location.host + "/views/logins/login-check",
 			provider_type: 0,
 		}),
 		headers: {
@@ -84,7 +84,7 @@ function fetchSignup() {
 		mode: "cors",
 		body: JSON.stringify({
 			code: url.searchParams.get("code"),
-			redirect_uri: "http://localhost:3000/views/logins/login-check",
+			redirect_uri: window.location.protocol + "//" + window.location.host + "/views/logins/login-check",
 			provider_type: 0,
 		}),
 		headers: {
