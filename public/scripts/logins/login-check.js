@@ -151,7 +151,11 @@ function fetchGuest() {
 			switch (resStatus) {
 				case 200:
 					console.log("게스트 로그인 성공: " + JSON.stringify(response));
-					// location.hash = "/views/feeds";
+
+					window.localStorage.setItem("access_token", response.access_token);
+					window.localStorage.setItem("refresh_token", response.refresh_token);
+
+					location.href = "/views/feeds";
 					break;
 				default:
 					console.log("게스트 로그인 실패: " + JSON.stringify(response));
