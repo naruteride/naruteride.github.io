@@ -24,11 +24,13 @@ body {
 }
 
 #Login img.logo {
-	width: 65px;
+	width: 48px;
+	height: 48px;
+	margin-right: 14px;
 }
 
 #Login img.text-logo {
-	width: 125.56px;
+	width: 86.1px;
 }
 
 #Login .catch-phrase {
