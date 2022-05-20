@@ -2,7 +2,7 @@ let player, cardList;
 let cards;
 let cardTemplateInDiv = document.createElement("div");
 let tagTemplateInDiv = document.createElement("div");
-let i = 0, count = 10;
+let offset = 0, count = 10;
 
 fetchCard();
 fetchTag();
@@ -61,7 +61,7 @@ function fetchDiggingLogSearch() {
 			"filter_expr": {},
 			"sort_by_key": "created",
 			"sort_by_order": "asc",
-			"offset": i,
+			"offset": offset,
 			"count": count
 		}),
 		headers: {
@@ -70,7 +70,7 @@ function fetchDiggingLogSearch() {
 		},
 	})
 		.then(response => {
-			i += count;
+			offset += count;
 			resStatus = response.status;
 			return response.json();
 		})
