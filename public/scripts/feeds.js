@@ -59,8 +59,8 @@ function fetchDiggingLogSearch() {
 		mode: "cors",
 		body: JSON.stringify({
 			"filter_expr": {},
-			"sort_by_key": "created",
-			"sort_by_order": "asc",
+			"sort_by_key": "",
+			"sort_by_order": "desc",
 			"offset": offset,
 			"count": count
 		}),
