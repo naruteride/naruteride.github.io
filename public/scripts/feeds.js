@@ -44,7 +44,7 @@ function fetchTag() {
 function fetchDiggingLogSearch() {
 	let resStatus = 0;
 
-	fetch("http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/digging_log/search", {
+	fetch("https://server.mugip.com/digging_log/search", {
 		method: "POST",
 		mode: "cors",
 		body: JSON.stringify({
