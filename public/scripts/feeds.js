@@ -89,6 +89,7 @@ function arrangeCards(data) {
 	cardElementInDiv.querySelector(".album-image").style.backgroundImage = "url(" + data.track.album.images[1].url + ")";
 	cardElementInDiv.querySelector(".album-image").addEventListener("click", () => {
 		player.src = "https://open.spotify.com/embed/track/" + data.track.id + "?utm_source=generator";
+		player.classList.add("on");
 	});
 	cardElementInDiv.querySelector(".song-name").textContent = data.track.album.name;
 	cardElementInDiv.querySelector(".artist").textContent = data.track.artists[0].name;

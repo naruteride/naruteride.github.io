@@ -103,18 +103,33 @@ hr {
 
 
 iframe#spotify-player {
+	position: fixed;
+	left: 50%;
+	bottom: 16px;
+	z-index: 100;
+	display: none;
+	width: calc(100% - 16px * 2);
+	height: 80px;
 	border-radius: 6px;
-    height: 80px;
-    width: calc(100% - 16px * 2);
-    position: fixed;
-    z-index: 100;
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
+	transform: translateX(-50%);
+	opacity: 0;
 }
 
+iframe#spotify-player.on {
+	animation: player-fadein 0.1s 1;
+	display: block;
+	opacity: 1;
+}
 
+@keyframes player-fadein {
+	from {
+		opacity: 0;
+	}
 
+	to {
+		opacity: 1;
+	}
+}
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 
