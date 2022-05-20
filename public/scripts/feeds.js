@@ -1,4 +1,4 @@
-let scrollElement, player, cardList;
+let player, cardList;
 let cards;
 let cardTemplateInDiv = document.createElement("div");
 let tagTemplateInDiv = document.createElement("div");
@@ -12,14 +12,15 @@ onload = () => {
 	player = document.querySelector("#spotify-player");
 	fetchDiggingLogSearch();
 
-	scrollElement = document.querySelector("#feeds");
+	let scrollElement = document.querySelector("#feeds");
+	scrollElement.addEventListener("scroll", () => {
+		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
+			fetchDiggingLogSearch();
+		}
+	})
 }
 
-scrollElement.addEventListener("scroll", () => {
-	if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
-		fetchDiggingLogSearch();
-	}
-})
+
 
 // 카드 HTML을 가져옴
 function fetchCard() {
