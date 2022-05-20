@@ -14,15 +14,23 @@ onload = () => {
 
 	let scrollElement = document.querySelector("#feeds");
 	scrollElement.addEventListener("scroll", () => {
-		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
+		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight - 100) {
 			fetchDiggingLogSearch();
+			alert("스크롤 이벤트 발생")
 		}
-	})
+	});
 	scrollElement.addEventListener("touchmove", () => {
-		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
+		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight - 100) {
 			fetchDiggingLogSearch();
+			alert("터치무브 이벤트 발생");
 		}
-	})
+	});
+	scrollElement.addEventListener("gesturechange", () => {
+		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight - 100) {
+			fetchDiggingLogSearch();
+			alert("재스처 변경 이벤트 발생");
+		}
+	});
 }
 
 
