@@ -1,7 +1,8 @@
-let cardList, player;
+let scrollElement, player, cardList;
 let cards;
 let cardTemplateInDiv = document.createElement("div");
 let tagTemplateInDiv = document.createElement("div");
+let i = 0;
 
 fetchCard();
 fetchTag();
@@ -10,7 +11,15 @@ onload = () => {
 	cardList = document.querySelector("#card-list");
 	player = document.querySelector("#spotify-player");
 	fetchDiggingLogSearch();
+
+	scrollElement = document.querySelector("#feeds");
 }
+
+scrollElement.addEventListener("scroll", () => {
+	if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
+		fetchDiggingLogSearch();
+	}
+})
 
 // 카드 HTML을 가져옴
 function fetchCard() {
@@ -51,8 +60,8 @@ function fetchDiggingLogSearch() {
 			"filter_expr": {},
 			"sort_by_key": "created",
 			"sort_by_order": "asc",
-			"offset": 0,
-			"count": 20
+			"offset": i,
+			"count": 10
 		}),
 		headers: {
 			"Content-type": "application/json; charset=UTF-8",
@@ -60,6 +69,7 @@ function fetchDiggingLogSearch() {
 		},
 	})
 		.then(response => {
+			i += count;
 			resStatus = response.status;
 			return response.json();
 		})
@@ -83,7 +93,7 @@ function fetchDiggingLogSearch() {
 		})
 		.catch((err) => {
 			console.error("DiggingLogSearch fetch error: " + err);
-			window.location.href = "/views/logins/login";
+			// window.location.href = "/views/logins/login";
 		})
 }
 
@@ -91,14 +101,14 @@ function fetchDiggingLogSearch() {
 let tags;
 function arrangeCards(data) {
 	let cardElementInDiv = cardTemplateInDiv.cloneNode(true);
-	
+
 	cardElementInDiv.querySelector(".profile-image").src = data.user.last_profile_image_url;
 	cardElementInDiv.querySelector(".writer").innerText = data.user.nickname;
 	cardElementInDiv.querySelector(".album-image").style.backgroundImage = "url(" + data.track.album.images[1].url + ")";
 	cardElementInDiv.querySelector(".album-image").addEventListener("click", e => {
 		player.src = "https://open.spotify.com/embed/track/" + data.track.id + "?utm_source=generator";
 		player.classList.add("on");
-		for(let card of cards) {
+		for (let card of cards) {
 			card.classList.remove("active");
 		}
 		e.target.parentElement.classList.add("active");
@@ -112,8 +122,8 @@ function arrangeCards(data) {
 		tagElementInDiv.querySelector(".icon").textContent = tag.icon;
 		tagElementInDiv.querySelector(".name").textContent = tag.name;
 
-		tags.prepend(tagElementInDiv.firstChild);
+		tags.append(tagElementInDiv.firstChild);
 	}
 
-	cardList.prepend(cardElementInDiv.firstChild);
+	cardList.append(cardElementInDiv.firstChild);
 }
