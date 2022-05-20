@@ -14,7 +14,12 @@ onload = () => {
 
 	let scrollElement = document.querySelector("#feeds");
 	scrollElement.addEventListener("scroll", () => {
-		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight + 100) {
+		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
+			fetchDiggingLogSearch();
+		}
+	})
+	scrollElement.addEventListener("touchmove", () => {
+		if (scrollElement.offsetHeight + scrollElement.scrollTop >= scrollElement.scrollHeight) {
 			fetchDiggingLogSearch();
 		}
 	})
