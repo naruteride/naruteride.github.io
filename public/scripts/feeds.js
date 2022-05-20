@@ -1,4 +1,5 @@
 let cardList, player;
+let cards;
 let cardTemplateInDiv = document.createElement("div");
 let tagTemplateInDiv = document.createElement("div");
 
@@ -39,7 +40,7 @@ function fetchTag() {
 		})
 }
 
-// 실제 서버로부터 데이터를 가져온 뒤 cardList에 카드를 나열함
+// 서버로부터 데이터를 가져온 뒤, 카드를 나열하는 함수를 호출함.
 function fetchDiggingLogSearch() {
 	let resStatus = 0;
 
@@ -69,6 +70,7 @@ function fetchDiggingLogSearch() {
 					for (const data of response) {
 						arrangeCards(data);
 					}
+					cards = cardList.querySelectorAll(".card");
 					break;
 				default:
 					console.log("피드 가져오기 실패: " + JSON.stringify(response));
@@ -81,15 +83,20 @@ function fetchDiggingLogSearch() {
 		})
 }
 
+// 매개변수로 받은 데이터와 함께 카드 엘리먼트를 나열함.
 let tags;
 function arrangeCards(data) {
 	let cardElementInDiv = cardTemplateInDiv.cloneNode(true);
 	
 	cardElementInDiv.querySelector(".writer").innerText = data.user.nickname;
 	cardElementInDiv.querySelector(".album-image").style.backgroundImage = "url(" + data.track.album.images[1].url + ")";
-	cardElementInDiv.querySelector(".album-image").addEventListener("click", () => {
+	cardElementInDiv.querySelector(".album-image").addEventListener("click", e => {
 		player.src = "https://open.spotify.com/embed/track/" + data.track.id + "?utm_source=generator";
 		player.classList.add("on");
+		for(let card of cards) {
+			card.classList.remove("active");
+		}
+		e.target.parentElement.classList.add("active");
 	});
 	cardElementInDiv.querySelector(".song-name").textContent = data.track.album.name;
 	cardElementInDiv.querySelector(".artist").textContent = data.track.artists[0].name;
@@ -104,5 +111,4 @@ function arrangeCards(data) {
 	}
 
 	cardList.prepend(cardElementInDiv.firstChild);
-	
 }
