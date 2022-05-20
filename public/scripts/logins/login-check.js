@@ -14,6 +14,7 @@ switch (location.hash) {
 }
 
 onload = () => {
+	snackbar = document.querySelector("#snackbar");
 	document.querySelector("#signup-link").addEventListener("click", () => {
 		let state = Math.floor(Math.random() * Math.pow(10, 16)).toString();
 		while (state.length < 16) {
@@ -57,9 +58,14 @@ function fetchLogin() {
 				case 409:
 					if (response.detail.code == "not_found_user") {
 						console.log("회원가입을 먼저 진행해주세요!");
+						onSnackbar("회원가입을 먼저 진행해주세요!");
 					} else {
 						console.log("로그인 실패: " + JSON.stringify(response));
 					}
+					break;
+				case 422:
+					console.log("회원가입을 먼저 진행해주세요");
+					location.href = window.location.protocol + "//" + window.location.host + "/views/logins/login";
 					break;
 				case 500:
 					console.log("로그인 실패: " + JSON.stringify(response));
@@ -166,4 +172,15 @@ function fetchGuest() {
 		.catch((err) => {
 			console.error("guest login fetch error: " + err);
 		})
+}
+
+// 스낵바 함수
+let snackbar;
+function onSnackbar(message) {
+	snackbar.innerText = message;
+	snackbar.classList.add("show");
+
+	setTimeout(() => {
+		snackbar.classList.remove("show");
+	}, 3000);
 }

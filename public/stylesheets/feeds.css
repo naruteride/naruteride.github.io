@@ -23,6 +23,11 @@
 	height: 68px;
 }
 
+#feeds-header .logo {
+	width: auto;
+	height: auto;
+}
+
 #feeds-header .buttons {
 	display: flex;
 	align-items: center;

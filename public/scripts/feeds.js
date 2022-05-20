@@ -72,6 +72,9 @@ function fetchDiggingLogSearch() {
 					}
 					cards = cardList.querySelectorAll(".card");
 					break;
+				case 403:
+					console.log("피드 가져오기 실패(로그인 안됨): " + JSON.stringify(response));
+					window.location.href = "/views/logins/login";
 				default:
 					console.log("피드 가져오기 실패: " + JSON.stringify(response));
 					console.log("unhandled");
@@ -88,6 +91,7 @@ let tags;
 function arrangeCards(data) {
 	let cardElementInDiv = cardTemplateInDiv.cloneNode(true);
 	
+	cardElementInDiv.querySelector(".profile-image").src = data.user.last_profile_image_url;
 	cardElementInDiv.querySelector(".writer").innerText = data.user.nickname;
 	cardElementInDiv.querySelector(".album-image").style.backgroundImage = "url(" + data.track.album.images[1].url + ")";
 	cardElementInDiv.querySelector(".album-image").addEventListener("click", e => {
