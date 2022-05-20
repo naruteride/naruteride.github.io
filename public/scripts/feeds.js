@@ -103,7 +103,9 @@ let tags;
 function arrangeCards(data) {
 	let cardElementInDiv = cardTemplateInDiv.cloneNode(true);
 
-	cardElementInDiv.querySelector(".profile-image").src = data.user.last_profile_image_url;
+	if (data.user.last_profile_image_url) {
+		cardElementInDiv.querySelector(".profile-image").src = data.user.last_profile_image_url;
+	}
 	cardElementInDiv.querySelector(".writer").innerText = data.user.nickname;
 	cardElementInDiv.querySelector(".album-image").style.backgroundImage = "url(" + data.track.album.images[1].url + ")";
 	cardElementInDiv.querySelector(".album-image").addEventListener("click", e => {
