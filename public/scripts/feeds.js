@@ -116,7 +116,7 @@ function arrangeCards(data) {
 		}
 		e.target.parentElement.classList.add("active");
 	});
-	cardElementInDiv.querySelector(".song-name").textContent = data.track.album.name;
+	cardElementInDiv.querySelector(".song-name").textContent = data.track.name;
 	cardElementInDiv.querySelector(".artist").textContent = data.track.artists[0].name;
 	tags = cardElementInDiv.querySelector(".tags");
 	for (tag of data.tags) {
