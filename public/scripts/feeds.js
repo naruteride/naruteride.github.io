@@ -2,7 +2,7 @@ let scrollElement, player, cardList;
 let cards;
 let cardTemplateInDiv = document.createElement("div");
 let tagTemplateInDiv = document.createElement("div");
-let i = 0;
+let i = 0, count = 10;
 
 fetchCard();
 fetchTag();
@@ -61,7 +61,7 @@ function fetchDiggingLogSearch() {
 			"sort_by_key": "created",
 			"sort_by_order": "asc",
 			"offset": i,
-			"count": 10
+			"count": count
 		}),
 		headers: {
 			"Content-type": "application/json; charset=UTF-8",
@@ -93,7 +93,7 @@ function fetchDiggingLogSearch() {
 		})
 		.catch((err) => {
 			console.error("DiggingLogSearch fetch error: " + err);
-			// window.location.href = "/views/logins/login";
+			window.location.href = "/views/logins/login";
 		})
 }
 
