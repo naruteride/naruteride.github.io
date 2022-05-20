@@ -51,7 +51,7 @@ function fetchDiggingLogSearch() {
 			"sort_by_key": "created",
 			"sort_by_order": "asc",
 			"offset": 0,
-			"count": 10
+			"count": 20
 		}),
 		headers: {
 			"Content-type": "application/json; charset=UTF-8",
@@ -85,6 +85,8 @@ let tags;
 function arrangeCards(data) {
 	let cardElementInDiv = cardTemplateInDiv.cloneNode(true);
 	
+	cardElementInDiv.querySelector(".writer").innerText = data.user.nickname;
+	cardElementInDiv.querySelector(".album-image").style.backgroundImage = "url(" + data.track.album.images[1].url + ")";
 	cardElementInDiv.querySelector(".album-image").addEventListener("click", () => {
 		player.src = "https://open.spotify.com/embed/track/" + data.track.id + "?utm_source=generator";
 	});
