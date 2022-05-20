@@ -83,6 +83,7 @@ function fetchDiggingLogSearch() {
 		})
 		.catch((err) => {
 			console.error("DiggingLogSearch fetch error: " + err);
+			window.location.href = "/views/logins/login";
 		})
 }
 
