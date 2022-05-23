@@ -8,6 +8,7 @@ body {
 	font-family: 'Work Sans', 'Noto Sans KR', sans-serif;
 	color: var(--text-color);
 	background: linear-gradient(167.95deg, #5A39FF 0%, #000000 52.34%);
+	word-break: keep-all;
 }
 
 a {
@@ -135,28 +136,18 @@ iframe#spotify-player.on {
 
 #snackbar {
 	visibility: hidden;
-	/* Hidden by default. Visible on click */
 	min-width: 250px;
-	/* Divide value of min-width by 2 */
 	background-color: #333;
-	/* Black background color */
 	color: #fff;
-	/* White text color */
 	text-align: center;
-	/* Centered text */
 	border-radius: 2px;
-	/* Rounded borders */
 	padding: 16px;
-	/* Padding */
 	position: fixed;
-	/* Sit on top of the screen */
 	z-index: 1;
-	/* Add a z-index if needed */
 	left: 50%;
-	/* Center the snackbar */
 	bottom: 30px;
-	/* 30px from the bottom */
 	transform: translateX(-50%);
+	word-break: keep-all;
 }
 
 /* 스낵바 */
