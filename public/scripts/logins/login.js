@@ -10,19 +10,7 @@ onload = () => {
 	});
 	spotifyButton = document.querySelector("#spotify-login");
 	spotifyButton.addEventListener("click", () => {
-		onSnackbar("스포티파이 로그인 업데이트 예정")
+		window.onSnackbar("스포티파이 로그인 업데이트 예정")
 		// location.href = "https://accounts.spotify.com/authorize?response_type=code&client_id=965724cc721a4fa3b21ec344ae31bf12&scope=user-read-private%20user-read-email&redirect_uri=" + window.location.protocol + "//" + window.location.host + "/views/logins/login-check&state=" + state;
 	});
-	snackbar = document.querySelector("#snackbar");
-}
-
-// 스낵바 함수
-let snackbar;
-function onSnackbar(message) {
-	snackbar.innerText = message;
-	snackbar.classList.add("show");
-
-	setTimeout(() => {
-		snackbar.classList.remove("show");
-	}, 3000);
 }
