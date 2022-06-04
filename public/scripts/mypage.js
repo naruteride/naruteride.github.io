@@ -26,7 +26,8 @@ function fetchCard() {
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
 	let element = document.getElementById('embed-iframe');
 	let options = {
-		uri: 'spotify:episode:7makk4oTQel546B0PZlDM5'
+		// uri: 'spotify:episode:7makk4oTQel546B0PZlDM5'
+		uri: 'spotify:player:37i9dQZF1DWZZbpkxU5t9L'
 	};
 	let callback = (EmbedController) => { };
 	IFrameAPI.createController(element, options, callback);

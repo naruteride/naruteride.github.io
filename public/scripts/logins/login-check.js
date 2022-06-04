@@ -26,7 +26,8 @@ onload = () => {
 function fetchLogin() {
 	let resStatus = 0;
 
-	fetch("https://server.mugip.com/auth/login/social", {
+	// fetch("https://server.mugip.com/auth/login/social", {
+	fetch("http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/login/social", {
 		method: "POST",
 		mode: "cors",
 		body: JSON.stringify({
@@ -84,7 +85,8 @@ function fetchLogin() {
 function fetchSignup() {
 	let resStatus = 0;
 
-	fetch("https://server.mugip.com/auth/signup/social", {
+	// fetch("https://server.mugip.com/auth/signup/social", {
+	fetch("http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/signup/social", {
 		method: "POST",
 		mode: "cors",
 		body: JSON.stringify({
@@ -137,7 +139,8 @@ function fetchSignup() {
 function fetchGuest() {
 	let resStatus = 0;
 
-	fetch("https://server.mugip.com/auth/login/guest", {
+	// fetch("https://server.mugip.com/auth/login/guest", {
+	fetch("http://ec2-3-37-203-162.ap-northeast-2.compute.amazonaws.com:5468/auth/login/guest", {
 		method: "POST",
 		mode: "cors",
 		body: JSON.stringify({
