@@ -1,5 +1,5 @@
 let map;
-let myLatLng = { lat: 37.5575312, lng: 126.9222782 };
+let myLatLng = { lat: 35.116595, lng: 129.0414111 };
 let funckingMarkerPosition = { lat: 37.5574111, lng: 126.9245447 };
 
 let isMouseUp = 0;
@@ -7,8 +7,8 @@ let isMouseUp = 0;
 function initMap() {
   // 기본 맵 위치 옵션
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 37.5575312, lng: 126.9222782 },
-    zoom: 17,
+    center: { lat: 35.116595, lng: 129.0414111 },
+    zoom: 14,
     disableDefaultUI: true,
   });
 
