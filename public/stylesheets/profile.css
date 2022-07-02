@@ -1,0 +1,128 @@
+body {
+	background: black;
+}
+
+#profile {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden auto;
+}
+
+#profile>.content {
+	display: grid;
+	grid-template: auto / 1fr;
+	place-items: center;
+	align-content: start;
+	width: 100%;
+	overflow: hidden auto;
+}
+
+#profile .first-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 282px;
+	padding: 16px;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 49.96%, #000000 100%), url(/public/images/background-image.png), linear-gradient(180deg, #5A39FF 0.24%, rgba(90, 57, 255, 0) 100%);
+	background-position: center;
+	background-size: cover;
+}
+
+#profile-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 68px;
+}
+
+#profile-header .logo {
+	width: auto;
+	height: auto;
+}
+
+#profile-header .right-icon-group {
+	display: flex;
+	align-items: center;
+	column-gap: calc(16px);
+	width: fit-content;
+}
+
+#profile-header .right-icon-group>button {
+	padding: 0;
+}
+
+#profile-header .my-profile-image>img {
+	object-fit: cover;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	border: solid 2px #ffffff;
+}
+
+#profile-information {
+	display: grid;
+	grid-template-rows: 72px min-content min-content;
+	grid-template-columns: 1fr 150px;
+	grid-template-areas:
+		"profile-image	."
+		"name			follow-button"
+		"id				.";
+	align-items: center;
+	row-gap: 4px;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+#profile-information>.profile-image {
+	grid-area: profile-image;
+	object-fit: cover;
+	height: 100%;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+#profile-information>.name {
+	grid-area: name;
+	margin-top: 3px;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 40px;
+	letter-spacing: -0.01em;
+	color: #FFFFFF;
+}
+
+#profile-information>.id {
+	grid-area: id;
+}
+
+#profile-information>.id>.id-text {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	letter-spacing: -0.01em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#profile-information>.id>img {
+	width: 16px;
+	height: 16px;
+	object-fit: cover;
+}
+
+#profile-information>.follow-button {
+	grid-area: follow-button;
+	position: absolute;
+	right: 0;
+	width: fit-content;
+	height: 32px;
+}
+
+#card-list {
+	width: 100%;
+	padding: 16px;
+}

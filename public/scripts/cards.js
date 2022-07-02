@@ -85,7 +85,7 @@ function fetchDiggingLogSearch() {
 					break;
 				case 403:
 					console.log("피드 가져오기 실패(로그인 안됨): " + JSON.stringify(response));
-					window.location.href = "/views/logins/login";
+					// window.location.href = "/views/logins/login";
 				default:
 					console.log("피드 가져오기 실패: " + JSON.stringify(response));
 					console.log("unhandled");
@@ -94,7 +94,7 @@ function fetchDiggingLogSearch() {
 		})
 		.catch((err) => {
 			console.error("DiggingLogSearch fetch error: " + err);
-			window.location.href = "/views/logins/login";
+			// window.location.href = "/views/logins/login";
 		})
 }
 
