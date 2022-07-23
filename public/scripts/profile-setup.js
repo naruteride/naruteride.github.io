@@ -1,4 +1,5 @@
 onload = () => {
+	// 뒤로가기 버튼
 	document.querySelector(".to-back-button").addEventListener("click", () => {
 		history.back();
 	})

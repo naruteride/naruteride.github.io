@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#5A39FF">
+	<meta name="theme-color" content="#5A39FF">
 
 	<!-- 파비콘 -->
 	<link rel="shortcut icon" href="/public/images/로고.svg" />
@@ -13,8 +13,10 @@
 	<!-- 구글 폰트 -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap&subset=latin" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap&subset=latin"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean"
+		rel="stylesheet">
 
 	<!-- 부트스트랩 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,27 +37,32 @@
 	<div id="search">
 		<div class="content">
 
-			<div id="search-bar">
-				<input type="search" placeholder="태그/유저/노래 검색" />
-                <button type="button" class="btn">
-                    <img class="off" src="/public/images/ic24-search.svg" alt="돋보기" />
-                </button>
+			<div class="header">
+				<button type="button" class="to-back-button btn">
+					<img class="to-back" src="/public/images/ic24-arrow-left.svg" alt="뮤집" fill="">
+				</button>
+				<div id="search-bar">
+					<input type="search" placeholder="태그/유저/노래 검색" />
+					<button type="button" class="btn">
+						<img class="off" src="/public/images/ic24-search.svg" alt="돋보기" />
+					</button>
+				</div>
 			</div>
 
-            <div id="search-options">
-                <button class="btn tag">
-                    태그
-                </button>
-                <button class="btn user">
-                    유저
-                </button>
-                <button class="btn song">
-                    노래
-                </button>
-            </div>
+			<div id="search-options">
+				<button class="btn tag on">
+					게시물
+				</button>
+				<button class="btn user">
+					유저
+				</button>
+				<button class="btn song">
+					음원
+				</button>
+			</div>
 
 			<div id="card-list">
-				
+
 			</div>
 
 		</div>

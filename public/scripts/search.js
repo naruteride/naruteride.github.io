@@ -6,6 +6,11 @@ onload = () => {
     cardList = document.querySelector("#card-list");
     fetchCard();
 
+	// 뒤로가기 버튼
+	document.querySelector(".to-back-button").addEventListener("click", () => {
+		history.back();
+	})
+
 	// 검색 바
     searchInput = document.querySelector("#search-bar>input[type=search]");
     searchIcon = document.querySelector("#search-bar>button>img");
