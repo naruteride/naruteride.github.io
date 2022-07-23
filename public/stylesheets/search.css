@@ -94,13 +94,3 @@
 	background-color: #5A39FF;
 	font-weight: 700;
 }
-
-#card-list {
-	display: grid;
-	grid-template: auto / 1fr;
-	row-gap: 16px;
-	place-items: center;
-	align-content: start;
-	width: 100%;
-	overflow: hidden auto;
-}
