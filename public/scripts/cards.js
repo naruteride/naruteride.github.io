@@ -8,6 +8,11 @@ fetchCard();
 fetchTag();
 
 onload = () => {
+	InitCard();
+}
+
+// 카드 전체 엘리먼트 초기화 함수
+function InitCard() {
 	cardList = document.querySelector("#card-list");
 	player = document.querySelector("#spotify-player");
 	fetchDiggingLogSearch();
@@ -19,7 +24,6 @@ onload = () => {
 		}
 	});
 }
-
 
 
 // 카드 HTML을 가져옴
