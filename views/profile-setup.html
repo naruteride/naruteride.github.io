@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#5A39FF">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/public/images/logo.svg" />
+
+	<!-- 구글 폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap&subset=latin"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap&subset=korean"
+		rel="stylesheet">
+
+	<!-- 부트스트랩 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+	<!-- 내부 CSS -->
+	<link rel="stylesheet" href="/public/stylesheets/main.css" />
+	<link rel="stylesheet" href="/public/stylesheets/profile-setup.css" />
+
+	<!-- 내부 JS -->
+	<script src="/public/scripts/main.js"></script>
+	<script src="/public/scripts/profile-setup.js"></script>
+
+	<title>뮤집 - 피드</title>
+</head>
+
+<body>
+	<div id="profile-setup">
+		<div class="content">
+			<section class="header">
+				<button type="button" class="to-back-button btn">
+					<img class="to-back" src="/public/images/ic24-arrow-left.svg" alt="뮤집" fill="">
+				</button>
+				<div class="title">
+					프로필 설정
+				</div>
+				<button type="button" class="submit btn">
+					완료
+				</button>
+			</section>
+			<section id="profile-images-section">
+				<label for="background-image-upload" class="image-edit-button btn">
+					<img src="/public/images/camera.png" alt="배경 이미지 편집">
+				</label>
+				<input type="file" accept="image/*" id="background-image-upload" onchange="previewBackgroundFile()">
+				<div id="circle-image">
+					<label for="circle-image-upload" class="image-edit-button btn">
+						<img src="/public/images/camera.png" alt="배경 이미지 편집">
+					</label>
+					<input type="file" accept="image/*" id="circle-image-upload" onchange="previewCircleFile()">
+				</div>
+			</section>
+			<section id="profile-text-section">
+				<div class="input-text-group">
+					<label>이름</label>
+					<input type="text" placeholder="김뮤지" pattern="[A-Za-z가-힣]{2,20}">
+				</div>
+				<div class="input-text-group">
+					<label>닉네임</label>
+					<input type="text" placeholder="muji_kim" pattern="[A-Za-z]{3,20}">
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -148,6 +148,17 @@ iframe#spotify-player.on {
 	}
 }
 
+#card-list {
+	display: grid;
+	grid-template: auto / 1fr;
+	row-gap: 16px;
+	place-items: center;
+	align-content: start;
+	width: 100%;
+	margin-bottom: 80px;
+	overflow: hidden auto;
+}
+
 /* The snackbar - position it at the bottom and in the middle of the screen */
 
 #snackbar {

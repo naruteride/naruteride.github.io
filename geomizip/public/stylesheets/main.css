@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+}
+
+header {
+	display: flex;
+	flex-flow: space-between;
+	align-items: center;
+	height: 128px;
+	padding: 40px;
+}
+
+header>.title {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 38px;
+}
+
+main {
+	background-image: url(/geomizip/public/images/line.svg);
+	height: 600px;
+}

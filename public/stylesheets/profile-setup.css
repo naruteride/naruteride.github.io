@@ -1,0 +1,133 @@
+body {
+	background: #fff;
+}
+
+#profile-setup {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden auto;
+}
+
+#profile-setup>.content {
+	display: grid;
+	grid-template: auto / 1fr;
+	place-items: center;
+	align-content: start;
+	width: 100%;
+	/* 추후 주석 해제 필요 */
+	/* overflow: hidden auto; */
+}
+
+#profile-setup .header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 68px;
+	padding: 16px;
+}
+
+.to-back-button {
+	padding: 0;
+}
+
+.header button>img {
+	filter: invert(0.5);
+}
+
+.header>.title {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: -0.035em;
+	color: #000000;
+}
+
+.header .submit {
+	width: 45px;
+	height: 45px;
+	padding: 0;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: -0.035em;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+#profile-images-section {
+	position: relative;
+	width: 100%;
+	height: 330px;
+	background-image: url(/public/images/Rectangle\ 56.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#profile-images-section input[type="file"] {
+	display: none;
+}
+
+.image-edit-button {
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	padding: 0;
+}
+
+
+#circle-image {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, +50%);
+	width: 104px;
+	height: 104px;
+	border-radius: 50%;
+	background-image: url(/public/images/Ellipse\ 27.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#circle-image>.image-edit-button {
+	right: -6px;
+	bottom: 0;
+}
+
+#profile-text-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 18px;
+	width: 100%;
+	height: 330px;
+	padding: 16px;
+}
+
+.input-text-group {
+	display: grid;
+	grid-template: auto / 1fr;
+	width: 100%;
+	height: 54px;
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.input-text-group>label {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	align-items: center;
+	letter-spacing: -0.035em;
+	color: rgba(0, 0, 0, 0.7);
+}
+.input-text-group>input {
+	border: 0;
+	padding-left: 0;
+	font-weight: 700;
+	font-size: 23px;
+	line-height: 27px;
+	letter-spacing: -0.035em;
+	color: #000000;
+}
