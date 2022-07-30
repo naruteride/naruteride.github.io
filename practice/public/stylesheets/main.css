@@ -1,0 +1,170 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
+	letter-spacing: -0.01em;
+	transition: 0.2s;
+}
+
+body {
+	margin: 0;
+	background-color: #C5C4C7;
+}
+
+nav>ul {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+nav>ul>li {
+	list-style-type: none;
+}
+
+nav>ul>li>a {
+	text-decoration: none;
+	color: inherit;
+}
+
+#content {
+	display: grid;
+	grid-template: 600px 1fr / 100px 1fr 400px;
+	grid-template-areas:
+		"nav	header-and-main-container	kategori"
+		"nav	header-and-main-container	top-podcaster";
+	gap: 0 2px;
+	position: relative;
+	height: 100vh;
+}
+
+#primary {
+	grid-area: nav;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-color: #EAEAEA;
+}
+
+#primary .item {
+	display: block;
+	width: 100%;
+	padding-top: 100%;
+	background-image: url(../images/streamlinehq-interface-home-5-interface-essential-24.SVG);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+}
+
+#primary .item:nth-child(2) {
+	background-image: url(../images/streamlinehq-entertainment-music-note-2-entertainment-24.SVG);
+}
+
+#primary .item:nth-child(3) {
+	background-image: url(../images/streamlinehq-interface-folder-interface-essential-24.SVG);
+}
+
+#primary .item:nth-child(4) {
+	background-image: url(../images/streamlinehq-interface-search-interface-essential-24.SVG);
+}
+
+#primary a:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#header-and-main-container {
+	grid-area: header-and-main-container;
+	position: relative;
+	/* background-color: gold; */
+}
+
+#header-and-main-container header {
+	position: relative;
+	/* top: -100px; */
+	height: 600px;
+	padding: 4vw;
+	text-align: right;
+	font-weight: bold;
+	color: #fff;
+	background-image: url(../images/header-image.png);
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#header-and-main-container header>.title {
+	font-size: 4em;
+	font-weight: bold;
+	background: linear-gradient(to right, #853931, #36527d);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#header-and-main-container header>hr {
+	width: 70px;
+	margin: 100px 0 100px auto;
+	border-color: #fff;
+}
+
+aside {
+	background: #E8E8E8;
+}
+
+aside>h1 {
+	margin: 0;
+	padding: 2vw;
+	font-size: 1.75em;
+}
+
+#kategori {
+	grid-area: kategori;
+	display: grid;
+	grid-template: min-content 1fr / 1fr;
+	align-items: center;
+}
+
+#kategori>nav {
+	height: 300px;
+	background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+#kategori>nav>ul {
+	display: grid;
+	grid-template: 150px / repeat(auto-fill, minmax(100px, auto));
+	align-items: stretch;
+	gap: 2px;
+}
+
+#kategori>nav>ul>li {
+	background-color: #E8E8E8;
+}
+
+#kategori a {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#kategori a:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#kategori a>img {
+	padding: 20px;
+}
+
+#kategori a>.name {
+	margin: 8px 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#kategori a>.number {
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #9f9ea1;
+}
+
+#top-podcaster {
+	grid-area: top-podcaster;
+	/* background-color: coral; */
+}
