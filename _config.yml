@@ -1,3 +1,18 @@
 theme: jekyll-theme-minimal
 title: 방성훈의 기술 블로그
 description: 방성훈의 기술 블로그입니다.
+baseurl: ""
+url: "https://naruteride.github.io"
+github_username: naruteride
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
