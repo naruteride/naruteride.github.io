@@ -17,4 +17,4 @@ permalink: /about/
 ## 연락처
 
 - GitHub: [naruteride](https://github.com/naruteride)
-- 이메일: example@example.com (실제 이메일로 변경해주세요) 
+- 이메일: slimejam01@gmail.com
