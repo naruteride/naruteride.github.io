@@ -6,6 +6,7 @@ url: "https://naruteride.github.io"
 github_username: naruteride
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+future: true
 plugins:
   - jekyll-feed
   - jekyll-sitemap
