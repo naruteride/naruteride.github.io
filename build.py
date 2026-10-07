@@ -7,19 +7,52 @@ from html import escape, unescape
 from urllib.parse import quote, urlsplit
 
 
+IMAGE = re.compile(r'!\[(?P<alt>[^\]\n]*)\]\([ \t]*(?:<(?P<angle>[^<>\n]+)>|(?P<src>[^()\s]+))(?:[ \t]+"(?P<caption>[^"\n]*)")?[ \t]*\)')
+INLINE = re.compile(
+	r"(?P<code>`[^`\n]+`)|(?P<image>" + IMAGE.pattern + r")"
+	r"|(?P<link>(?<!!)\[(?P<label>[^\]\n]+)\]\((?P<href>[^()\s]+)\))"
+	r"|(?P<strong>\*\*(?P<bold>.+?)\*\*)|(?P<emphasis>\*(?P<italic>.+?)\*)"
+)
+
+
+def safe_url(url, image=False, spaces=False):
+	# Validate after decoding entities so encoded schemes cannot bypass the check.
+	while unescape(url) != url:
+		url = unescape(url)
+	forbidden = r"[\x00-\x1f\x7f\\]" if spaces else r"[\x00-\x20\x7f\\]"
+	schemes = ("", "http", "https") if image else ("", "http", "https", "mailto")
+	if re.search(forbidden, url) or urlsplit(url).scheme not in schemes:
+		raise ValueError(f"허용하지 않는 URL: {url}")
+	return escape(quote(url, safe="/:?&=#%[]@!$'()*+,;~-._"), quote=True)
+
+
+def image_html(match, figure=False):
+	src = safe_url(match["angle"] or match["src"], image=True, spaces=match["angle"] is not None)
+	caption = match["caption"]
+	title = f' title="{escape(caption, quote=True)}"' if caption is not None and not figure else ""
+	image = f'<img src="{src}" alt="{escape(match["alt"], quote=True)}" loading="lazy" decoding="async"{title}>'
+	if not figure:
+		return image
+	caption = f"<figcaption>{escape(caption)}</figcaption>" if caption else ""
+	return f"<figure>{image}{caption}</figure>"
+
+
 def inline(text):
-	def replace(match):
-		code, label, url, strong, emphasis = match.groups()
-		if code is not None:
-			return f"<code>{code}</code>"
-		if url is not None:
-			url = unescape(unescape(url))
-			if re.search(r"[\x00-\x20\\]", url) or urlsplit(url).scheme not in ("", "http", "https", "mailto"):
-				raise ValueError(f"허용하지 않는 링크: {url}")
-			return f'<a href="{escape(url, quote=True)}">{inline(unescape(label))}</a>'
-		tag = "strong" if strong is not None else "em"
-		return f"<{tag}>{inline(unescape(strong or emphasis))}</{tag}>"
-	return re.sub(r"`([^`\n]+)`|(?<!!)\[([^\]\n]+)\]\(([^()\s]+)\)|\*\*(.+?)\*\*|\*(.+?)\*", replace, escape(text))
+	output, position = [], 0
+	for match in INLINE.finditer(text):
+		output.append(escape(text[position:match.start()]))
+		if match["code"] is not None:
+			output.append(f'<code>{escape(match["code"][1:-1])}</code>')
+		elif match["image"] is not None:
+			output.append(image_html(match))
+		elif match["link"] is not None:
+			output.append(f'<a href="{safe_url(match["href"])}">{inline(match["label"])}</a>')
+		else:
+			tag = "strong" if match["strong"] is not None else "em"
+			output.append(f'<{tag}>{inline(match["bold"] or match["italic"])}</{tag}>')
+		position = match.end()
+	output.append(escape(text[position:]))
+	return "".join(output)
 
 
 def markdown(text):
@@ -34,6 +67,7 @@ def markdown(text):
 		if not line.strip():
 			continue
 		heading = re.fullmatch(r"(#{1,6}) +(.+?)(?: +#+)?", line)
+		image = IMAGE.fullmatch(line.strip())
 		if line.startswith("```"):
 			code = []
 			while lines and not re.fullmatch(r"```\s*", lines[0]):
@@ -46,6 +80,8 @@ def markdown(text):
 			output.append(f"<h{level}>{inline(heading[2])}</h{level}>")
 		elif re.fullmatch(r"(?:-{3,}|\*{3,}|_{3,})\s*", line):
 			output.append("<hr>")
+		elif image:
+			output.append(image_html(image, figure=True))
 		elif lines and table(line, lines[0]):
 			headers = cells(line)
 			lines.popleft()
@@ -63,7 +99,7 @@ def markdown(text):
 			output.append("<ul>" + "".join(f"<li>{inline(item)}</li>" for item in items) + "</ul>")
 		else:
 			paragraph = [line]
-			while lines and lines[0].strip() and not re.match(r"#{1,6} |```|[-+*] +|(?:-{3,}|\*{3,}|_{3,})\s*$", lines[0]) and not (len(lines) > 1 and table(lines[0], lines[1])):
+			while lines and lines[0].strip() and not re.match(r"#{1,6} |```|[-+*] +|(?:-{3,}|\*{3,}|_{3,})\s*$", lines[0]) and not IMAGE.fullmatch(lines[0].strip()) and not (len(lines) > 1 and table(lines[0], lines[1])):
 				paragraph.append(lines.popleft())
 			output.append("<p>" + inline("\n".join(paragraph)) + "</p>")
 	return "\n".join(output)
@@ -107,6 +143,25 @@ nav {{
 pre {{
 	white-space: pre-wrap;
 }}
+img {{
+	max-inline-size: 100%;
+	block-size: auto;
+}}
+figure {{
+	margin: 2rem 0;
+	text-align: center;
+}}
+figure img {{
+	display: block;
+	max-block-size: 40rem;
+	inline-size: auto;
+	margin: auto;
+	object-fit: contain;
+}}
+figcaption {{
+	margin-block-start: 0.5rem;
+	font-size: 0.9rem;
+}}
 </style>
 <a href="#main">본문 바로가기</a>
 <nav><a href="/">홈</a> <a href="/about.html">소개</a></nav>
@@ -142,6 +197,9 @@ def build(root=Path(__file__).resolve().parent):
 	output.mkdir()
 	for name, html in pages.items():
 		(output / name).write_text(html, encoding="utf-8", newline="\n")
+	assets = root / "assets"
+	if assets.exists():
+		shutil.copytree(assets, output / "assets")
 	(output / ".nojekyll").touch()
 	print(f"{len(pages)} pages → {output}")
 
