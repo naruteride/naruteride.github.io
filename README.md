@@ -15,4 +15,4 @@ python3 -m http.server --directory site --bind 127.0.0.1 8000
 ![사진 설명](/assets/photo.jpg "캡션")
 ```
 
-경로에 공백이나 괄호가 있으면 `</assets/사진 (1).jpg>`처럼 감쌉니다.
+경로에 공백이나 괄호가 있으면 `\`</assets/사진 (1).jpg>\``처럼 감쌉니다.
