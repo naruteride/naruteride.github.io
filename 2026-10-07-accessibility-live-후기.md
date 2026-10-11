@@ -3,7 +3,7 @@ layout: post
 title: "Accessibility, live에서 본 웹 접근성과 AI"
 date: 2026-10-07
 categories: blog
-excerpt: "스크린 리더로 개발하는 모습과 AI 에이전트로 쇼핑하는 모습을 보고 왔다. 에이전트가 웹을 대신 이용하는 시대에 웹 개발자는 무엇을 신경 써야 할까."
+description: "스크린 리더로 개발하는 모습과 AI 에이전트로 쇼핑하는 모습을 보고 왔다. 에이전트가 웹을 대신 이용하는 시대에 웹 개발자는 무엇을 신경 써야 할까."
 ---
 
 Dev Korea가 강남 AWS Korea 오피스에서 진행한 [Accessibility, live](https://luma.com/sswqz2jh)에 다녀왔다. 시각장애가 있는 개발자와 전문가가 평소 컴퓨터와 스마트폰을 어떻게 사용하는지, 실제로 보여주는 행사였다.

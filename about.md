@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 소개
+description: 방성훈의 기술 블로그를 소개합니다. 프로그래밍, 웹 개발, 기술 트렌드에 대한 관심 분야와 글 작성 방향, 연락처를 확인할 수 있습니다.
 permalink: /about/
 ---
 

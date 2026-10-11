@@ -1,5 +1,6 @@
 ---
 layout: default
+description: 방성훈의 기술 블로그입니다. 프로그래밍, 웹 개발, 기술 트렌드에 관한 글과 개인적인 견해를 공유합니다.
 ---
 
 # 안녕하세요
@@ -12,7 +13,7 @@ layout: default
 	{% for post in site.posts %}
 		<li>
 			<a href="{{ post.url }}">{{ post.title }}</a>
-			<p>{{ post.excerpt }}</p>
+			<p>{{ post.description }}</p>
 		</li>
 	{% endfor %}
-</ul> 
+</ul>

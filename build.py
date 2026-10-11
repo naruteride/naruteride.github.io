@@ -160,11 +160,13 @@ def read_document(path):
 	return meta, title, text
 
 
-def document(title, body):
+def document(title, body, description=""):
+	description = " ".join(description.split()) or title
 	return f'''<!doctype html>
 <html lang="ko">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{escape(description, quote=True)}">
 <title>{escape(title)} | 방성훈의 기술 블로그</title>
 <style>
 body {{
@@ -224,7 +226,8 @@ def build(root=ROOT):
 			text = re.sub(r"<ul>\s*{% for post in site.posts %}.*?{% endfor %}\s*</ul>", "", text, flags=re.S)
 		elif name != "about.html":
 			posts.append((published, name, title))
-		pages[name] = document(title, stamp + markdown(text, root=root))
+		description = meta.get("description", "").strip()
+		pages[name] = document(title, stamp + markdown(text, root=root), description)
 	items = "".join(f'<li><a href="/{quote(name)}">{escape(title)}</a></li>' for _, name, title in sorted(posts, reverse=True))
 	pages["index.html"] = pages["index.html"].replace("</main>", f"<ul>{items}</ul></main>")
 	output = root / "site"
