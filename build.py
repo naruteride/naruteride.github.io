@@ -4,9 +4,10 @@ from datetime import date
 from pathlib import Path
 from collections import deque
 from html import escape, unescape
-from urllib.parse import quote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
 
 
+ROOT = Path(__file__).resolve().parent
 IMAGE = re.compile(r'!\[(?P<alt>[^\]\n]*)\]\([ \t]*(?:<(?P<angle>[^<>\n]+)>|(?P<src>[^()\s]+))(?:[ \t]+"(?P<caption>[^"\n]*)")?[ \t]*\)')
 INLINE = re.compile(
 	r"(?P<code>`[^`\n]+`)|(?P<image>" + IMAGE.pattern + r")"
@@ -26,36 +27,74 @@ def safe_url(url, image=False, spaces=False):
 	return escape(quote(url, safe="/:?&=#%[]@!$'()*+,;~-._"), quote=True)
 
 
-def image_html(match, figure=False):
+def image_dimensions(src, root):
+	url = urlsplit(unescape(src))
+	if url.scheme or url.netloc:
+		return None
+	root = root.resolve()
+	path = (root / unquote(url.path).lstrip("/")).resolve()
+	if not path.is_relative_to(root) or not path.is_file():
+		return None
+	with path.open("rb") as image:
+		header = image.read(24)
+		if header.startswith(b"\x89PNG\r\n\x1a\n") and len(header) == 24 and header[12:16] == b"IHDR":
+			return int.from_bytes(header[16:20], "big"), int.from_bytes(header[20:24], "big")
+		if header[:6] in (b"GIF87a", b"GIF89a") and len(header) >= 10:
+			return int.from_bytes(header[6:8], "little"), int.from_bytes(header[8:10], "little")
+		if not header.startswith(b"\xff\xd8"):
+			return None
+		# JPEG dimensions live in a start-of-frame segment, including progressive JPEGs.
+		image.seek(2)
+		while image.read(1) == b"\xff":
+			marker = image.read(1)
+			while marker == b"\xff":
+				marker = image.read(1)
+			if not marker or marker in (b"\xda", b"\xd9"):
+				break
+			length = int.from_bytes(image.read(2), "big")
+			if length < 2:
+				break
+			if marker[0] in (0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf):
+				frame = image.read(5)
+				if length >= 7 and len(frame) == 5:
+					return int.from_bytes(frame[3:5], "big"), int.from_bytes(frame[1:3], "big")
+				break
+			image.seek(length - 2, 1)
+	return None
+
+
+def image_html(match, figure=False, root=ROOT):
 	src = safe_url(match["angle"] or match["src"], image=True, spaces=match["angle"] is not None)
+	size = image_dimensions(src, root)
+	dimensions = f' width="{size[0]}" height="{size[1]}"' if size and all(value > 0 for value in size) else ""
 	caption = match["caption"]
 	title = f' title="{escape(caption, quote=True)}"' if caption is not None and not figure else ""
-	image = f'<img src="{src}" alt="{escape(match["alt"], quote=True)}" loading="lazy" decoding="async"{title}>'
+	image = f'<img src="{src}" alt="{escape(match["alt"], quote=True)}"{dimensions} loading="lazy" decoding="async"{title}>'
 	if not figure:
 		return image
 	caption = f"<figcaption>{escape(caption)}</figcaption>" if caption else ""
 	return f"<figure>{image}{caption}</figure>"
 
 
-def inline(text):
+def inline(text, root=ROOT):
 	output, position = [], 0
 	for match in INLINE.finditer(text):
 		output.append(escape(text[position:match.start()]))
 		if match["code"] is not None:
 			output.append(f'<code>{escape(match["code"][1:-1])}</code>')
 		elif match["image"] is not None:
-			output.append(image_html(match))
+			output.append(image_html(match, root=root))
 		elif match["link"] is not None:
-			output.append(f'<a href="{safe_url(match["href"])}">{inline(match["label"])}</a>')
+			output.append(f'<a href="{safe_url(match["href"])}">{inline(match["label"], root=root)}</a>')
 		else:
 			tag = "strong" if match["strong"] is not None else "em"
-			output.append(f'<{tag}>{inline(match["bold"] or match["italic"])}</{tag}>')
+			output.append(f'<{tag}>{inline(match["bold"] or match["italic"], root=root)}</{tag}>')
 		position = match.end()
 	output.append(escape(text[position:]))
 	return "".join(output)
 
 
-def markdown(text):
+def markdown(text, root=ROOT):
 	lines = deque(text.splitlines())
 	output = []
 	def cells(line):
@@ -77,31 +116,31 @@ def markdown(text):
 			output.append("<pre><code>" + escape("\n".join(code)) + "</code></pre>")
 		elif heading:
 			level = max(2, len(heading[1]))
-			output.append(f"<h{level}>{inline(heading[2])}</h{level}>")
+			output.append(f"<h{level}>{inline(heading[2], root=root)}</h{level}>")
 		elif re.fullmatch(r"(?:-{3,}|\*{3,}|_{3,})\s*", line):
 			output.append("<hr>")
 		elif image:
-			output.append(image_html(image, figure=True))
+			output.append(image_html(image, figure=True, root=root))
 		elif lines and table(line, lines[0]):
 			headers = cells(line)
 			lines.popleft()
-			rows = ['<tr>' + ''.join(f'<th scope="col">{inline(cell)}</th>' for cell in headers) + '</tr>']
+			rows = ['<tr>' + ''.join(f'<th scope="col">{inline(cell, root=root)}</th>' for cell in headers) + '</tr>']
 			while lines and "|" in lines[0]:
 				row = cells(lines.popleft())
 				if len(row) != len(headers):
 					raise ValueError("표의 각 행은 머리글과 셀 개수가 같아야 합니다.")
-				rows.append("<tr>" + "".join(f"<td>{inline(cell)}</td>" for cell in row) + "</tr>")
+				rows.append("<tr>" + "".join(f"<td>{inline(cell, root=root)}</td>" for cell in row) + "</tr>")
 			output.append("<table>" + "\n".join(rows) + "</table>")
 		elif re.match(r"[-+*] +", line):
 			items = [re.sub(r"^[-+*] +", "", line)]
 			while lines and re.match(r"[-+*] +", lines[0]):
 				items.append(re.sub(r"^[-+*] +", "", lines.popleft()))
-			output.append("<ul>" + "".join(f"<li>{inline(item)}</li>" for item in items) + "</ul>")
+			output.append("<ul>" + "".join(f"<li>{inline(item, root=root)}</li>" for item in items) + "</ul>")
 		else:
 			paragraph = [line]
 			while lines and lines[0].strip() and not re.match(r"#{1,6} |```|[-+*] +|(?:-{3,}|\*{3,}|_{3,})\s*$", lines[0]) and not IMAGE.fullmatch(lines[0].strip()) and not (len(lines) > 1 and table(lines[0], lines[1])):
 				paragraph.append(lines.popleft())
-			output.append("<p>" + inline("\n".join(paragraph)) + "</p>")
+			output.append("<p>" + inline("\n".join(paragraph), root=root) + "</p>")
 	return "\n".join(output)
 
 
@@ -154,7 +193,6 @@ figure {{
 figure img {{
 	display: block;
 	max-block-size: 40rem;
-	inline-size: auto;
 	margin: auto;
 	object-fit: contain;
 }}
@@ -173,7 +211,7 @@ figcaption {{
 '''
 
 
-def build(root=Path(__file__).resolve().parent):
+def build(root=ROOT):
 	pages, posts = {}, []
 	for source in sorted(root.glob("*.md")):
 		if source.name == "README.md":
@@ -186,7 +224,7 @@ def build(root=Path(__file__).resolve().parent):
 			text = re.sub(r"<ul>\s*{% for post in site.posts %}.*?{% endfor %}\s*</ul>", "", text, flags=re.S)
 		elif name != "about.html":
 			posts.append((published, name, title))
-		pages[name] = document(title, stamp + markdown(text))
+		pages[name] = document(title, stamp + markdown(text, root=root))
 	items = "".join(f'<li><a href="/{quote(name)}">{escape(title)}</a></li>' for _, name, title in sorted(posts, reverse=True))
 	pages["index.html"] = pages["index.html"].replace("</main>", f"<ul>{items}</ul></main>")
 	output = root / "site"
@@ -200,6 +238,7 @@ def build(root=Path(__file__).resolve().parent):
 	assets = root / "assets"
 	if assets.exists():
 		shutil.copytree(assets, output / "assets")
+	shutil.copyfile(root / "robots.txt", output / "robots.txt")
 	(output / ".nojekyll").touch()
 	print(f"{len(pages)} pages → {output}")
 
