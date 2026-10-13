@@ -1,3 +1,4 @@
+import json
 import re
 import shutil
 from datetime import date
@@ -168,6 +169,7 @@ def document(title, body, description=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{escape(description, quote=True)}">
 <title>{escape(title)} | 방성훈의 기술 블로그</title>
+<script src="/assets/webmcp.js" defer></script>
 <style>
 body {{
 	max-inline-size: 72ch;
@@ -213,6 +215,14 @@ figcaption {{
 '''
 
 
+def static_files(directory):
+	for source in sorted(directory.iterdir()):
+		if source.name.startswith(".") or source.is_symlink():
+			continue
+		if source.is_file() and source.suffix.lower() not in {".md", ".py", ".pyc"}:
+			yield source
+
+
 def build(root=ROOT):
 	pages, posts = {}, []
 	for source in sorted(root.glob("*.md")):
@@ -222,14 +232,23 @@ def build(root=ROOT):
 		name = source.with_suffix(".html").name
 		published = date.fromisoformat(meta["date"]).isoformat() if meta.get("date") else ""
 		stamp = f'<time datetime="{published}">{published}</time>' if published else ""
+		description = meta.get("description", "").strip()
 		if name == "index.html":
 			text = re.sub(r"<ul>\s*{% for post in site.posts %}.*?{% endfor %}\s*</ul>", "", text, flags=re.S)
 		elif name != "about.html":
-			posts.append((published, name, title))
-		description = meta.get("description", "").strip()
+			posts.append((published, name, title, description or title))
 		pages[name] = document(title, stamp + markdown(text, root=root), description)
-	items = "".join(f'<li><a href="/{quote(name)}">{escape(title)}</a></li>' for _, name, title in sorted(posts, reverse=True))
+	post_index = [
+		{"title": title, "description": description, "date": published or None, "url": "/" + quote(name)}
+		for published, name, title, description in sorted(posts, reverse=True)
+	]
+	items = "".join(f'<li><a href="{post["url"]}">{escape(post["title"])}</a></li>' for post in post_index)
 	pages["index.html"] = pages["index.html"].replace("</main>", f"<ul>{items}</ul></main>")
+	static = list(static_files(root))
+	reserved = set(pages) | {"posts.json", ".nojekyll"}
+	for source in static:
+		if source.name in reserved:
+			raise ValueError(f"정적 파일 경로가 빌드 결과와 충돌합니다: {source.name}")
 	output = root / "site"
 	if output.is_symlink():
 		raise ValueError("site must not be a symlink")
@@ -238,10 +257,12 @@ def build(root=ROOT):
 	output.mkdir()
 	for name, html in pages.items():
 		(output / name).write_text(html, encoding="utf-8", newline="\n")
+	(output / "posts.json").write_text(json.dumps(post_index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+	for source in static:
+		shutil.copy2(source, output / source.name)
 	assets = root / "assets"
-	if assets.exists():
+	if assets.is_dir() and not assets.is_symlink():
 		shutil.copytree(assets, output / "assets")
-	shutil.copyfile(root / "robots.txt", output / "robots.txt")
 	(output / ".nojekyll").touch()
 	print(f"{len(pages)} pages → {output}")
 
