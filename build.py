@@ -9,6 +9,7 @@ from urllib.parse import quote, unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent
+LIST_MARKER = re.compile(r"(?:(?P<ul>[-+*])|(?P<ol>[0-9]{1,9})\.) +")
 IMAGE = re.compile(r'!\[(?P<alt>[^\]\n]*)\]\([ \t]*(?:<(?P<angle>[^<>\n]+)>|(?P<src>[^()\s]+))(?:[ \t]+"(?P<caption>[^"\n]*)")?[ \t]*\)')
 INLINE = re.compile(
 	r"(?P<code>`[^`\n]+`)|(?P<image>" + IMAGE.pattern + r")"
@@ -132,14 +133,17 @@ def markdown(text, root=ROOT):
 					raise ValueError("표의 각 행은 머리글과 셀 개수가 같아야 합니다.")
 				rows.append("<tr>" + "".join(f"<td>{inline(cell, root=root)}</td>" for cell in row) + "</tr>")
 			output.append("<table>" + "\n".join(rows) + "</table>")
-		elif re.match(r"[-+*] +", line):
-			items = [re.sub(r"^[-+*] +", "", line)]
-			while lines and re.match(r"[-+*] +", lines[0]):
-				items.append(re.sub(r"^[-+*] +", "", lines.popleft()))
-			output.append("<ul>" + "".join(f"<li>{inline(item, root=root)}</li>" for item in items) + "</ul>")
+		elif marker := LIST_MARKER.match(line):
+			tag = marker.lastgroup
+			first = int(marker["ol"]) if tag == "ol" else 1
+			start = f' start="{first}"' if first != 1 else ""
+			items = [line[marker.end():]]
+			while lines and (marker := LIST_MARKER.match(lines[0])) and marker.lastgroup == tag:
+				items.append(lines.popleft()[marker.end():])
+			output.append(f"<{tag}{start}>" + "".join(f"<li>{inline(item, root=root)}</li>" for item in items) + f"</{tag}>")
 		else:
 			paragraph = [line]
-			while lines and lines[0].strip() and not re.match(r"#{1,6} |```|[-+*] +|(?:-{3,}|\*{3,}|_{3,})\s*$", lines[0]) and not IMAGE.fullmatch(lines[0].strip()) and not (len(lines) > 1 and table(lines[0], lines[1])):
+			while lines and lines[0].strip() and not re.match(r"#{1,6} |```|(?:[-+*]|0{0,8}1\.) +|(?:-{3,}|\*{3,}|_{3,})\s*$", lines[0]) and not IMAGE.fullmatch(lines[0].strip()) and not (len(lines) > 1 and table(lines[0], lines[1])):
 				paragraph.append(lines.popleft())
 			output.append("<p>" + inline("\n".join(paragraph), root=root) + "</p>")
 	return "\n".join(output)
